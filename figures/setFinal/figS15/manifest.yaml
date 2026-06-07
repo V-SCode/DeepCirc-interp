@@ -1,0 +1,43 @@
+# Figure S15 — per-design Shapley contributions + pairwise epistasis on
+# the Fig. 3 yellow-dot designs (previously the bottom row of Fig. S05
+# under the setB_design_arc layout; old panels d/e relabeled here as a/b).
+#
+# Two panels stacked top-to-bottom in a single column:
+#   a — single-component score contribution per part per circuit design
+#       (per-design fractional Shapley stacked bars over the 30 figS13
+#       curated designs; circuit panel above, growth panel below)
+#       [previously labeled "d" in figS05]
+#   b — pairwise epistasis heatmap on part cooperativity in Fig. 3
+#       yellow-dot designs (2 rows × 3 cols = circuit/growth ×
+#       5-/6-/7-reg, Shapley-Taylor Φᵢⱼ)
+#       [previously labeled "e" in figS05]
+#
+# On-disk filenames stay panel_d.pdf / panel_e.pdf (no script renames);
+# the manifest's panel.id and label.text carry the new a/b assignment.
+#
+# Canvas 370 × 490 mm — single-column 2-row stack with 12 pt minimum
+# text across both panels.
+
+figure_id: figure_S15
+canvas:
+  width_mm: 370.0
+  height_mm: 490.0
+
+panels:
+  - id: a
+    file: panels/vector/panel_d.pdf
+    preview_file: panels/raster/panel_d.png
+    x_mm: 5.0
+    y_mm: 5.0
+    w_mm: 360.0
+    h_mm: 210.0
+    label: {text: a, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 20}
+
+  - id: b
+    file: panels/vector/panel_e.pdf
+    preview_file: panels/raster/panel_e.png
+    x_mm: 5.0
+    y_mm: 225.0
+    w_mm: 360.0
+    h_mm: 260.0
+    label: {text: b, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 20}

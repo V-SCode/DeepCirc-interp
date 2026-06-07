@@ -1,0 +1,25 @@
+# Figure S11 — most-enriched NOT/NOR gate composition per motif across
+# circuit sizes (single-panel figure, previously Fig. S04 panel a under
+# the setB_design_arc layout).
+#
+# Single panel covering 3 sizes × 2 directions × 3 motifs = 18 typed-motif
+# cells. Each cell shows the most-enriched NIG-typed variant of its parent
+# scaffold, with the parent's plain log2 enrichment stacked below for
+# context. Cyan = NOR, dark grey = NOT, purple = OUT-NOT.
+#
+# Canvas 240 × 300 mm — matches the panel's native canvas at 1:1.
+
+figure_id: figure_S11
+canvas:
+  width_mm: 240.0
+  height_mm: 300.0
+
+panels:
+  - id: a
+    file: panels/vector/panel_a.pdf
+    preview_file: panels/raster/panel_a.png
+    x_mm: 0.0
+    y_mm: 0.0
+    w_mm: 240.0
+    h_mm: 300.0
+    label: {text: '', x_offset_mm: 0.0, y_offset_mm: 0.0}

@@ -1,0 +1,39 @@
+# Figure S14 v2 — blue-to-red palette variant for Panels A/B/C.
+#
+# Same layout as manifest.yaml; only Panels A/B/C swapped to their v2
+# (red-tier "bad") renders. Compare the composed `final/figure_S14_v2.pdf`
+# against `final/figure_S14.pdf` for the blue-to-red vs blue-to-grey
+# decision.
+
+figure_id: figure_S14_v2
+canvas:
+  width_mm: 474.0
+  height_mm: 130.0
+
+panels:
+  - id: a
+    file: panels/vector/panel_a_v2.pdf
+    preview_file: panels/raster/panel_a_v2.png
+    x_mm: 4.0
+    y_mm: 4.0
+    w_mm: 130.0
+    h_mm: 120.0
+    label: {text: a, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 20}
+
+  - id: b
+    file: panels/vector/panel_b_v2.pdf
+    preview_file: panels/raster/panel_b_v2.png
+    x_mm: 150.0
+    y_mm: 4.0
+    w_mm: 130.0
+    h_mm: 120.0
+    label: {text: b, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 20}
+
+  - id: c
+    file: panels/vector/panel_c_v2.pdf
+    preview_file: panels/raster/panel_c_v2.png
+    x_mm: 296.0
+    y_mm: 4.0
+    w_mm: 174.0
+    h_mm: 120.0
+    label: {text: c, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 20}

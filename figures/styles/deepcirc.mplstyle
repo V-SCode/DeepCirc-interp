@@ -1,0 +1,95 @@
+# DeepCirc paper figure style — small sans-serif typography, thin axes,
+# vector-safe defaults. Load via figtools.use_style() (preferred) or:
+#     import matplotlib.pyplot as plt
+#     plt.style.use("figures/styles/deepcirc.mplstyle")
+#
+# All sizes in points. Tuned for the 181.8 mm main-figure canvas and
+# 153.7 mm supplementary canvas, where labels read at 6-7 pt at print size.
+#
+# Important: matplotlib's mplstyle parser treats `#` after whitespace as
+# the start of an inline comment, so hex literals like `#4A4A4A` cannot be
+# used directly for color rcParams. We therefore use grayscale floats here
+# (0.29 ≈ #4A4A4A, 0.85 ≈ #D9D9D9). Programmatic data colors come from
+# `figures.styles.colors` instead — that's where ACCENT_BLUE lives.
+
+# --- typography -----------------------------------------------------------
+font.family:        sans-serif
+font.sans-serif:    Arial, Helvetica, DejaVu Sans
+font.size:          7
+axes.labelsize:     7
+axes.titlesize:     7
+xtick.labelsize:    6
+ytick.labelsize:    6
+legend.fontsize:    6
+legend.title_fontsize: 6
+
+# --- axes / spines (0.29 ~= #4A4A4A dark gray) ----------------------------
+axes.linewidth:     0.6
+axes.spines.top:    False
+axes.spines.right:  False
+axes.edgecolor:     0.29
+axes.labelcolor:    0.29
+axes.titlepad:      3.0
+axes.labelpad:      2.5
+
+# --- ticks ----------------------------------------------------------------
+xtick.major.size:   2.5
+ytick.major.size:   2.5
+xtick.major.width:  0.6
+ytick.major.width:  0.6
+xtick.minor.size:   1.5
+ytick.minor.size:   1.5
+xtick.minor.width:  0.4
+ytick.minor.width:  0.4
+xtick.color:        0.29
+ytick.color:        0.29
+xtick.major.pad:    2.0
+ytick.major.pad:    2.0
+
+# --- lines / markers ------------------------------------------------------
+lines.linewidth:    1.0
+lines.markersize:   3
+lines.markeredgewidth: 0.5
+patch.linewidth:    0.6
+
+# --- legend ---------------------------------------------------------------
+legend.frameon:     False
+legend.borderaxespad: 0.4
+legend.handlelength: 1.5
+legend.handletextpad: 0.5
+legend.columnspacing: 1.0
+
+# --- grids (off by default; turn on per-axis if needed) -------------------
+axes.grid:          False
+grid.linewidth:     0.4
+grid.color:         0.85
+grid.alpha:         0.8
+
+# --- figure / save --------------------------------------------------------
+figure.dpi:         300
+figure.facecolor:   white
+savefig.dpi:        600
+savefig.bbox:       tight
+savefig.pad_inches: 0.02
+savefig.transparent: True
+savefig.facecolor:  none
+savefig.edgecolor:  none
+
+# --- vector-safe font output ---------------------------------------------
+pdf.fonttype:       42
+ps.fonttype:        42
+svg.fonttype:       none
+
+# --- mathtext (renders $...$ mathmode strings) ----------------------------
+# Default matplotlib mathtext.fontset is "dejavusans", which embeds
+# DejaVu Sans for every $...$ string. That pollutes Arial-only figures.
+# "custom" + Arial-mapped slots keep $\Phi$, $\rightarrow$, $\log_2$, etc.
+# rendering in Arial. Fallback to "cm" only if Arial lacks a math glyph.
+mathtext.fontset:   custom
+mathtext.rm:        Arial
+mathtext.it:        Arial:italic
+mathtext.bf:        Arial:bold
+mathtext.sf:        Arial
+mathtext.tt:        Arial
+mathtext.cal:       Arial:italic
+mathtext.fallback:  cm

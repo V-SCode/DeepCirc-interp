@@ -1,0 +1,50 @@
+# Figure S14 — per-part landscapes and position-dependence on the
+# universal-eligible (part × graph-role) population (previously the top
+# row of Fig. S05 under the setB_design_arc layout).
+#
+# 2+1 layout (top row: a + b side-by-side, bottom row: c full-width):
+#   a — per-part GROWTH log2 enrichment beeswarm (toxic / neutral /
+#       protective classes; 20 parts × 65 universal-eligible cells)
+#   b — per-part CIRCUIT log2 enrichment beeswarm (destructive / neutral /
+#       constructive classes; paired counterpart of a)
+#   c — parts × cascade-role mean CIRCUIT log2 enrichment heatmap (20
+#       parts × 6 role buckets: {NOT, NOR} × {early, middle, late})
+#
+# Canvas 420 × 385 mm — fits a single page block when scaled to typical
+# doc/paper column widths. 12 pt minimum body text, 19 pt panel titles
+# (a/b/c). Panel A/B canvases grew 150 → 165 mm vertically and their
+# axes shifted down so the hero title sits with breathing room above
+# the beeswarm, matching Panel C's title-to-axes spacing convention.
+
+figure_id: figure_S14
+canvas:
+  width_mm: 420.0
+  height_mm: 385.0
+
+panels:
+  - id: a
+    file: panels/vector/panel_a.pdf
+    preview_file: panels/raster/panel_a.png
+    x_mm: 5.0
+    y_mm: 5.0
+    w_mm: 200.0
+    h_mm: 165.0
+    label: {text: a, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 20}
+
+  - id: b
+    file: panels/vector/panel_b.pdf
+    preview_file: panels/raster/panel_b.png
+    x_mm: 215.0
+    y_mm: 5.0
+    w_mm: 200.0
+    h_mm: 165.0
+    label: {text: b, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 20}
+
+  - id: c
+    file: panels/vector/panel_c.pdf
+    preview_file: panels/raster/panel_c.png
+    x_mm: 5.0
+    y_mm: 180.0
+    w_mm: 410.0
+    h_mm: 200.0
+    label: {text: c, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 20}

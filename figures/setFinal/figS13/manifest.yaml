@@ -1,0 +1,28 @@
+# Figure S13 — Pareto-optimal vs max circuit score design space and part
+# composition (single-panel figure, previously Fig. S04 panel c under the
+# setB_design_arc layout).
+#
+# Two-pane composite:
+#   LEFT  — scatter of 215 per-topology Pareto-knee designs (near-black)
+#           + 215 per-topology max-circuit designs (mid-grey) + 3 paper
+#           Fig. 3 yellow-dot stars, against the buildable region.
+#   RIGHT — 30-row table = 15 max-circuit + 15 Pareto-knee best per target,
+#           with part_names position-informed (input → output via d2o),
+#           5 top-frequency parts highlighted; + paper yellow-dot strip.
+#
+# Canvas 306 × 246 mm — matches the panel's native canvas at 1:1.
+
+figure_id: figure_S13
+canvas:
+  width_mm: 270.0
+  height_mm: 199.0
+
+panels:
+  - id: a
+    file: panels/vector/panel_c.pdf
+    preview_file: panels/raster/panel_c.png
+    x_mm: 0.0
+    y_mm: 0.0
+    w_mm: 270.0
+    h_mm: 199.0
+    label: {text: '', x_offset_mm: 0.0, y_offset_mm: 0.0}

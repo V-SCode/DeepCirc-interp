@@ -1,0 +1,30 @@
+# Figure S12 — per-NPN Pareto fronts (3 x 3 grid of all 9 NPN classes;
+# single panel; previously Fig. S04 panel b under the setB_design_arc
+# layout, with a top-3 NPN classes side-by-side view that has been
+# expanded to all 9 classes for the standalone canvas).
+#
+# Nine cells in topology-count descending order across rows:
+#   Row 1: 0x03 (60), 0x17 (51), 0x0F (25)
+#   Row 2: 0x1B (24), 0x07 (16), 0x3C (15)
+#   Row 3: 0x19 (10), 0x06  (9), 0x16  (5)
+#
+# Each cell plots PCHIP-smoothed Pareto fronts per topology, coloured by
+# target hex. Per-cell legend lists contributing targets. Shared axis
+# limits across all 9 cells for direct visual comparison.
+#
+# Canvas 306 x 320 mm.
+
+figure_id: figure_S12
+canvas:
+  width_mm: 360.0
+  height_mm: 360.0
+
+panels:
+  - id: a
+    file: panels/vector/panel_b.pdf
+    preview_file: panels/raster/panel_b.png
+    x_mm: 0.0
+    y_mm: 0.0
+    w_mm: 360.0
+    h_mm: 360.0
+    label: {text: '', x_offset_mm: 0.0, y_offset_mm: 0.0}

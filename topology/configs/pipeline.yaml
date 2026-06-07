@@ -1,0 +1,88 @@
+# DeepCirc topology — canonical pipeline configuration
+#
+# All hyperparameters here MATCH upstream DeepCirc defaults
+# (DeepCirc_upstream/scripts/NNGGA designs parallel GPUs.py and
+#  DeepCirc_upstream/scripts/example_zero_shot.sh).
+#
+# Per PROJECT_STATE_TOPOLOGY.md Decision #6, methodological consistency with
+# upstream is required so this project's findings sit alongside the
+# DeepCirc paper's own results without hyperparameter gaps.
+#
+# Edit only with explicit reason; document any deviation in the project state.
+
+# -----------------------------------------------------------------------------
+# Stage 1 — PPO+GAT topology generation (per target function)
+# -----------------------------------------------------------------------------
+# v2.0 (2026-05-06): paper-scale zero-shot inference per Palacios et al.,
+# Methods, lines 503-514. The DeepCirc paper runs zero-shot in two regimes:
+#   - Fig. 2 benchmarking (rich registry for population analysis):
+#       5,120 episodes (up to 51,200 steps).
+#   - Figs. 4-5 experimental validation (single-design wet-lab pick):
+#       1,000 episodes.
+# Cross-topology study uses the benchmarking regime so the registry has
+# enough size-diverse candidates to support per-(target × size) sampling.
+# At ~173 s per 1000 episodes on L40S, 5120 ep ≈ 15 min per target.
+stage1:
+  episodes: 5120              # paper Fig. 2 zero-shot regime (51,200 env-steps cap)
+  n_envs: 80                  # paper Methods line 504
+  max_steps: 10               # paper Methods line 471 (T = 10)
+  max_nodes: 100              # paper Methods line 472
+  initial_state_sampling_factor: 0  # paper k=0 (uniform); Methods line 510
+  device: "auto"              # cuda if available
+
+# -----------------------------------------------------------------------------
+# Stage 2 — composition-to-function MLP training (per topology)
+# -----------------------------------------------------------------------------
+stage2:
+  # Sim-label generation
+  percentage: 0.1             # NNGGA default; sample fraction of valid-K
+  sim_batch_size: 1000        # NNGGA L134
+
+  # Filters
+  inputs_with_interference: [0, 2]                    # Ara, IPTG
+  regulators_with_interference: ["PhlF", "SrpR", "BM3R1", "QacR"]
+  interference_evaluation_excluded_node_types: ["input"]
+  growth_score_threshold:
+    "4-reg": 0.75
+    "5-reg": 0.75
+    "6-reg": 0.75
+    "7-reg": 0.65             # paper relaxation for the largest exemplar (NNGGA L248-250)
+
+  # MLP architecture (matches NNGGA L723-733)
+  mlp:
+    hidden_size: 100
+    num_layers: 9             # 9 hidden Linear + 1 output = 10 total
+    output_size: 1
+    dropout: 0.0
+    activation: "relu"
+
+  # Training
+  num_epochs_circuit_score_model: 25
+  num_epochs_toxicity_score_model: 25
+  train_batch_size: 4096
+  optimizer: "adam"
+  learning_rate: 1.0e-3
+  loss: "mse"
+
+# -----------------------------------------------------------------------------
+# Project-specific QC stratification (NOT in upstream — see §6)
+# -----------------------------------------------------------------------------
+qc:
+  # Held-out R² thresholds per tier; calibrated against upstream's published
+  # R² values for 0x2B / 0x17 / 0x6D (circuit ≈ 0.95+, growth ≈ 0.99).
+  # Re-calibrate empirically once G1 produces real R² distributions.
+  tier_a1:
+    circuit_r2_min: 0.85
+    growth_r2_min: 0.95
+  tier_a2:
+    circuit_r2_min: 0.6
+    growth_r2_min: 0.85
+  # Below tier_a2 → tier A3 ("hard-to-fit"), excluded from L1-L2 rule
+  # extraction, kept as a topology-level finding.
+
+# -----------------------------------------------------------------------------
+# Project-specific random baseline generation (NOT in upstream — see §5)
+# -----------------------------------------------------------------------------
+baseline:
+  strategy: "hamming1_perturbation"   # option 3 from §5.1
+  baselines_per_size: 25              # ~5 per G1 size, scaled by group

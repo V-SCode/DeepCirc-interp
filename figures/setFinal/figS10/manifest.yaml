@@ -1,0 +1,56 @@
+# Figure S10 — design-space scale + structural motif scaffolds
+# (previously Fig. S03 under the setB_design_arc layout).
+#
+# Layout:
+#   row 1 (top, full width)  — a: interp pipeline diagram (placeholder)
+#   row 2 (left column)      — b: full design-score distribution by size
+#                             c: design-score distribution in the elite tier
+#   row 2 (right column)     — d: top structural motif scaffolds by size
+#                                  (combined k=3+4 pool, top-5% vs bot-5%)
+#
+# Canvas 200 × 220 mm (preserved from the figS03 manifest layout).
+
+figure_id: figure_S10
+canvas:
+  width_mm: 240.0
+  height_mm: 246.0
+
+panels:
+  # --- row 1: pipeline diagram, full width ---------------------------------
+  - id: a
+    file: panels/vector/panel_a.pdf
+    preview_file: panels/raster/panel_a.png
+    x_mm: 4.0
+    y_mm: 4.0
+    w_mm: 232.0
+    h_mm: 50.0
+    label: {text: a, x_offset_mm: -2.5, y_offset_mm: -2.0}
+
+  # --- row 2 left column: design-space distributions ----------------------
+  - id: b
+    file: panels/vector/panel_b.pdf
+    preview_file: panels/raster/panel_b.png
+    x_mm: 4.0
+    y_mm: 58.0
+    w_mm: 95.0
+    h_mm: 90.0
+    label: {text: b, x_offset_mm: -2.5, y_offset_mm: -2.0}
+
+  - id: c
+    file: panels/vector/panel_c.pdf
+    preview_file: panels/raster/panel_c.png
+    x_mm: 4.0
+    y_mm: 152.0
+    w_mm: 95.0
+    h_mm: 90.0
+    label: {text: c, x_offset_mm: -2.5, y_offset_mm: -2.0}
+
+  # --- row 2 right column: combined simplemotif rankings ------------------
+  - id: d
+    file: panels/vector/panel_d.pdf
+    preview_file: panels/raster/panel_d.png
+    x_mm: 100.0
+    y_mm: 58.0
+    w_mm: 136.0
+    h_mm: 184.0
+    label: {text: d, x_offset_mm: -5.0, y_offset_mm: -2.0}
