@@ -1,5 +1,9 @@
 # DeepCirc-interp
 
+[![smoke](https://github.com/V-SCode/DeepCirc-interp/actions/workflows/smoke.yml/badge.svg)](https://github.com/V-SCode/DeepCirc-interp/actions/workflows/smoke.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+
 End-to-end interpretability pipeline for the DeepCirc paper (Palacios et al.),
 covering the cross-topology design-rule analyses and per-design attribution
 work behind supplementary figures **S10–S15**.
@@ -183,6 +187,13 @@ And the Zenodo deposit for this companion repository (DOI pending).
 
 MIT (see [LICENSE](LICENSE)). The vendored upstream DeepCirc submodule under
 `upstream/DeepCirc/` is governed by its own license.
+
+## Tested on
+
+- macOS 15 (Darwin 25.3), Python 3.12.13, conda env from `environment.yml`
+- ubuntu-latest GitHub Actions runner, Python 3.10 / 3.11 / 3.12 via pip
+- All six supplementary figures (S10–S15) regenerate from Tier 0 in-repo data
+  alone — see [docs/smoke_test_results.md](docs/smoke_test_results.md)
 
 ## Acknowledgments
 
