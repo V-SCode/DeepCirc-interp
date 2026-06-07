@@ -24,7 +24,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-DEFAULT_DOI = "10.5281/zenodo.20576207"
+DEFAULT_DOI = "10.5281/zenodo.20576709"
 ZENODO_API = "https://zenodo.org/api/records/{record_id}"
 
 

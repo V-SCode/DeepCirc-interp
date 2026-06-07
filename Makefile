@@ -12,7 +12,7 @@
 # Variables (override on the command line):
 PY         ?= python
 DATA_ROOT  ?= ./data
-ZENODO_DOI ?= 10.5281/zenodo.20576207
+ZENODO_DOI ?= 10.5281/zenodo.20576709
 FIG_OUT    := figures/setFinal
 
 .PHONY: help env data data-figures data-full \

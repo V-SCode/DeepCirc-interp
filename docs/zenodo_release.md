@@ -92,7 +92,7 @@ paper Methods section "Data and code availability" subsection with:
 > Code and intermediate data for the cross-topology interpretability analyses
 > and supplementary figures S10–S15 are available at
 > `https://github.com/V-SCode/DeepCirc-interp` and archived at Zenodo
-> (DOI: [`10.5281/zenodo.20576207`](https://doi.org/10.5281/zenodo.20576207)).
+> (DOI: [`10.5281/zenodo.20576709`](https://doi.org/10.5281/zenodo.20576709)).
 
 Use the **concept DOI** (not the version DOI) so the citation tracks future
 updates.
