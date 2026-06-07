@@ -1,0 +1,65 @@
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# --- Virtual environments ---
+.venv/
+.venv_*/
+venv/
+env/
+
+# --- Generated panel outputs (regenerable from scripts) ---
+figures/setFinal/*/panels/raster/*.png
+figures/setFinal/*/panels/vector/*.pdf
+figures/setFinal/*/panels/vector/*.svg
+figures/setFinal/*/final/*.pdf
+figures/setFinal/*/final/*.png
+figures/setFinal/*/final/*.linked_assets.json
+figures/setFinal/*/preview/contact_sheet.png
+
+# --- Large data — fetched from Zenodo, not tracked here ---
+data/exemplars/0x*_design/
+data/topology_g3/predictions/
+data/topology_g3/mlp_checkpoints/
+data/topology_g3/registries/
+data/topology_g3/landscape_*.parquet
+data/topology_g3/motif_catalog_*.json
+data/interp_processed/global_landscape_*.parquet
+data/interp_processed/master_*.parquet
+
+# --- Logs and run artifacts ---
+*.log
+logs/
+slurm-*.out
+slurm-*.err
+runs/
+checkpoints/
+wandb/
+mlruns/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# --- Misc ---
+tmp/
+scratch/
+.coverage
+htmlcov/
