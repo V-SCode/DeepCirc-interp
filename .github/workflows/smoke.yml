@@ -21,10 +21,15 @@ jobs:
         python-version: ["3.10", "3.11", "3.12"]
 
     steps:
-      - name: Checkout (with submodules)
+      - name: Checkout (no submodules)
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          # The CI smoke test only exercises the Tier 0 figure-rebuild path,
+          # which does not need the upstream DeepCirc submodule. The submodule
+          # is only required for back-end re-runs (PPO+GAT topology generation,
+          # MLP training, simulator-valued Shapley-Taylor). Skipping the clone
+          # here also lets CI run before the upstream DeepCirc repo is public.
+          submodules: false
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
