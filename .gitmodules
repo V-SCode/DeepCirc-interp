@@ -1,5 +1,0 @@
-[submodule "upstream/DeepCirc"]
-	path = upstream/DeepCirc
-	url = https://github.com/sebastianrpalacios/DeepCirc.git
-	# Pinned to verified-working commit ad5b1494 (2026-04-08).
-	# Update via: git submodule update --init --remote upstream/DeepCirc
