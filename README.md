@@ -190,7 +190,7 @@ And the Zenodo deposit for this companion repository:
   author    = {Vege, Venkat},
   year      = {2026},
   publisher = {Zenodo},
-  version   = {v1.0.1},
+  version   = {v1.0.0},
   doi       = {10.5281/zenodo.20576207},
   url       = {https://doi.org/10.5281/zenodo.20576207}
 }
