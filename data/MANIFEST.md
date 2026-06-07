@@ -32,8 +32,13 @@ data/
 │   ├── l2_top05/
 │   │   ├── l2_enrichment.csv               ~999 KB     # feeds figS14 panels a, b, c
 │   │   └── l2_summary.json
-│   └── panel_c_shapley/
-│       └── shapley_per_design.json         ~28 KB      # feeds figS13 + figS15a
+│   ├── panel_c_shapley/
+│   │   └── shapley_per_design.json         ~28 KB      # feeds figS13 + figS15a
+│   └── pareto/
+│       ├── all_topology_fronts.csv         ~880 KB     # feeds figS12 panel b (3×3 NPN grid)
+│       ├── knee_designs.csv                ~120 KB     # feeds figS13 panel c (max-circ + Pareto-knee cohorts)
+│       ├── cross_target_portfolio.csv      ~13 KB
+│       └── pareto_summary.json             ~2 KB
 └── interp_processed/
     ├── shapley_taylor_sim_0x{2B,17,6D}.json   ~10 KB total   # feeds figS15b (primary)
     └── pairwise_0x{2B,17,6D}.json             ~10 KB total   # feeds figS15b (fallback)

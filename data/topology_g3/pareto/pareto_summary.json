@@ -1,0 +1,59 @@
+{
+  "scope": {
+    "include_baselines": false,
+    "size_classes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "scope_locked_on": "2026-05-06",
+    "scope_note": "Agent-only, 4-7-reg analysis scope. Baselines remain in the population manifest but are not analyzed. See PROJECT_STATE_TOPOLOGY.md \u00a72."
+  },
+  "group": "G3",
+  "phase": "14_l1_pareto_frontier",
+  "n_topologies_analyzed": 215,
+  "skipped_by_tier": {
+    "A0": 44
+  },
+  "buildable_thresholds": {
+    "circuit_score_min": 5.3,
+    "circuit_log_min": 2.4059923596758366,
+    "toxicity_min": 0.85,
+    "anchor_rationale": "circuit_score_min = paper's weakest yellow-dot (0x6D, c=5.3); buildable = meet biological growth floor AND meet-or-beat the weakest paper-built circuit"
+  },
+  "portfolio_size": 24,
+  "knee_A_circuit_log": {
+    "n": 310.1794337911271,
+    "mean": 7.251483803692351,
+    "median": 6.649328330466611,
+    "min": -0.011956975564829869,
+    "max": 12.192041873194016,
+    "std": 2.0517529351434765
+  },
+  "knee_A_toxicity": {
+    "n": 215,
+    "mean": 0.7853964051534963,
+    "median": 0.7823856472969055,
+    "min": 0.6801277995109558,
+    "max": 0.9317149519920349,
+    "std": 0.05122263602628775
+  },
+  "n_pareto_front": {
+    "n": 215,
+    "mean": 25.683720930232557,
+    "median": 24.0,
+    "min": 12.0,
+    "max": 55.0,
+    "std": 7.945636851032465
+  },
+  "n_designs_total": {
+    "n": 215,
+    "mean": 10847182.73488372,
+    "median": 10000000.0,
+    "min": 74736.0,
+    "max": 40000000.0,
+    "std": 9016311.4553281
+  },
+  "elapsed_minutes": 30.231199023482624
+}
