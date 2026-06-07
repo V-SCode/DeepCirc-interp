@@ -211,8 +211,4 @@ MIT (see [LICENSE](LICENSE)). The vendored upstream DeepCirc submodule under
 ## Acknowledgments
 
 This work builds on the upstream DeepCirc framework by Sebastian Palacios and
-the Collins lab.
-
-The repository structure, migration tooling, and documentation in this
-companion repo were assembled with support from
-[Claude Code](https://claude.com/claude-code).
+the Jim Collins lab.
