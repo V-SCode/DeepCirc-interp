@@ -1,0 +1,25 @@
+{
+  "phase": "26_l3_motif_size_aggregation",
+  "motif_view": "full",
+  "min_n_topo": 1,
+  "size_classes": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "per_k_summary": {
+    "k=3": {
+      "n_rows_per_task": 16,
+      "n_iso_classes": 4
+    },
+    "k=4": {
+      "n_rows_per_task": 68,
+      "n_iso_classes": 17
+    },
+    "k=5": {
+      "n_rows_per_task": 400,
+      "n_iso_classes": 100
+    }
+  }
+}

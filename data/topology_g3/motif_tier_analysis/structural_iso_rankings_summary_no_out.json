@@ -1,0 +1,35 @@
+{
+  "phase": "24_l3_motif_tier_aggregation",
+  "motif_view": "no_out",
+  "tier_pool_sizes": {
+    "circuit": {
+      "top_01": 14102436,
+      "top_05": 70512260,
+      "bot_05": 70512249,
+      "bot_01": 14102450
+    },
+    "toxicity": {
+      "top_01": 14102447,
+      "top_05": 70512259,
+      "bot_05": 70512248,
+      "bot_01": 14102437
+    }
+  },
+  "per_k_summary": {
+    "k=3": {
+      "n_iso_classes": 4,
+      "n_linear_iso": 1,
+      "n_raw_motifs": 4
+    },
+    "k=4": {
+      "n_iso_classes": 17,
+      "n_linear_iso": 1,
+      "n_raw_motifs": 21
+    },
+    "k=5": {
+      "n_iso_classes": 97,
+      "n_linear_iso": 1,
+      "n_raw_motifs": 156
+    }
+  }
+}

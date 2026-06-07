@@ -1,0 +1,35 @@
+{
+  "title": "DeepCirc-interp: end-to-end interpretability companion code for the DeepCirc paper (Supplementary Figures S10–S15)",
+  "description": "End-to-end interpretability pipeline for the DeepCirc paper (Palacios et al.), covering the cross-topology design-rule analyses and per-design attribution work behind supplementary figures S10–S15. Includes target Boolean function selection, topology population generation (via PPO+GAT, upstream DeepCirc), Stage-2 MLP training and design-space scoring, downstream L1/L2/L3 cross-topology analyses, single-topology slot-level Shapley + pairwise Shapley–Taylor epistasis on the three yellow-dot exemplars (0x2B / 0x17 / 0x6D), and the vector-first manifest-driven figure-assembly pipeline. The upstream training framework (sebastianrpalacios/DeepCirc) is vendored as a pinned git submodule.",
+  "creators": [
+    {
+      "name": "Vege, Venkat",
+      "affiliation": "Massachusetts Institute of Technology"
+    }
+  ],
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "DeepCirc",
+    "synthetic biology",
+    "gene circuit design",
+    "mechanistic interpretability",
+    "Shapley value",
+    "Shapley-Taylor interaction index",
+    "graph neural networks",
+    "PPO",
+    "reinforcement learning",
+    "compositional rules"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/sebastianrpalacios/DeepCirc",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "communities": [],
+  "notes": "This deposit accompanies the DeepCirc paper (citation pending). The deposit's 'figures' tier (~10 MB) holds the small CSV/JSON intermediates needed to rebuild supplementary figures S10–S15 from the assembly scripts on a laptop. The 'full' tier (tens of GB) additionally holds trained Stage-2 MLP checkpoints, design-space predictions, per-exemplar HDF5 samples, and PPO+GAT agent registries needed for full end-to-end re-runs from population scoring onward."
+}

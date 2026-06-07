@@ -1,0 +1,3 @@
+[submodule "upstream/DeepCirc"]
+	path = upstream/DeepCirc
+	url = https://github.com/sebastianrpalacios/DeepCirc.git

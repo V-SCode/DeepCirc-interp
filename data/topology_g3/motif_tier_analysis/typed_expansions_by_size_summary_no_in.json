@@ -1,0 +1,24 @@
+{
+  "phase": "27_l3_motif_size_typed_expansion",
+  "motif_view": "no_in",
+  "size_classes": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "per_k_summary": {
+    "k=3": {
+      "n_circuit_rows": 253,
+      "n_toxicity_rows": 253
+    },
+    "k=4": {
+      "n_circuit_rows": 621,
+      "n_toxicity_rows": 621
+    },
+    "k=5": {
+      "n_circuit_rows": 936,
+      "n_toxicity_rows": 936
+    }
+  }
+}

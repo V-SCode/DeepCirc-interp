@@ -1,0 +1,971 @@
+{
+  "scope": {
+    "include_baselines": false,
+    "size_classes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "scope_locked_on": "2026-05-06",
+    "scope_note": "Agent-only, 4-7-reg analysis scope. Baselines remain in the population manifest but are not analyzed. See PROJECT_STATE_TOPOLOGY.md \u00a72."
+  },
+  "top_k": 5,
+  "n_topologies_analyzed": 215,
+  "n_topologies_skipped": 44,
+  "agreement_AB_rate": 0.6790697674418604,
+  "agreement_AC_rate": 0.6651162790697674,
+  "agreement_BC_rate": 0.9720930232558139,
+  "agreement_ABC_rate": 0.6604651162790698,
+  "n_agree_AB": 146,
+  "n_agree_AC": 143,
+  "n_agree_BC": 209,
+  "n_agree_ABC": 142,
+  "per_target_disagreements": {
+    "multi": {
+      "n_total": 22,
+      "n_disagree_AB": 4,
+      "n_disagree_AC": 4,
+      "n_disagree_ABC": 4
+    },
+    "0x2B": {
+      "n_total": 3,
+      "n_disagree_AB": 0,
+      "n_disagree_AC": 1,
+      "n_disagree_ABC": 1
+    },
+    "0x17": {
+      "n_total": 12,
+      "n_disagree_AB": 7,
+      "n_disagree_AC": 7,
+      "n_disagree_ABC": 7
+    },
+    "0x6D": {
+      "n_total": 5,
+      "n_disagree_AB": 3,
+      "n_disagree_AC": 3,
+      "n_disagree_ABC": 3
+    },
+    "0xEE": {
+      "n_total": 20,
+      "n_disagree_AB": 8,
+      "n_disagree_AC": 8,
+      "n_disagree_ABC": 8
+    },
+    "0x4D": {
+      "n_total": 3,
+      "n_disagree_AB": 1,
+      "n_disagree_AC": 1,
+      "n_disagree_ABC": 1
+    },
+    "0xCC": {
+      "n_total": 7,
+      "n_disagree_AB": 4,
+      "n_disagree_AC": 4,
+      "n_disagree_ABC": 5
+    },
+    "0xE8": {
+      "n_total": 8,
+      "n_disagree_AB": 5,
+      "n_disagree_AC": 5,
+      "n_disagree_ABC": 5
+    },
+    "0x33": {
+      "n_total": 5,
+      "n_disagree_AB": 4,
+      "n_disagree_AC": 4,
+      "n_disagree_ABC": 4
+    },
+    "0x66": {
+      "n_total": 5,
+      "n_disagree_AB": 0,
+      "n_disagree_AC": 0,
+      "n_disagree_ABC": 0
+    },
+    "0x3C": {
+      "n_total": 10,
+      "n_disagree_AB": 4,
+      "n_disagree_AC": 4,
+      "n_disagree_ABC": 4
+    },
+    "0x2C": {
+      "n_total": 10,
+      "n_disagree_AB": 0,
+      "n_disagree_AC": 0,
+      "n_disagree_ABC": 0
+    },
+    "0x03": {
+      "n_total": 20,
+      "n_disagree_AB": 7,
+      "n_disagree_AC": 7,
+      "n_disagree_ABC": 7
+    },
+    "0x0F": {
+      "n_total": 10,
+      "n_disagree_AB": 7,
+      "n_disagree_AC": 7,
+      "n_disagree_ABC": 7
+    },
+    "0x06": {
+      "n_total": 9,
+      "n_disagree_AB": 4,
+      "n_disagree_AC": 6,
+      "n_disagree_ABC": 6
+    },
+    "0x07": {
+      "n_total": 15,
+      "n_disagree_AB": 1,
+      "n_disagree_AC": 1,
+      "n_disagree_ABC": 1
+    },
+    "0x71": {
+      "n_total": 3,
+      "n_disagree_AB": 1,
+      "n_disagree_AC": 1,
+      "n_disagree_ABC": 1
+    },
+    "0x8E": {
+      "n_total": 12,
+      "n_disagree_AB": 6,
+      "n_disagree_AC": 6,
+      "n_disagree_ABC": 6
+    },
+    "0x77": {
+      "n_total": 20,
+      "n_disagree_AB": 3,
+      "n_disagree_AC": 3,
+      "n_disagree_ABC": 3
+    },
+    "0x47": {
+      "n_total": 7,
+      "n_disagree_AB": 0,
+      "n_disagree_AC": 0,
+      "n_disagree_ABC": 0
+    },
+    "0x1B": {
+      "n_total": 9,
+      "n_disagree_AB": 0,
+      "n_disagree_AC": 0,
+      "n_disagree_ABC": 0
+    }
+  },
+  "disagreements_detail": [
+    {
+      "topology_id": "deab6c1f",
+      "source": [
+        "0x2B",
+        "0x4D",
+        "0x71"
+      ],
+      "regs": 4,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.919,
+      "max_circuit_B": 153.273,
+      "top5_mean_C": 123.161
+    },
+    {
+      "topology_id": "2d1a0fd5",
+      "source": [
+        "0x2B",
+        "0x4D",
+        "0x71"
+      ],
+      "regs": 6,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.967,
+      "max_circuit_B": 181.35,
+      "top5_mean_C": 168.96
+    },
+    {
+      "topology_id": "186e103b",
+      "source": "0x2B",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.956,
+      "max_circuit_B": 114.146,
+      "top5_mean_C": 96.746
+    },
+    {
+      "topology_id": "4e6f5b1a",
+      "source": "0x17",
+      "regs": 5,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.912,
+      "max_circuit_B": 117.737,
+      "top5_mean_C": 110.163
+    },
+    {
+      "topology_id": "96cc1443",
+      "source": "0x17",
+      "regs": 5,
+      "perm_A_(R2)": 2,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.958,
+      "max_circuit_B": 108.158,
+      "top5_mean_C": 105.612
+    },
+    {
+      "topology_id": "acfb5670",
+      "source": "0x17",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 4,
+      "perm_C_(topK)": 4,
+      "circuit_r2_A": 0.989,
+      "max_circuit_B": 131.029,
+      "top5_mean_C": 125.447
+    },
+    {
+      "topology_id": "00930f32",
+      "source": "0x17",
+      "regs": 7,
+      "perm_A_(R2)": 2,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.934,
+      "max_circuit_B": 119.128,
+      "top5_mean_C": 98.728
+    },
+    {
+      "topology_id": "022059b9",
+      "source": "0x17",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 3,
+      "perm_C_(topK)": 3,
+      "circuit_r2_A": 0.926,
+      "max_circuit_B": 112.334,
+      "top5_mean_C": 95.421
+    },
+    {
+      "topology_id": "024eae69",
+      "source": "0x17",
+      "regs": 7,
+      "perm_A_(R2)": 3,
+      "perm_B_(maxC)": 5,
+      "perm_C_(topK)": 5,
+      "circuit_r2_A": 0.958,
+      "max_circuit_B": 70.922,
+      "top5_mean_C": 63.566
+    },
+    {
+      "topology_id": "032fb3a9",
+      "source": "0x17",
+      "regs": 7,
+      "perm_A_(R2)": 4,
+      "perm_B_(maxC)": 5,
+      "perm_C_(topK)": 5,
+      "circuit_r2_A": 0.926,
+      "max_circuit_B": 107.387,
+      "top5_mean_C": 103.758
+    },
+    {
+      "topology_id": "62c3e40b",
+      "source": "0x6D",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.96,
+      "max_circuit_B": 32.604,
+      "top5_mean_C": 31.086
+    },
+    {
+      "topology_id": "a56bf54d",
+      "source": "0x6D",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.958,
+      "max_circuit_B": 39.016,
+      "top5_mean_C": 35.998
+    },
+    {
+      "topology_id": "a987d27b",
+      "source": "0x6D",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.954,
+      "max_circuit_B": 39.316,
+      "top5_mean_C": 35.951
+    },
+    {
+      "topology_id": "1b87f351",
+      "source": "0xEE",
+      "regs": 4,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.948,
+      "max_circuit_B": 689.835,
+      "top5_mean_C": 653.268
+    },
+    {
+      "topology_id": "127e231c",
+      "source": "0xEE",
+      "regs": 5,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.875,
+      "max_circuit_B": 2892.164,
+      "top5_mean_C": 2623.055
+    },
+    {
+      "topology_id": "14ec46f1",
+      "source": "0xEE",
+      "regs": 5,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.968,
+      "max_circuit_B": 1345.465,
+      "top5_mean_C": 1197.377
+    },
+    {
+      "topology_id": "043ead30",
+      "source": "0xEE",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.991,
+      "max_circuit_B": 856.381,
+      "top5_mean_C": 841.122
+    },
+    {
+      "topology_id": "03442896",
+      "source": "0xEE",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.994,
+      "max_circuit_B": 1192.195,
+      "top5_mean_C": 1170.609
+    },
+    {
+      "topology_id": "069067ff",
+      "source": "0xEE",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.996,
+      "max_circuit_B": 1206.546,
+      "top5_mean_C": 1196.954
+    },
+    {
+      "topology_id": "07012647",
+      "source": "0xEE",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.996,
+      "max_circuit_B": 1236.536,
+      "top5_mean_C": 1228.78
+    },
+    {
+      "topology_id": "08c0d645",
+      "source": "0xEE",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.978,
+      "max_circuit_B": 2096.338,
+      "top5_mean_C": 2058.079
+    },
+    {
+      "topology_id": "0973762a",
+      "source": "0x4D",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.949,
+      "max_circuit_B": 86.397,
+      "top5_mean_C": 80.571
+    },
+    {
+      "topology_id": "121452f9",
+      "source": "0xCC",
+      "regs": 4,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.99,
+      "max_circuit_B": 2773.35,
+      "top5_mean_C": 2768.067
+    },
+    {
+      "topology_id": "0489dcd5",
+      "source": "0xCC",
+      "regs": 5,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.956,
+      "max_circuit_B": 3858.608,
+      "top5_mean_C": 3670.351
+    },
+    {
+      "topology_id": "05ce3955",
+      "source": "0xCC",
+      "regs": 5,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.926,
+      "max_circuit_B": 3284.329,
+      "top5_mean_C": 3052.758
+    },
+    {
+      "topology_id": "00340848",
+      "source": "0xCC",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.993,
+      "max_circuit_B": 3321.256,
+      "top5_mean_C": 3292.433
+    },
+    {
+      "topology_id": "0492607b",
+      "source": "0xCC",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.982,
+      "max_circuit_B": 3434.557,
+      "top5_mean_C": 3333.468
+    },
+    {
+      "topology_id": "1977316a",
+      "source": "0xE8",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 3,
+      "perm_C_(topK)": 3,
+      "circuit_r2_A": 0.962,
+      "max_circuit_B": 620.323,
+      "top5_mean_C": 540.083
+    },
+    {
+      "topology_id": "1fdd9f06",
+      "source": "0xE8",
+      "regs": 6,
+      "perm_A_(R2)": 2,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.98,
+      "max_circuit_B": 359.996,
+      "top5_mean_C": 310.651
+    },
+    {
+      "topology_id": "039d4a44",
+      "source": "0xE8",
+      "regs": 7,
+      "perm_A_(R2)": 2,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.935,
+      "max_circuit_B": 518.79,
+      "top5_mean_C": 481.706
+    },
+    {
+      "topology_id": "810fcebd",
+      "source": "0xE8",
+      "regs": 7,
+      "perm_A_(R2)": 2,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.852,
+      "max_circuit_B": 345.69,
+      "top5_mean_C": 284.903
+    },
+    {
+      "topology_id": "e42ec999",
+      "source": "0xE8",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.902,
+      "max_circuit_B": 433.468,
+      "top5_mean_C": 394.7
+    },
+    {
+      "topology_id": "038b4a59",
+      "source": [
+        "0x33",
+        "0x0F"
+      ],
+      "regs": 5,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.978,
+      "max_circuit_B": 3389.765,
+      "top5_mean_C": 3209.818
+    },
+    {
+      "topology_id": "072f2e06",
+      "source": [
+        "0x33",
+        "0x0F"
+      ],
+      "regs": 5,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.978,
+      "max_circuit_B": 2929.942,
+      "top5_mean_C": 2682.707
+    },
+    {
+      "topology_id": "02aaa5f4",
+      "source": "0x33",
+      "regs": 6,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.999,
+      "max_circuit_B": 2459.695,
+      "top5_mean_C": 2451.851
+    },
+    {
+      "topology_id": "0595ffad",
+      "source": "0x33",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.998,
+      "max_circuit_B": 2321.959,
+      "top5_mean_C": 2317.716
+    },
+    {
+      "topology_id": "01665019",
+      "source": "0x33",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.992,
+      "max_circuit_B": 8679.556,
+      "top5_mean_C": 8371.377
+    },
+    {
+      "topology_id": "01874d6e",
+      "source": "0x33",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.994,
+      "max_circuit_B": 2559.071,
+      "top5_mean_C": 2518.656
+    },
+    {
+      "topology_id": "2b8d88ba",
+      "source": "0x3C",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.994,
+      "max_circuit_B": 197.237,
+      "top5_mean_C": 194.647
+    },
+    {
+      "topology_id": "104e83a9",
+      "source": "0x3C",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.971,
+      "max_circuit_B": 133.7,
+      "top5_mean_C": 122.697
+    },
+    {
+      "topology_id": "13136e2d",
+      "source": "0x3C",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.979,
+      "max_circuit_B": 144.121,
+      "top5_mean_C": 127.273
+    },
+    {
+      "topology_id": "143b51d3",
+      "source": "0x3C",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.976,
+      "max_circuit_B": 314.378,
+      "top5_mean_C": 251.356
+    },
+    {
+      "topology_id": "081a8405",
+      "source": "0x03",
+      "regs": 5,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.988,
+      "max_circuit_B": 1421.766,
+      "top5_mean_C": 1412.947
+    },
+    {
+      "topology_id": "0899c0ab",
+      "source": "0x03",
+      "regs": 5,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.957,
+      "max_circuit_B": 1640.724,
+      "top5_mean_C": 1608.629
+    },
+    {
+      "topology_id": "01d6c96b",
+      "source": "0x03",
+      "regs": 6,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.972,
+      "max_circuit_B": 1461.187,
+      "top5_mean_C": 1351.605
+    },
+    {
+      "topology_id": "0290090c",
+      "source": "0x03",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.997,
+      "max_circuit_B": 1306.713,
+      "top5_mean_C": 1302.695
+    },
+    {
+      "topology_id": "0043547c",
+      "source": "0x03",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.995,
+      "max_circuit_B": 2351.93,
+      "top5_mean_C": 2342.997
+    },
+    {
+      "topology_id": "00d368d4",
+      "source": "0x03",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.928,
+      "max_circuit_B": 2044.816,
+      "top5_mean_C": 1500.308
+    },
+    {
+      "topology_id": "00db8011",
+      "source": "0x03",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.958,
+      "max_circuit_B": 1400.704,
+      "top5_mean_C": 1341.579
+    },
+    {
+      "topology_id": "02f0946b",
+      "source": "0x0F",
+      "regs": 5,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.982,
+      "max_circuit_B": 1533.931,
+      "top5_mean_C": 1499.676
+    },
+    {
+      "topology_id": "054e8a38",
+      "source": "0x0F",
+      "regs": 5,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.952,
+      "max_circuit_B": 1516.964,
+      "top5_mean_C": 1433.979
+    },
+    {
+      "topology_id": "016fb08b",
+      "source": "0x0F",
+      "regs": 6,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.998,
+      "max_circuit_B": 1329.735,
+      "top5_mean_C": 1323.915
+    },
+    {
+      "topology_id": "026c6361",
+      "source": "0x0F",
+      "regs": 6,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.999,
+      "max_circuit_B": 1327.468,
+      "top5_mean_C": 1321.231
+    },
+    {
+      "topology_id": "00f7ae8d",
+      "source": "0x0F",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.994,
+      "max_circuit_B": 5754.65,
+      "top5_mean_C": 5729.994
+    },
+    {
+      "topology_id": "045b97cd",
+      "source": "0x0F",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.989,
+      "max_circuit_B": 5998.267,
+      "top5_mean_C": 5879.061
+    },
+    {
+      "topology_id": "046dc60c",
+      "source": "0x0F",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.996,
+      "max_circuit_B": 1367.865,
+      "top5_mean_C": 1347.577
+    },
+    {
+      "topology_id": "cedb356c",
+      "source": "0x06",
+      "regs": 5,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.908,
+      "max_circuit_B": 76.91,
+      "top5_mean_C": 73.746
+    },
+    {
+      "topology_id": "15353008",
+      "source": "0x06",
+      "regs": 6,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.962,
+      "max_circuit_B": 478.685,
+      "top5_mean_C": 444.683
+    },
+    {
+      "topology_id": "59849fd9",
+      "source": "0x06",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.946,
+      "max_circuit_B": 660.417,
+      "top5_mean_C": 562.403
+    },
+    {
+      "topology_id": "0012834e",
+      "source": "0x06",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.809,
+      "max_circuit_B": 338.675,
+      "top5_mean_C": 248.605
+    },
+    {
+      "topology_id": "011f8a14",
+      "source": "0x06",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.813,
+      "max_circuit_B": 533.925,
+      "top5_mean_C": 436.992
+    },
+    {
+      "topology_id": "027ce22d",
+      "source": "0x06",
+      "regs": 7,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.789,
+      "max_circuit_B": 448.438,
+      "top5_mean_C": 361.918
+    },
+    {
+      "topology_id": "003c0fe1",
+      "source": "0x07",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.941,
+      "max_circuit_B": 656.396,
+      "top5_mean_C": 622.439
+    },
+    {
+      "topology_id": "8f92f4fb",
+      "source": "0x71",
+      "regs": 6,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.968,
+      "max_circuit_B": 135.025,
+      "top5_mean_C": 131.193
+    },
+    {
+      "topology_id": "830cbc6a",
+      "source": "0x8E",
+      "regs": 5,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.932,
+      "max_circuit_B": 138.366,
+      "top5_mean_C": 116.625
+    },
+    {
+      "topology_id": "b9ca967f",
+      "source": "0x8E",
+      "regs": 5,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.919,
+      "max_circuit_B": 89.014,
+      "top5_mean_C": 83.24
+    },
+    {
+      "topology_id": "498a9089",
+      "source": "0x8E",
+      "regs": 6,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.982,
+      "max_circuit_B": 148.851,
+      "top5_mean_C": 124.308
+    },
+    {
+      "topology_id": "013f5616",
+      "source": "0x8E",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.901,
+      "max_circuit_B": 255.597,
+      "top5_mean_C": 211.067
+    },
+    {
+      "topology_id": "0271424b",
+      "source": "0x8E",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.768,
+      "max_circuit_B": 1519.489,
+      "top5_mean_C": 1119.557
+    },
+    {
+      "topology_id": "083ff9a8",
+      "source": "0x8E",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.807,
+      "max_circuit_B": 392.887,
+      "top5_mean_C": 323.533
+    },
+    {
+      "topology_id": "56f94267",
+      "source": "0x77",
+      "regs": 4,
+      "perm_A_(R2)": 1,
+      "perm_B_(maxC)": 0,
+      "perm_C_(topK)": 0,
+      "circuit_r2_A": 0.957,
+      "max_circuit_B": 146.513,
+      "top5_mean_C": 144.925
+    },
+    {
+      "topology_id": "0857254f",
+      "source": "0x77",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.97,
+      "max_circuit_B": 377.074,
+      "top5_mean_C": 342.567
+    },
+    {
+      "topology_id": "0a095a06",
+      "source": "0x77",
+      "regs": 7,
+      "perm_A_(R2)": 0,
+      "perm_B_(maxC)": 1,
+      "perm_C_(topK)": 1,
+      "circuit_r2_A": 0.996,
+      "max_circuit_B": 145.643,
+      "top5_mean_C": 143.906
+    }
+  ]
+}

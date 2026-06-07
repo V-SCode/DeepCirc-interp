@@ -1,0 +1,4836 @@
+{
+  "scope": {
+    "include_baselines": false,
+    "size_classes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "scope_locked_on": "2026-05-06",
+    "scope_note": "Agent-only, 4-7-reg analysis scope. Baselines remain in the population manifest but are not analyzed. See PROJECT_STATE_TOPOLOGY.md \u00a72."
+  },
+  "n_topologies_processed": 215,
+  "n_topologies_skipped": 44,
+  "n_unique_fp_keys": 378,
+  "thresholds": {
+    "min_topologies": 2,
+    "min_total_designs": 1000,
+    "top_k_per_task": 30
+  },
+  "tier_cutoffs": {
+    "top_quantile": 0.95,
+    "bot_quantile": 0.05
+  },
+  "top_rules_per_task": {
+    "circuit_log": [
+      {
+        "part_name": "LmrA/N1",
+        "part_idx": 9,
+        "log_odds": -12.821339362414594,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "n_topologies": 4,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 370029
+      },
+      {
+        "part_name": "LitR/L1",
+        "part_idx": 8,
+        "log_odds": -12.666742222733937,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "n_topologies": 4,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 317026
+      },
+      {
+        "part_name": "HlyIIR/H1",
+        "part_idx": 6,
+        "log_odds": -12.579444910091073,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "n_topologies": 4,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 290524
+      },
+      {
+        "part_name": "HlyIIR/H1",
+        "part_idx": 6,
+        "log_odds": -12.18754200891074,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=6|in=1|out=1|pred=5|succ=0|type=NOT",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 0,
+        "bot_count": 196327
+      },
+      {
+        "part_name": "LitR/L1",
+        "part_idx": 8,
+        "log_odds": -12.173874814112354,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=6|in=1|out=1|pred=5|succ=0|type=NOT",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 0,
+        "bot_count": 193662
+      },
+      {
+        "part_name": "LmrA/N1",
+        "part_idx": 9,
+        "log_odds": -12.172386587875367,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=1,6|succ=0|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 193374
+      },
+      {
+        "part_name": "HlyIIR/H1",
+        "part_idx": 6,
+        "log_odds": -12.131693867481076,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=2|pred=0,5|succ=0,1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 185663
+      },
+      {
+        "part_name": "LitR/L1",
+        "part_idx": 8,
+        "log_odds": -12.111151889890415,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=2|pred=0,5|succ=0,1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 181888
+      },
+      {
+        "part_name": "LmrA/N1",
+        "part_idx": 9,
+        "log_odds": -12.02735857392984,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=6|in=1|out=1|pred=5|succ=0|type=NOT",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 0,
+        "bot_count": 167268
+      },
+      {
+        "part_name": "LitR/L1",
+        "part_idx": 8,
+        "log_odds": -12.007310682833637,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=1,6|succ=0|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 163948
+      },
+      {
+        "part_name": "HlyIIR/H1",
+        "part_idx": 6,
+        "log_odds": -11.949824638567923,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=1|pred=2,5|succ=1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 154789
+      },
+      {
+        "part_name": "HlyIIR/H1",
+        "part_idx": 6,
+        "log_odds": -11.928347504569842,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=1,6|succ=0|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 151500
+      },
+      {
+        "part_name": "LmrA/N1",
+        "part_idx": 9,
+        "log_odds": -11.88515087129726,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=1|pred=2,5|succ=1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 145095
+      },
+      {
+        "part_name": "LmrA/N1",
+        "part_idx": 9,
+        "log_odds": -11.859439965983796,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=2|pred=0,5|succ=0,1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 141412
+      },
+      {
+        "part_name": "LitR/L1",
+        "part_idx": 8,
+        "log_odds": -11.8515453936489,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=1|pred=2,5|succ=1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 140300
+      },
+      {
+        "part_name": "PhlF/P1",
+        "part_idx": 10,
+        "log_odds": -11.822158635252306,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "n_topologies": 4,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 136237
+      },
+      {
+        "part_name": "PhlF/P1",
+        "part_idx": 10,
+        "log_odds": -11.718792635339197,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=2|pred=0,5|succ=0,1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 122858
+      },
+      {
+        "part_name": "PhlF/P1",
+        "part_idx": 10,
+        "log_odds": -11.654911020241308,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=6|in=1|out=1|pred=5|succ=0|type=NOT",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 0,
+        "bot_count": 115255
+      },
+      {
+        "part_name": "SrpR/S1",
+        "part_idx": 16,
+        "log_odds": -11.588032937457033,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "n_topologies": 4,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 107799
+      },
+      {
+        "part_name": "SrpR/S1",
+        "part_idx": 16,
+        "log_odds": -11.580256957130514,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=2|pred=0,5|succ=0,1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 106964
+      },
+      {
+        "part_name": "HlyIIR/H1",
+        "part_idx": 6,
+        "log_odds": -11.550490962856369,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=1,1|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 0,
+        "bot_count": 103827
+      },
+      {
+        "part_name": "PhlF/P1",
+        "part_idx": 10,
+        "log_odds": -11.530205304869487,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=1,1|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 0,
+        "bot_count": 101742
+      },
+      {
+        "part_name": "SrpR/S1",
+        "part_idx": 16,
+        "log_odds": -11.499465281785396,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=6|in=1|out=1|pred=5|succ=0|type=NOT",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 0,
+        "bot_count": 98662
+      },
+      {
+        "part_name": "LmrA/N1",
+        "part_idx": 9,
+        "log_odds": -11.470758816808338,
+        "direction": "depleted in top",
+        "fp_key": "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=3,3|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 4,
+        "top_count": 0,
+        "bot_count": 95870
+      },
+      {
+        "part_name": "LitR/L1",
+        "part_idx": 8,
+        "log_odds": -11.439138979595631,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=1,1|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 0,
+        "bot_count": 92886
+      },
+      {
+        "part_name": "AmeR/F1",
+        "part_idx": 0,
+        "log_odds": 11.368546882291673,
+        "direction": "enriched in top",
+        "fp_key": "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=1,1|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 86555,
+        "bot_count": 0
+      },
+      {
+        "part_name": "HlyIIR/H1",
+        "part_idx": 6,
+        "log_odds": -11.33087587119098,
+        "direction": "depleted in top",
+        "fp_key": "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=3,3|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 4,
+        "top_count": 0,
+        "bot_count": 83355
+      },
+      {
+        "part_name": "LitR/L1",
+        "part_idx": 8,
+        "log_odds": -11.292004442009116,
+        "direction": "depleted in top",
+        "fp_key": "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=0,4|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 80177
+      },
+      {
+        "part_name": "HlyIIR/H1",
+        "part_idx": 6,
+        "log_odds": -11.289631902404894,
+        "direction": "depleted in top",
+        "fp_key": "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=0,4|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 79987
+      },
+      {
+        "part_name": "SrpR/S1",
+        "part_idx": 16,
+        "log_odds": -11.206753503204602,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=1,6|succ=0|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 73625
+      }
+    ],
+    "toxicity": [
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -14.056833458987896,
+        "direction": "depleted in top",
+        "fp_key": "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "n_topologies": 16,
+        "n_targets": 9,
+        "top_count": 0,
+        "bot_count": 1272931
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -13.130418844830245,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "n_topologies": 25,
+        "n_targets": 12,
+        "top_count": 0,
+        "bot_count": 504043
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -12.934623166183515,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=5|in=2|out=1|pred=3,4|succ=1|type=NOR",
+        "n_topologies": 5,
+        "n_targets": 4,
+        "top_count": 0,
+        "bot_count": 414414
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -12.675372902467593,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "n_topologies": 4,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 319774
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -12.599465172404068,
+        "direction": "depleted in top",
+        "fp_key": "d2o=3|dfi=5|in=1|out=1|pred=4|succ=2|type=NOT",
+        "n_topologies": 3,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 296399
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -12.59695189530992,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=1|pred=4,5|succ=1|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 295655
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -12.556775290743603,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=4|in=2|out=1|pred=3,3|succ=1|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 5,
+        "top_count": 0,
+        "bot_count": 284012
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -12.315594988756763,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "n_topologies": 9,
+        "n_targets": 4,
+        "top_count": 0,
+        "bot_count": 223148
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -12.186201515887761,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=4|in=1|out=2|pred=3|succ=1,1|type=NOT",
+        "n_topologies": 2,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 196064
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -12.091974063929062,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=1,1|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 3,
+        "top_count": 0,
+        "bot_count": 178433
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -12.055075321978245,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=1|pred=2,5|succ=1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 171969
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -11.999909114250649,
+        "direction": "depleted in top",
+        "fp_key": "d2o=6|dfi=2|in=2|out=2|pred=0,1|succ=2,5|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 162739
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -11.959366155803375,
+        "direction": "depleted in top",
+        "fp_key": "d2o=6|dfi=2|in=1|out=1|pred=1|succ=5|type=NOT",
+        "n_topologies": 2,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 156273
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -11.776527424715281,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=6|in=2|out=2|pred=0,5|succ=0,1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 130160
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -11.734163201372343,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=5|in=2|out=2|pred=0,4|succ=0,1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 124761
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -11.729302172753997,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=2|in=2|out=1|pred=1,1|succ=0|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 124156
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -11.572288114363735,
+        "direction": "depleted in top",
+        "fp_key": "d2o=3|dfi=2|in=1|out=2|pred=1|succ=1,2|type=NOT",
+        "n_topologies": 2,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 106115
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -11.296149100034178,
+        "direction": "depleted in top",
+        "fp_key": "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=1,4|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 80510
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -10.040070534322663,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=0,1|type=NOR",
+        "n_topologies": 3,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 22926
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -10.00937792779356,
+        "direction": "depleted in top",
+        "fp_key": "d2o=4|dfi=1|in=1|out=2|pred=0|succ=0,3|type=NOT",
+        "n_topologies": 3,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 22233
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -9.983176351437496,
+        "direction": "depleted in top",
+        "fp_key": "d2o=4|dfi=1|in=1|out=2|pred=0|succ=1,3|type=NOT",
+        "n_topologies": 3,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 21658
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -9.859796863911395,
+        "direction": "depleted in top",
+        "fp_key": "d2o=2|dfi=3|in=2|out=2|pred=0,2|succ=1,1|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 2,
+        "top_count": 0,
+        "bot_count": 19144
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -9.522279422073524,
+        "direction": "depleted in top",
+        "fp_key": "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=0,3|type=NOR",
+        "n_topologies": 4,
+        "n_targets": 3,
+        "top_count": 6,
+        "bot_count": 95624
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -9.465041503343041,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "n_topologies": 31,
+        "n_targets": 9,
+        "top_count": 99,
+        "bot_count": 1290075
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -9.452658902676433,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=2|in=1|out=1|pred=1|succ=0|type=NOT",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 12741
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -8.945462952177666,
+        "direction": "depleted in top",
+        "fp_key": "d2o=3|dfi=2|in=2|out=2|pred=1,1|succ=1,2|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 7672
+      },
+      {
+        "part_name": "HlyIIR/H1",
+        "part_idx": 6,
+        "log_odds": -8.897682313454224,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=2|in=1|out=1|pred=1|succ=0|type=NOT",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 7314
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -8.875846177738596,
+        "direction": "depleted in top",
+        "fp_key": "d2o=3|dfi=1|in=2|out=2|pred=0,0|succ=1,2|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 4,
+        "top_count": 0,
+        "bot_count": 7156
+      },
+      {
+        "part_name": "QacR/Q1",
+        "part_idx": 14,
+        "log_odds": -8.711113884053544,
+        "direction": "depleted in top",
+        "fp_key": "d2o=1|dfi=2|in=1|out=1|pred=1|succ=0|type=NOT",
+        "n_topologies": 2,
+        "n_targets": 1,
+        "top_count": 0,
+        "bot_count": 6069
+      },
+      {
+        "part_name": "IcaRA/I1",
+        "part_idx": 7,
+        "log_odds": -8.336630087637145,
+        "direction": "depleted in top",
+        "fp_key": "d2o=4|dfi=1|in=2|out=3|pred=0,0|succ=0,2,3|type=NOR",
+        "n_topologies": 2,
+        "n_targets": 3,
+        "top_count": 1,
+        "bot_count": 8347
+      }
+    ]
+  },
+  "per_topology": [
+    {
+      "topology_id": "deab6c1f",
+      "source": [
+        "0x2B",
+        "0x4D",
+        "0x71"
+      ],
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=2|pred=0,1|succ=1,1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.022890566033311188,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "ea89a821",
+      "source": [
+        "0x2B",
+        "0x4D",
+        "0x71"
+      ],
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=2|pred=0,0|succ=1,2|type=NOR"
+      ],
+      "elapsed_s": 0.009411195991560817,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "e4c14f22",
+      "source": [
+        "0x2B",
+        "0x4D",
+        "0x71"
+      ],
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.09068448806647211,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1df1418f",
+      "source": [
+        "0x2B",
+        "0x4D"
+      ],
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=2,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=0,3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=4,4|type=NOR"
+      ],
+      "elapsed_s": 0.9786673849448562,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1e873b88",
+      "source": "0x2B",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=2,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=0,3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=4,4|type=NOR"
+      ],
+      "elapsed_s": 0.9827866090927273,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "2d1a0fd5",
+      "source": [
+        "0x2B",
+        "0x4D",
+        "0x71"
+      ],
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436970,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=1,1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 0.954832821036689,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "3ff42dea",
+      "source": "0x2B",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=2,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=1,3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=3,4|type=NOR"
+      ],
+      "elapsed_s": 0.9713676560204476,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "461f6e8c",
+      "source": [
+        "0x2B",
+        "0x4D",
+        "0x71"
+      ],
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR"
+      ],
+      "elapsed_s": 0.9579755370505154,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "02d9736d",
+      "source": [
+        "0x2B",
+        "0x4D",
+        "0x71"
+      ],
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=3,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=2,2|succ=2|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=2,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=3|pred=0,1|succ=0,3,3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=3,3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=4,4|type=NOR"
+      ],
+      "elapsed_s": 1.6665167469764128,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "076cf7ed",
+      "source": [
+        "0x2B",
+        "0x4D"
+      ],
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=2|pred=2,3|succ=1,1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=3,4|type=NOR"
+      ],
+      "elapsed_s": 1.631129767978564,
+      "best_perm": 1,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "186e103b",
+      "source": "0x2B",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=2,2|succ=1,2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=4,4|type=NOR"
+      ],
+      "elapsed_s": 1.6490288749337196,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1f7306eb",
+      "source": [
+        "0x2B",
+        "0x71"
+      ],
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=1,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=1,2|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=1,3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=2,4|type=NOR"
+      ],
+      "elapsed_s": 1.6308648569975048,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "2905552f",
+      "source": [
+        "0x2B",
+        "0x4D",
+        "0x71"
+      ],
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 1.6498173309955746,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "4ca37011",
+      "source": "0x17",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43777,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=2|pred=1,1|succ=1,1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.08655715303029865,
+      "best_perm": 5,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "4e6f5b1a",
+      "source": "0x17",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR"
+      ],
+      "elapsed_s": 0.08366699994076043,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "96cc1443",
+      "source": "0x17",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=1,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.08593393804039806,
+      "best_perm": 2,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "a512820e",
+      "source": "0x17",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.9485315099591389,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "a60f23fb",
+      "source": "0x17",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436969,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=2,3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 0.9276988409692422,
+      "best_perm": 4,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "acfb5670",
+      "source": "0x17",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 0.9527500839903951,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "b466eedb",
+      "source": "0x17",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.9401513120392337,
+      "best_perm": 4,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00930f32",
+      "source": "0x17",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=1|out=1|pred=4|succ=1|type=NOT",
+        "d2o=3|dfi=4|in=2|out=1|pred=1,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=3|pred=0,0|succ=0,3,5|type=NOR"
+      ],
+      "elapsed_s": 1.6740897779818624,
+      "best_perm": 2,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "022059b9",
+      "source": "0x17",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=1|out=1|pred=4|succ=1|type=NOT",
+        "d2o=3|dfi=4|in=1|out=1|pred=3|succ=2|type=NOT",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=4,5|type=NOR"
+      ],
+      "elapsed_s": 1.6976033590035513,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "024eae69",
+      "source": "0x17",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR"
+      ],
+      "elapsed_s": 1.633450638037175,
+      "best_perm": 3,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "032fb3a9",
+      "source": "0x17",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=2|pred=0,0|succ=0,1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=1,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=1,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=2,4|type=NOR"
+      ],
+      "elapsed_s": 1.656004830962047,
+      "best_perm": 4,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "048334c7",
+      "source": "0x17",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.6585316910641268,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00a8f4fe",
+      "source": "0x6D",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 1.6594235389493406,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "62c3e40b",
+      "source": "0x6D",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500008,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=2,2|succ=1,2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=1,3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=4,4|type=NOR"
+      ],
+      "elapsed_s": 1.6448764100205153,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "a33c0bce",
+      "source": "0x6D",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 1.7081830049864948,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "a56bf54d",
+      "source": "0x6D",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=3|pred=0,0|succ=2,3,3|type=NOR"
+      ],
+      "elapsed_s": 1.5961291439598426,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "a987d27b",
+      "source": "0x6D",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500003,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=0,2|succ=0,2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=2,3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=3,4|type=NOR"
+      ],
+      "elapsed_s": 1.632677381974645,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "03b5c679",
+      "source": "0xEE",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=1,1|succ=0|type=NOR",
+        "d2o=1|dfi=2|in=1|out=1|pred=1|succ=0|type=NOT",
+        "d2o=2|dfi=1|in=2|out=2|pred=0,0|succ=1,1|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR"
+      ],
+      "elapsed_s": 0.008645750000141561,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0c2c6466",
+      "source": "0xEE",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.008317718049511313,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0dc43646",
+      "source": "0xEE",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.008441747981123626,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1b87f351",
+      "source": "0xEE",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=1|out=1|pred=3|succ=0|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.008152807014994323,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "20e11378",
+      "source": "0xEE",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.007697761990129948,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0367de62",
+      "source": "0xEE",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=3,4|type=NOR"
+      ],
+      "elapsed_s": 0.08594290900509804,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0392d2d2",
+      "source": "0xEE",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "d2o=1|dfi=2|in=1|out=1|pred=1|succ=0|type=NOT",
+        "d2o=2|dfi=1|in=2|out=2|pred=0,0|succ=1,1|type=NOR",
+        "d2o=2|dfi=2|in=1|out=1|pred=1|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.08784918405581266,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "127e231c",
+      "source": "0xEE",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=0,3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=3|pred=0,0|succ=1,3,4|type=NOR"
+      ],
+      "elapsed_s": 0.08949608798138797,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "14ec46f1",
+      "source": "0xEE",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=1,3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=2,3|type=NOT"
+      ],
+      "elapsed_s": 0.08504833199549466,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1b94262d",
+      "source": "0xEE",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=1,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=1|out=1|pred=2|succ=2|type=NOT",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=3|pred=0,0|succ=1,2,4|type=NOR"
+      ],
+      "elapsed_s": 0.0903110639192164,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "01bb328f",
+      "source": "0xEE",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=1|out=1|pred=2|succ=2|type=NOT",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 0.9446486689848825,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01f602ff",
+      "source": "0xEE",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=1|out=1|pred=1|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.9884416440036148,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "02f0b000",
+      "source": "0xEE",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=2|pred=1,2|succ=0,1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR"
+      ],
+      "elapsed_s": 0.999220083002001,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "043ead30",
+      "source": "0xEE",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=2,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=1,3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 0.9922036650823429,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "054721c9",
+      "source": "0xEE",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=2|pred=1,2|succ=0,1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=2,3|type=NOT"
+      ],
+      "elapsed_s": 0.9953742609359324,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "03442896",
+      "source": "0xEE",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "d2o=1|dfi=2|in=2|out=1|pred=1,1|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=2|in=2|out=1|pred=1,1|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=2|out=2|pred=0,0|succ=1,1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 1.6592625380726531,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "069067ff",
+      "source": "0xEE",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=7|in=2|out=1|pred=1,6|succ=0|type=NOR",
+        "d2o=2|dfi=6|in=2|out=1|pred=2,5|succ=1|type=NOR",
+        "d2o=3|dfi=5|in=1|out=1|pred=4|succ=2|type=NOT",
+        "d2o=4|dfi=4|in=2|out=1|pred=0,3|succ=3|type=NOR",
+        "d2o=5|dfi=3|in=1|out=1|pred=2|succ=4|type=NOT",
+        "d2o=6|dfi=2|in=2|out=2|pred=0,1|succ=2,5|type=NOR",
+        "d2o=7|dfi=1|in=2|out=2|pred=0,0|succ=1,6|type=NOR"
+      ],
+      "elapsed_s": 1.8292944099521264,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "07012647",
+      "source": "0xEE",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=7|in=2|out=1|pred=1,6|succ=0|type=NOR",
+        "d2o=2|dfi=6|in=2|out=1|pred=2,5|succ=1|type=NOR",
+        "d2o=3|dfi=5|in=1|out=1|pred=4|succ=2|type=NOT",
+        "d2o=4|dfi=4|in=2|out=1|pred=0,3|succ=3|type=NOR",
+        "d2o=5|dfi=3|in=2|out=1|pred=0,2|succ=4|type=NOR",
+        "d2o=6|dfi=2|in=2|out=2|pred=0,1|succ=2,5|type=NOR",
+        "d2o=7|dfi=1|in=2|out=2|pred=0,0|succ=1,6|type=NOR"
+      ],
+      "elapsed_s": 1.6994756839703768,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "08077746",
+      "source": "0xEE",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=7|in=2|out=1|pred=1,6|succ=0|type=NOR",
+        "d2o=2|dfi=6|in=2|out=1|pred=4,5|succ=1|type=NOR",
+        "d2o=3|dfi=5|in=1|out=1|pred=4|succ=2|type=NOT",
+        "d2o=4|dfi=4|in=1|out=2|pred=3|succ=2,3|type=NOT",
+        "d2o=5|dfi=3|in=2|out=1|pred=0,2|succ=4|type=NOR",
+        "d2o=6|dfi=2|in=2|out=1|pred=0,1|succ=5|type=NOR",
+        "d2o=7|dfi=1|in=2|out=2|pred=0,0|succ=1,6|type=NOR"
+      ],
+      "elapsed_s": 1.8393108509480953,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "08c0d645",
+      "source": "0xEE",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=3,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=1,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=2|pred=1,2|succ=1,3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=5|dfi=2|in=1|out=1|pred=1|succ=4|type=NOT",
+        "d2o=6|dfi=1|in=1|out=2|pred=0|succ=4,5|type=NOT"
+      ],
+      "elapsed_s": 1.881135800969787,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0e00a42e",
+      "source": "0x4D",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=1,1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 0.9631651089293882,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0973762a",
+      "source": "0x4D",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=3,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=2,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=2|pred=2,2|succ=2,3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=3,4|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=0,4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=5,5|type=NOR"
+      ],
+      "elapsed_s": 1.7091785339871421,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0b104926",
+      "source": "0x4D",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=3,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=2,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=2|pred=0,2|succ=2,3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=3,4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=1,5|type=NOR"
+      ],
+      "elapsed_s": 1.6014818879775703,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "121452f9",
+      "source": "0xCC",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.008639189996756613,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0489dcd5",
+      "source": "0xCC",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=1,4|type=NOR"
+      ],
+      "elapsed_s": 0.08643164206296206,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "05ce3955",
+      "source": "0xCC",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=1|out=1|pred=3|succ=0|type=NOT",
+        "d2o=2|dfi=3|in=2|out=2|pred=0,2|succ=1,1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.09026128402911127,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00340848",
+      "source": "0xCC",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436972,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 0.941074260044843,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0064e4f7",
+      "source": "0xCC",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=3,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=1|out=1|pred=3|succ=2|type=NOT",
+        "d2o=4|dfi=3|in=2|out=2|pred=0,2|succ=1,3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=1|pred=0,0|succ=5|type=NOR"
+      ],
+      "elapsed_s": 0.9583319689845666,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01316716",
+      "source": "0xCC",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436970,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 0.8973362050019205,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0492607b",
+      "source": "0xCC",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=7|in=2|out=1|pred=5,6|succ=0|type=NOR",
+        "d2o=2|dfi=6|in=2|out=1|pred=3,5|succ=1|type=NOR",
+        "d2o=3|dfi=5|in=2|out=2|pred=0,4|succ=1,2|type=NOR",
+        "d2o=4|dfi=4|in=2|out=1|pred=0,3|succ=3|type=NOR",
+        "d2o=5|dfi=3|in=1|out=2|pred=2|succ=2,4|type=NOT",
+        "d2o=6|dfi=2|in=2|out=1|pred=0,1|succ=5|type=NOR",
+        "d2o=7|dfi=1|in=1|out=1|pred=0|succ=6|type=NOT"
+      ],
+      "elapsed_s": 1.6727963170269504,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "11476b01",
+      "source": "0xE8",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "d2o=1|dfi=2|in=2|out=1|pred=1,1|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=2|pred=0|succ=1,2|type=NOT"
+      ],
+      "elapsed_s": 0.9776839370606467,
+      "best_perm": 2,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1977316a",
+      "source": "0xE8",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.9965846709674224,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1bb98c9c",
+      "source": "0xE8",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=3,4|type=NOR"
+      ],
+      "elapsed_s": 1.0027426710585132,
+      "best_perm": 3,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1fdd9f06",
+      "source": "0xE8",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436969,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=1,1|succ=0,2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.9581495689926669,
+      "best_perm": 2,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "039d4a44",
+      "source": "0xE8",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 1.6823682250687853,
+      "best_perm": 2,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "4f845bff",
+      "source": "0xE8",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=1,5|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=2,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=3,4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=1|pred=0,0|succ=5|type=NOR"
+      ],
+      "elapsed_s": 1.6636999530019239,
+      "best_perm": 3,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "810fcebd",
+      "source": "0xE8",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=3,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=1|out=1|pred=1|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=3,3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.726115999976173,
+      "best_perm": 2,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "e42ec999",
+      "source": "0xE8",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=4,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=1,2|succ=2,2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 1.862236157990992,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "2846df4c",
+      "source": [
+        "0x33",
+        "0x0F"
+      ],
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.009012912982143462,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "038b4a59",
+      "source": [
+        "0x33",
+        "0x0F"
+      ],
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=1|out=1|pred=2|succ=2|type=NOT",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 0.08193168591242284,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "072f2e06",
+      "source": [
+        "0x33",
+        "0x0F"
+      ],
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.08368442999199033,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "02aaa5f4",
+      "source": "0x33",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436970,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=2,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=2|pred=0|succ=4,4|type=NOT"
+      ],
+      "elapsed_s": 0.9193007829599082,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0595ffad",
+      "source": "0x33",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=1|dfi=1|in=1|out=1|pred=0|succ=0|type=NOT",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=2|pred=1,2|succ=1,2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=2|pred=0|succ=3,4|type=NOT"
+      ],
+      "elapsed_s": 0.9221025749575347,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01665019",
+      "source": "0x33",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500003,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=3,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=1|out=1|pred=3|succ=2|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=3,4|type=NOR",
+        "d2o=6|dfi=1|in=1|out=1|pred=0|succ=5|type=NOT"
+      ],
+      "elapsed_s": 1.7978163739899173,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01874d6e",
+      "source": "0x33",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=1|out=1|pred=1|succ=2|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=0,4|type=NOR"
+      ],
+      "elapsed_s": 1.9297452059108764,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01a3ec20",
+      "source": "0x33",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=1|out=1|pred=3|succ=0|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.6560637810034677,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "87c860fb",
+      "source": "0x66",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=2,3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 0.9838600970106199,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "4fc3e01f",
+      "source": "0x66",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=2|pred=0,0|succ=1,1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 1.6690291570266709,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "58cd788d",
+      "source": "0x66",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=2|pred=0,0|succ=1,1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.7939102520467713,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "c1e19df0",
+      "source": "0x66",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=3,4|type=NOR"
+      ],
+      "elapsed_s": 1.8155896689277142,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "e697dccd",
+      "source": "0x66",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.7251004030695185,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "03a28722",
+      "source": "0x3C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 1.0488403460476547,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "2b8d88ba",
+      "source": "0x3C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.0525768849765882,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "67eaf262",
+      "source": "0x3C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=3|pred=0,0|succ=1,1,2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 1.0531954710604623,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "687b8380",
+      "source": "0x3C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=0,2|succ=1,2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=2,3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=1,4|type=NOR"
+      ],
+      "elapsed_s": 1.0354979370022193,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "6f156a51",
+      "source": "0x3C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 1.0337148429825902,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0b2e82b8",
+      "source": "0x3C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.9237685180269182,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "104e83a9",
+      "source": "0x3C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=1|out=1|pred=5|succ=0|type=NOT",
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=2,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=0,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=2,4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=1,5|type=NOR"
+      ],
+      "elapsed_s": 2.1895874179899693,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "13136e2d",
+      "source": "0x3C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=1,3|type=NOR"
+      ],
+      "elapsed_s": 1.7971972579834983,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1408b6bc",
+      "source": "0x3C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=1,3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.9398849880089983,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "143b51d3",
+      "source": "0x3C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=0,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 1.8790010039228946,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01276479",
+      "source": "0x2C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=1,3|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 1.0717553719878197,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0d5b01b1",
+      "source": "0x2C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 1.0372299109585583,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1323c479",
+      "source": "0x2C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=1,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=0,4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=3,5|type=NOR"
+      ],
+      "elapsed_s": 1.0359151409938931,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "27c9f7d8",
+      "source": "0x2C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=0,2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 1.0579407790210098,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "27d8c27d",
+      "source": "0x2C",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=3,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=2,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 1.091339031001553,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0a4ff245",
+      "source": "0x2C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500005,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.8408977639628574,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0ed03332",
+      "source": "0x2C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=0,2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 2.150627670926042,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0ff5e006",
+      "source": "0x2C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500004,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=2|pred=0|succ=3,4|type=NOT"
+      ],
+      "elapsed_s": 1.7781336840707809,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "161d9514",
+      "source": "0x2C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=1,3|type=NOR"
+      ],
+      "elapsed_s": 1.8959322709124535,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "187bbd1c",
+      "source": "0x2C",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=2|pred=0|succ=3,4|type=NOT"
+      ],
+      "elapsed_s": 1.8699280300643295,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "001e156f",
+      "source": "0x03",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=0,3|type=NOR"
+      ],
+      "elapsed_s": 0.007968354970216751,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "019e39ef",
+      "source": "0x03",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=3|pred=0,0|succ=0,2,3|type=NOR"
+      ],
+      "elapsed_s": 0.007889423985034227,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "2f0ee7b4",
+      "source": "0x03",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=1,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.007699151989072561,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "68236200",
+      "source": "0x03",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR"
+      ],
+      "elapsed_s": 0.007608692045323551,
+      "best_perm": 1,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "7868634e",
+      "source": "0x03",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=1|out=1|pred=1|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=1|out=2|pred=0|succ=1,2|type=NOT"
+      ],
+      "elapsed_s": 0.007980405003763735,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "009fd716",
+      "source": "0x03",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=2|out=2|pred=0,0|succ=0,2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.08680841501336545,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01160282",
+      "source": "0x03",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.08963831805158406,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "05bb7f91",
+      "source": "0x03",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=2|pred=0,2|succ=1,2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=0,4|type=NOR"
+      ],
+      "elapsed_s": 0.08384948200546205,
+      "best_perm": 1,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "081a8405",
+      "source": "0x03",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.08237484900746495,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0899c0ab",
+      "source": "0x03",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 0.09354798006825149,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0055f301",
+      "source": "0x03",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=3,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=3,3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.1242440090281889,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01d6c96b",
+      "source": "0x03",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436978,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=2,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=4,4|type=NOR"
+      ],
+      "elapsed_s": 1.1132089879829437,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0290090c",
+      "source": "0x03",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436969,
+      "n_bot_designs": 436972,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=1,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=1,2|succ=1,2|type=NOR",
+        "d2o=3|dfi=1|in=2|out=2|pred=0,0|succ=0,2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=2|pred=0|succ=3,4|type=NOT"
+      ],
+      "elapsed_s": 1.009267964051105,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "029bd500",
+      "source": "0x03",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.9588520140387118,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "040614cc",
+      "source": "0x03",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 437004,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=1,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=0,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=1|out=1|pred=2|succ=3|type=NOT",
+        "d2o=5|dfi=2|in=1|out=1|pred=1|succ=4|type=NOT",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=2,5|type=NOR"
+      ],
+      "elapsed_s": 1.1031312070554122,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "002e324d",
+      "source": "0x03",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500063,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=1|out=1|pred=5|succ=0|type=NOT",
+        "d2o=2|dfi=5|in=1|out=1|pred=4|succ=1|type=NOT",
+        "d2o=3|dfi=4|in=2|out=1|pred=0,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT",
+        "d2o=6|dfi=1|in=1|out=1|pred=0|succ=5|type=NOT"
+      ],
+      "elapsed_s": 2.0289924120297655,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0043547c",
+      "source": "0x03",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=2,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=2|dfi=2|in=1|out=1|pred=1|succ=1|type=NOT",
+        "d2o=3|dfi=4|in=1|out=1|pred=3|succ=2|type=NOT",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=3|pred=0,0|succ=2,4,5|type=NOR"
+      ],
+      "elapsed_s": 1.7566681490279734,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0051bf46",
+      "source": "0x03",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 1.9282592040253803,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00d368d4",
+      "source": "0x03",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=1|out=1|pred=4|succ=0|type=NOT",
+        "d2o=2|dfi=4|in=1|out=2|pred=3|succ=1,1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=1,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.7739449200453237,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00db8011",
+      "source": "0x03",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500011,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=1|out=1|pred=4|succ=1|type=NOT",
+        "d2o=3|dfi=4|in=2|out=1|pred=2,3|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=1|out=3|pred=0|succ=4,4,5|type=NOT"
+      ],
+      "elapsed_s": 1.7774794879369438,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00685be0",
+      "source": "0x0F",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=1,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=0,3|type=NOT"
+      ],
+      "elapsed_s": 0.0827454129466787,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "02f0946b",
+      "source": "0x0F",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=1,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=0,3|type=NOT",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.08600604895036668,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "054e8a38",
+      "source": "0x0F",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=1|out=2|pred=1|succ=1,2|type=NOT",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.09264316293410957,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "016fb08b",
+      "source": "0x0F",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=2|dfi=2|in=2|out=1|pred=1,1|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=3|pred=0|succ=0,2,3|type=NOT"
+      ],
+      "elapsed_s": 0.9700546950334683,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "026c6361",
+      "source": "0x0F",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=2|dfi=2|in=1|out=1|pred=1|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=1|out=2|pred=0|succ=0,2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.9851584980497137,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00f7ae8d",
+      "source": "0x0F",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500007,
+      "fingerprint_keys": [
+        "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "d2o=2|dfi=6|in=2|out=1|pred=4,5|succ=1|type=NOR",
+        "d2o=3|dfi=5|in=2|out=1|pred=0,4|succ=2|type=NOR",
+        "d2o=4|dfi=4|in=1|out=2|pred=3|succ=2,3|type=NOT",
+        "d2o=5|dfi=3|in=2|out=1|pred=0,2|succ=4|type=NOR",
+        "d2o=6|dfi=2|in=1|out=1|pred=1|succ=5|type=NOT",
+        "d2o=7|dfi=1|in=1|out=1|pred=0|succ=6|type=NOT"
+      ],
+      "elapsed_s": 1.8775226520374417,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01ec5f09",
+      "source": "0x0F",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 2504676,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=3,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=3,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=1|out=2|pred=2|succ=2,3|type=NOT",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=1|out=2|pred=1|succ=4,4|type=NOT",
+        "d2o=6|dfi=1|in=2|out=1|pred=0,0|succ=5|type=NOR"
+      ],
+      "elapsed_s": 2.068542613997124,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "02ff08e5",
+      "source": "0x0F",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=4,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=1,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=2|pred=0,3|succ=1,2|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=1|out=1|pred=0|succ=5|type=NOT"
+      ],
+      "elapsed_s": 1.7946341780479997,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "045b97cd",
+      "source": "0x0F",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "d2o=2|dfi=6|in=2|out=1|pred=4,5|succ=1|type=NOR",
+        "d2o=3|dfi=5|in=2|out=1|pred=0,4|succ=2|type=NOR",
+        "d2o=4|dfi=4|in=2|out=2|pred=0,3|succ=2,3|type=NOR",
+        "d2o=5|dfi=3|in=1|out=1|pred=2|succ=4|type=NOT",
+        "d2o=6|dfi=2|in=2|out=1|pred=0,1|succ=5|type=NOR",
+        "d2o=7|dfi=1|in=2|out=1|pred=0,0|succ=6|type=NOR"
+      ],
+      "elapsed_s": 2.043510630959645,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "046dc60c",
+      "source": "0x0F",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=1|dfi=1|in=1|out=1|pred=0|succ=0|type=NOT",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=2|pred=1,2|succ=1,2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.7532753619598225,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "77634763",
+      "source": "0x06",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43777,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 0.08484519901685417,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "cedb356c",
+      "source": "0x06",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=1|out=2|pred=2|succ=1,1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.08929089596495032,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "15353008",
+      "source": "0x06",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=2|pred=2,2|succ=1,1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 1.031318693072535,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "364d8813",
+      "source": "0x06",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=1,1|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR"
+      ],
+      "elapsed_s": 1.103204756975174,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "59849fd9",
+      "source": "0x06",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.0303612449206412,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0012834e",
+      "source": "0x06",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500004,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=2,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=2,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=2,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=3|pred=0,1|succ=2,3,4|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=5,5|type=NOR"
+      ],
+      "elapsed_s": 1.8476658989675343,
+      "best_perm": 1,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "011f8a14",
+      "source": "0x06",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500027,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=2,4|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=0,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=3,5|type=NOR"
+      ],
+      "elapsed_s": 1.882776984013617,
+      "best_perm": 1,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "027ce22d",
+      "source": "0x06",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=1|out=1|pred=4|succ=1|type=NOT",
+        "d2o=3|dfi=4|in=2|out=1|pred=1,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=1|out=2|pred=0|succ=4,5|type=NOT"
+      ],
+      "elapsed_s": 1.7182242670096457,
+      "best_perm": 1,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "09d17748",
+      "source": "0x06",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500006,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=1,2|succ=1,2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=3,4|type=NOR"
+      ],
+      "elapsed_s": 1.9328858620719984,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0204839c",
+      "source": "0x07",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=1|out=1|pred=1|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.00787562399636954,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "16db710e",
+      "source": "0x07",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=1|out=1|pred=1|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.008340717060491443,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "323dda67",
+      "source": "0x07",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.007880144054070115,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "41ca0731",
+      "source": [
+        "0x07",
+        "0x1B"
+      ],
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.008138495963066816,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "02c2394e",
+      "source": "0x07",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=2|pred=0,0|succ=0,2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.08697183709591627,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0608bf36",
+      "source": "0x07",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43778,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=1,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=2,4|type=NOR"
+      ],
+      "elapsed_s": 0.08805911603849381,
+      "best_perm": 1,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "08fef3b6",
+      "source": "0x07",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=1,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.08681339502800256,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "003c0fe1",
+      "source": "0x07",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436978,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=1,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=2,3|type=NOT",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.1896791610633954,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "078f63d3",
+      "source": "0x07",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436986,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=1|out=1|pred=4|succ=1|type=NOT",
+        "d2o=3|dfi=4|in=1|out=1|pred=3|succ=2|type=NOT",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=4,5|type=NOR"
+      ],
+      "elapsed_s": 1.190144415013492,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "07c3b91a",
+      "source": "0x07",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=1|out=1|pred=1|succ=1|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=0,3|type=NOR"
+      ],
+      "elapsed_s": 1.0331346379825845,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "089de4f9",
+      "source": "0x07",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR"
+      ],
+      "elapsed_s": 0.9769951219204813,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00175049",
+      "source": "0x07",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500033,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=1|out=1|pred=3|succ=2|type=NOT",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=1|pred=0,0|succ=5|type=NOR"
+      ],
+      "elapsed_s": 1.7577548580011353,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "006bb422",
+      "source": "0x07",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=1,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=0,4|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.8884648700477555,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "018c9f36",
+      "source": "0x07",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500008,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=1,4|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=0,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=1|out=1|pred=1|succ=4|type=NOT",
+        "d2o=6|dfi=1|in=2|out=1|pred=0,0|succ=5|type=NOR"
+      ],
+      "elapsed_s": 1.7252549940021709,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01a74816",
+      "source": "0x07",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500010,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=4,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=2,3|succ=2|type=NOR",
+        "d2o=3|dfi=4|in=1|out=1|pred=3|succ=2|type=NOT",
+        "d2o=4|dfi=3|in=2|out=2|pred=1,2|succ=3,3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=3,4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=4,5|type=NOR"
+      ],
+      "elapsed_s": 1.828858615946956,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01c4e3b3",
+      "source": "0x07",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=1,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=1|out=1|pred=4|succ=1|type=NOT",
+        "d2o=3|dfi=4|in=2|out=1|pred=0,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=0,4|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=1,5|type=NOR"
+      ],
+      "elapsed_s": 1.7385906330309808,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "8f5136c1",
+      "source": "0x71",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=1|out=2|pred=3|succ=1,1|type=NOT",
+        "d2o=3|dfi=3|in=1|out=1|pred=2|succ=2|type=NOT",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 1.0260813999921083,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "8f92f4fb",
+      "source": "0x71",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=1,1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 0.9787212359951809,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "076290ad",
+      "source": "0x71",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=2,4|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=2,3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.760664772009477,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "199ebd1c",
+      "source": "0x8E",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR"
+      ],
+      "elapsed_s": 0.09004435199312866,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "830cbc6a",
+      "source": "0x8E",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=2|pred=0,2|succ=1,1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=1,3|type=NOT"
+      ],
+      "elapsed_s": 0.08507930196356028,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "89f39494",
+      "source": "0x8E",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=3,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=2,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.08534137299284339,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "8d6295b1",
+      "source": "0x8E",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=2|out=2|pred=0,0|succ=1,2|type=NOR"
+      ],
+      "elapsed_s": 0.08918261504732072,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "b9ca967f",
+      "source": "0x8E",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=1,3|type=NOT"
+      ],
+      "elapsed_s": 0.08919971506111324,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "498a9089",
+      "source": "0x8E",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=1,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 1.0651765280636027,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "6c760541",
+      "source": "0x8E",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.0476098660146818,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "013f5616",
+      "source": "0x8E",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=1,4|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=1,1|succ=2,3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.825228916015476,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0271424b",
+      "source": "0x8E",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=1|out=1|pred=5|succ=0|type=NOT",
+        "d2o=2|dfi=5|in=1|out=1|pred=4|succ=1|type=NOT",
+        "d2o=3|dfi=4|in=2|out=1|pred=3,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=4,4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=1|pred=0,0|succ=5|type=NOR"
+      ],
+      "elapsed_s": 1.774815596989356,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "083ff9a8",
+      "source": "0x8E",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=5,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=2|pred=0,3|succ=2,2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=1|pred=0,0|succ=5|type=NOR"
+      ],
+      "elapsed_s": 1.8864333840319887,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "0f20a32d",
+      "source": "0x8E",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500024,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=3,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=0,2|succ=1,2|type=NOR",
+        "d2o=3|dfi=3|in=1|out=1|pred=2|succ=2|type=NOT",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=4,4|type=NOR"
+      ],
+      "elapsed_s": 1.786751942941919,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0fb754cb",
+      "source": "0x8E",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 3826642,
+      "n_bot_designs": 500001,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=2,5|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=0,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=2,5|type=NOR"
+      ],
+      "elapsed_s": 1.9583674590103328,
+      "best_perm": 1,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "56f94267",
+      "source": "0x77",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=2|pred=0|succ=0,3|type=NOT"
+      ],
+      "elapsed_s": 0.007870943984016776,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "5f656235",
+      "source": "0x77",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=1|in=1|out=1|pred=0|succ=0|type=NOT",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.007519581005908549,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "71e1aa86",
+      "source": "0x77",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=2|pred=0,2|succ=0,1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.007596210925839841,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "9cc4c4e3",
+      "source": "0x77",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=1|in=1|out=1|pred=0|succ=0|type=NOT",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.007404900039546192,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "9d8f007a",
+      "source": "0x77",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=2|pred=0,2|succ=0,1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.00725547899492085,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "03137b78",
+      "source": "0x77",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=0,1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 0.0762761099031195,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "047684f3",
+      "source": "0x77",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=2|pred=1,2|succ=0,1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=1|out=1|pred=1|succ=2|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.0839387730229646,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "104084ad",
+      "source": "0x77",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=1|dfi=1|in=1|out=1|pred=0|succ=0|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.0767884140368551,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "10c2e7be",
+      "source": "0x77",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43778,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=0,1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 0.07638516102451831,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1cdd5bae",
+      "source": "0x77",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=2|pred=0,3|succ=0,1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 0.07752573990728706,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00cab20a",
+      "source": "0x77",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=2|in=2|out=1|pred=0,1|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=1|out=1|pred=3|succ=0|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=1,3|type=NOR"
+      ],
+      "elapsed_s": 1.043548812973313,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00e58ea1",
+      "source": "0x77",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=2|pred=1,3|succ=0,1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=2,4|type=NOR"
+      ],
+      "elapsed_s": 1.124499601079151,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "019a5192",
+      "source": "0x77",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=1|out=1|pred=0|succ=0|type=NOT",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=1|out=2|pred=1|succ=2,3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=3,4|type=NOR"
+      ],
+      "elapsed_s": 0.9921683450229466,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "07a57303",
+      "source": "0x77",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=2|pred=0,4|succ=0,1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=0,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=1|out=1|pred=2|succ=3|type=NOT",
+        "d2o=5|dfi=2|in=1|out=1|pred=1|succ=4|type=NOT",
+        "d2o=6|dfi=1|in=2|out=1|pred=0,0|succ=5|type=NOR"
+      ],
+      "elapsed_s": 0.9931792829884216,
+      "best_perm": 1,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "098247b0",
+      "source": "0x77",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=1|out=1|pred=3|succ=0|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=2,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=3,3|type=NOR"
+      ],
+      "elapsed_s": 1.0243930759606883,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "01f4a154",
+      "source": "0x77",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "d2o=2|dfi=6|in=2|out=2|pred=0,5|succ=0,1|type=NOR",
+        "d2o=3|dfi=5|in=2|out=1|pred=2,4|succ=2|type=NOR",
+        "d2o=4|dfi=4|in=1|out=1|pred=3|succ=3|type=NOT",
+        "d2o=5|dfi=3|in=2|out=1|pred=0,2|succ=4|type=NOR",
+        "d2o=6|dfi=2|in=2|out=2|pred=0,1|succ=3,5|type=NOR",
+        "d2o=7|dfi=1|in=2|out=1|pred=0,0|succ=6|type=NOR"
+      ],
+      "elapsed_s": 1.806141591980122,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0857254f",
+      "source": "0x77",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=2|pred=2,4|succ=0,1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=1,3|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=2,4|type=NOR",
+        "d2o=6|dfi=1|in=1|out=1|pred=0|succ=5|type=NOT"
+      ],
+      "elapsed_s": 1.863712529069744,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "09a32db6",
+      "source": "0x77",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=2|pred=0,4|succ=0,1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=0,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=1,2|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR",
+        "d2o=5|dfi=2|in=1|out=1|pred=1|succ=4|type=NOT",
+        "d2o=6|dfi=1|in=1|out=1|pred=0|succ=5|type=NOT"
+      ],
+      "elapsed_s": 1.8636388790328056,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "09f55c47",
+      "source": "0x77",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=7|in=2|out=1|pred=0,6|succ=0|type=NOR",
+        "d2o=2|dfi=6|in=2|out=2|pred=0,5|succ=0,1|type=NOR",
+        "d2o=3|dfi=5|in=2|out=1|pred=0,4|succ=2|type=NOR",
+        "d2o=4|dfi=4|in=2|out=1|pred=1,3|succ=3|type=NOR",
+        "d2o=5|dfi=3|in=1|out=1|pred=2|succ=4|type=NOT",
+        "d2o=6|dfi=2|in=2|out=1|pred=0,1|succ=5|type=NOR",
+        "d2o=7|dfi=1|in=1|out=2|pred=0|succ=4,6|type=NOT"
+      ],
+      "elapsed_s": 1.7854760530171916,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0a095a06",
+      "source": "0x77",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500002,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=1|out=1|pred=0|succ=0|type=NOT",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=2,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=2,3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=2|out=1|pred=0,0|succ=4|type=NOR"
+      ],
+      "elapsed_s": 1.8033529489766806,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "660178a5",
+      "source": [
+        "0x47",
+        "0x1B"
+      ],
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=2|pred=0,1|succ=1,1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT"
+      ],
+      "elapsed_s": 0.008444098988547921,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "cd9571ae",
+      "source": [
+        "0x47",
+        "0x1B"
+      ],
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=2|pred=0,1|succ=1,1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.008206006954424083,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0abd6f97",
+      "source": [
+        "0x47",
+        "0x1B"
+      ],
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=1,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=0,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=3|pred=0,0|succ=0,2,4|type=NOR"
+      ],
+      "elapsed_s": 0.0829475240316242,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "147e9960",
+      "source": [
+        "0x47",
+        "0x1B"
+      ],
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 0.07882497005630285,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "148597e8",
+      "source": "0x47",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=2|out=1|pred=0,0|succ=1|type=NOR",
+        "d2o=2|dfi=3|in=1|out=1|pred=2|succ=1|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=0,3|type=NOR"
+      ],
+      "elapsed_s": 0.08230625896248966,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "1f41e344",
+      "source": [
+        "0x47",
+        "0x1B"
+      ],
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=1,3|succ=0|type=NOR",
+        "d2o=2|dfi=1|in=1|out=1|pred=0|succ=1|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=3|pred=0,0|succ=0,2,3|type=NOR"
+      ],
+      "elapsed_s": 0.08358320000115782,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "28c6d3bb",
+      "source": "0x47",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=0,3|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 0.0822666990570724,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "02dd2ca8",
+      "source": [
+        "0x47",
+        "0x1B"
+      ],
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=1,3|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=2|pred=0,0|succ=0,2|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=2|pred=0|succ=3,4|type=NOT"
+      ],
+      "elapsed_s": 1.0264278630493209,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0ec7dcf1",
+      "source": "0x47",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=0,4|type=NOR"
+      ],
+      "elapsed_s": 1.2305705230683088,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "10349a42",
+      "source": "0x47",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=0,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=2|in=2|out=1|pred=1,1|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.047259802930057,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0070f10b",
+      "source": "0x47",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500001,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=7|in=2|out=1|pred=4,6|succ=0|type=NOR",
+        "d2o=2|dfi=6|in=2|out=1|pred=3,5|succ=1|type=NOR",
+        "d2o=3|dfi=5|in=2|out=1|pred=0,4|succ=2|type=NOR",
+        "d2o=4|dfi=4|in=2|out=2|pred=0,3|succ=1,3|type=NOR",
+        "d2o=5|dfi=3|in=1|out=2|pred=2|succ=2,4|type=NOT",
+        "d2o=6|dfi=2|in=1|out=1|pred=1|succ=5|type=NOT",
+        "d2o=7|dfi=1|in=2|out=1|pred=0,0|succ=6|type=NOR"
+      ],
+      "elapsed_s": 1.856057656928897,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "00b0114d",
+      "source": [
+        "0x47",
+        "0x1B"
+      ],
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=1|pred=0,1|succ=2|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=1|pred=0,0|succ=3|type=NOR"
+      ],
+      "elapsed_s": 2.061336955986917,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "00d162df",
+      "source": [
+        "0x47",
+        "0x1B"
+      ],
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=6|in=2|out=1|pred=2,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=1,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=2,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=3|pred=1,1|succ=1,3,4|type=NOR",
+        "d2o=6|dfi=1|in=1|out=1|pred=0|succ=5|type=NOT",
+        "d2o=6|dfi=1|in=2|out=2|pred=0,0|succ=2,5|type=NOR"
+      ],
+      "elapsed_s": 1.7745997549500316,
+      "best_perm": 0,
+      "tier": "A2"
+    },
+    {
+      "topology_id": "0201c198",
+      "source": "0x47",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=6|in=2|out=1|pred=0,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=0,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=1|pred=2,3|succ=2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=1|pred=0,2|succ=3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=2|pred=0,1|succ=3,4|type=NOR",
+        "d2o=6|dfi=1|in=1|out=1|pred=0|succ=5|type=NOT"
+      ],
+      "elapsed_s": 1.8195910709910095,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0869e90d",
+      "source": "0x47",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=1|pred=1,2|succ=2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.7835201170528308,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "91c94c8d",
+      "source": "0x1B",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.008456778945401311,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "badf61a8",
+      "source": "0x1B",
+      "n_designs": 74736,
+      "n_slots": 4,
+      "n_top_designs": 3737,
+      "n_bot_designs": 3737,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=2|out=1|pred=0,1|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=2|out=1|pred=0,0|succ=2|type=NOR"
+      ],
+      "elapsed_s": 0.007958515081554651,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0b96a9dc",
+      "source": "0x1B",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43777,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=0,2|succ=0,2|type=NOR",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 0.0821230870205909,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "10211231",
+      "source": "0x1B",
+      "n_designs": 875520,
+      "n_slots": 5,
+      "n_top_designs": 43776,
+      "n_bot_designs": 43776,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=1|out=1|pred=3|succ=1|type=NOT",
+        "d2o=3|dfi=3|in=1|out=1|pred=2|succ=2|type=NOT",
+        "d2o=4|dfi=2|in=2|out=1|pred=0,1|succ=3|type=NOR",
+        "d2o=5|dfi=1|in=2|out=2|pred=0,0|succ=0,4|type=NOR"
+      ],
+      "elapsed_s": 0.08248308091424406,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "05771a23",
+      "source": "0x1B",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436968,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=3|in=2|out=1|pred=1,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=2|out=2|pred=0,1|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.1263426950899884,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "0a3768e5",
+      "source": "0x1B",
+      "n_designs": 8739360,
+      "n_slots": 6,
+      "n_top_designs": 436969,
+      "n_bot_designs": 436968,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=5|in=2|out=1|pred=0,4|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=0,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=1|out=1|pred=2|succ=2|type=NOT",
+        "d2o=4|dfi=2|in=1|out=1|pred=1|succ=3|type=NOT",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.0226537130074576,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "009d5d18",
+      "source": "0x1B",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500003,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=1|dfi=4|in=2|out=1|pred=2,3|succ=0|type=NOR",
+        "d2o=2|dfi=2|in=1|out=1|pred=1|succ=1|type=NOT",
+        "d2o=2|dfi=3|in=2|out=1|pred=0,2|succ=1|type=NOR",
+        "d2o=3|dfi=1|in=1|out=1|pred=0|succ=2|type=NOT",
+        "d2o=3|dfi=2|in=1|out=2|pred=1|succ=1,2|type=NOT",
+        "d2o=4|dfi=1|in=1|out=1|pred=0|succ=3|type=NOT"
+      ],
+      "elapsed_s": 1.8292330090189353,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "017c44d7",
+      "source": "0x1B",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=5|in=2|out=1|pred=3,4|succ=0|type=NOR",
+        "d2o=1|dfi=3|in=2|out=1|pred=0,2|succ=0|type=NOR",
+        "d2o=2|dfi=4|in=2|out=1|pred=1,3|succ=1|type=NOR",
+        "d2o=3|dfi=3|in=2|out=2|pred=1,2|succ=1,2|type=NOR",
+        "d2o=4|dfi=1|in=2|out=2|pred=0,0|succ=2,3|type=NOR",
+        "d2o=4|dfi=2|in=2|out=2|pred=0,1|succ=1,3|type=NOR",
+        "d2o=5|dfi=1|in=1|out=1|pred=0|succ=4|type=NOT"
+      ],
+      "elapsed_s": 1.8149854029761627,
+      "best_perm": 0,
+      "tier": "A1"
+    },
+    {
+      "topology_id": "02b5456c",
+      "source": "0x1B",
+      "n_designs": 10000000,
+      "n_slots": 7,
+      "n_top_designs": 500000,
+      "n_bot_designs": 500000,
+      "fingerprint_keys": [
+        "d2o=1|dfi=1|in=2|out=1|pred=0,0|succ=0|type=NOR",
+        "d2o=1|dfi=6|in=2|out=1|pred=4,5|succ=0|type=NOR",
+        "d2o=2|dfi=5|in=2|out=1|pred=3,4|succ=1|type=NOR",
+        "d2o=3|dfi=4|in=2|out=2|pred=1,3|succ=1,2|type=NOR",
+        "d2o=4|dfi=3|in=2|out=2|pred=0,2|succ=2,3|type=NOR",
+        "d2o=5|dfi=2|in=2|out=1|pred=0,1|succ=4|type=NOR",
+        "d2o=6|dfi=1|in=1|out=2|pred=0|succ=3,5|type=NOT"
+      ],
+      "elapsed_s": 1.6956224630121142,
+      "best_perm": 0,
+      "tier": "A1"
+    }
+  ]
+}

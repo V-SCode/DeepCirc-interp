@@ -1,0 +1,28 @@
+{
+  "scope": {
+    "include_baselines": false,
+    "size_classes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "scope_locked_on": "2026-05-06",
+    "scope_note": "Agent-only, 4-7-reg analysis scope. Baselines remain in the population manifest but are not analyzed. See PROJECT_STATE_TOPOLOGY.md \u00a72."
+  },
+  "k": 5,
+  "motif_view": "internal_only",
+  "mode": "position",
+  "min_motif_topologies": 1,
+  "min_count_per_tier": 20,
+  "top_k_per_tier": 0,
+  "n_topologies_processed": 215,
+  "n_topologies_skipped": 44,
+  "n_topo_in_size": {
+    "4": 27,
+    "5": 43,
+    "6": 63,
+    "7": 82
+  },
+  "elapsed_minutes": 5.04
+}

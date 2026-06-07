@@ -1,0 +1,112 @@
+{
+  "phase": "23_2_size_tier_design_counts",
+  "scope": {
+    "include_baselines": false,
+    "size_classes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "scope_locked_on": "2026-05-06",
+    "scope_note": "Agent-only, 4-7-reg analysis scope. Baselines remain in the population manifest but are not analyzed. See PROJECT_STATE_TOPOLOGY.md \u00a72."
+  },
+  "n_bins": 200000,
+  "circuit_log_range": [
+    -28.85390081777927,
+    14.426950408889635
+  ],
+  "toxicity_range": [
+    0.0,
+    1.0
+  ],
+  "elapsed_pass1_s": 489.34469713800354,
+  "n_topologies_processed": 215,
+  "n_topologies_skipped": 44,
+  "per_size": {
+    "4": {
+      "n_topologies": 27,
+      "n_designs_total_circuit": 2017872,
+      "n_designs_total_toxicity": 2017872,
+      "circuit_log_p99": 5.434792749999999,
+      "toxicity_p99": 0.8449614000000002,
+      "circuit_log_p95": 4.094918235294115,
+      "toxicity_p95": 0.8043653181818182,
+      "circuit_log_p90": 3.4011757692307687,
+      "toxicity_p90": 0.7805303913043479,
+      "circuit_log_p75": 2.0521136363636354,
+      "toxicity_p75": 0.7343515384615386,
+      "circuit_log_p25": -0.07970970350404553,
+      "toxicity_p25": 0.5837296296296297,
+      "circuit_log_p10": -0.4111131914893638,
+      "toxicity_p10": 0.5188134545454546,
+      "circuit_log_p05": -0.9982900000000005,
+      "toxicity_p05": 0.4875625384615385,
+      "circuit_log_p01": -1.9341605000000024,
+      "toxicity_p01": 0.4415714333333334
+    },
+    "5": {
+      "n_topologies": 43,
+      "n_designs_total_circuit": 37647360,
+      "n_designs_total_toxicity": 37647360,
+      "circuit_log_p99": 4.950225492957741,
+      "toxicity_p99": 0.7952342674418604,
+      "circuit_log_p95": 3.6730091726618688,
+      "toxicity_p95": 0.753615993150685,
+      "circuit_log_p90": 2.916567790697672,
+      "toxicity_p90": 0.7283933370288249,
+      "circuit_log_p75": 1.007103417266186,
+      "toxicity_p75": 0.6794390427098674,
+      "circuit_log_p25": -0.20300441176470876,
+      "toxicity_p25": 0.5277322768670311,
+      "circuit_log_p10": -0.5786879120879145,
+      "toxicity_p10": 0.47223672576832154,
+      "circuit_log_p05": -1.0658510775862091,
+      "toxicity_p05": 0.44572689873417726,
+      "circuit_log_p01": -1.6974302000000001,
+      "toxicity_p01": 0.4053772307692308
+    },
+    "6": {
+      "n_topologies": 63,
+      "n_designs_total_circuit": 550579680,
+      "n_designs_total_toxicity": 550579680,
+      "circuit_log_p99": 4.713422324022351,
+      "toxicity_p99": 0.7418545430879715,
+      "circuit_log_p95": 3.0834141558047876,
+      "toxicity_p95": 0.6954737890625,
+      "circuit_log_p90": 1.902627090301002,
+      "toxicity_p90": 0.6675166749316006,
+      "circuit_log_p75": 0.06102556443819689,
+      "toxicity_p75": 0.6134214415643475,
+      "circuit_log_p25": -0.2670136236709285,
+      "toxicity_p25": 0.4684260554479666,
+      "circuit_log_p10": -1.2437857698289283,
+      "toxicity_p10": 0.42032825446363775,
+      "circuit_log_p05": -2.2387278528764547,
+      "toxicity_p05": 0.39674039925208976,
+      "circuit_log_p01": -3.3022939263803703,
+      "toxicity_p01": 0.3587615674116799
+    },
+    "7": {
+      "n_topologies": 82,
+      "n_designs_total_circuit": 820000000,
+      "n_designs_total_toxicity": 820000000,
+      "circuit_log_p99": 4.710996856581531,
+      "toxicity_p99": 0.6924842095914743,
+      "circuit_log_p95": 2.868192320441988,
+      "toxicity_p95": 0.6444534785342195,
+      "circuit_log_p90": 1.2857132479468099,
+      "toxicity_p90": 0.6154581089706395,
+      "circuit_log_p75": 0.010072181737831209,
+      "toxicity_p75": 0.559199455838441,
+      "circuit_log_p25": -0.4057134116910996,
+      "toxicity_p25": 0.42450479080352455,
+      "circuit_log_p10": -1.5516245718861668,
+      "toxicity_p10": 0.38329032271514346,
+      "circuit_log_p05": -2.460217801251957,
+      "toxicity_p05": 0.3624595699631773,
+      "circuit_log_p01": -3.391428176262465,
+      "toxicity_p01": 0.32819941607367104
+    }
+  }
+}
