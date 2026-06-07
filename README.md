@@ -9,7 +9,7 @@ End-to-end interpretability pipeline for the DeepCirc paper (Palacios et al.),
 covering the cross-topology design-rule analyses and per-design attribution
 work behind supplementary figures **S10–S15**.
 
-This repository is the companion to the main DeepCirc paper. It bundles the
+This repository is an analysis extension to the main DeepCirc paper. It bundles the
 target-function selection, topology population generation, Stage-2 MLP
 training, design-space scoring, downstream design-rule analyses, and the
 figure-assembly pipeline needed to reproduce S10–S15 end-to-end.
