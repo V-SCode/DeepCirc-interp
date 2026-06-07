@@ -73,7 +73,7 @@ pip install -e upstream/DeepCirc
 
 ## Two reproducibility paths
 
-### Path 1 — "Just rebuild the figures" (laptop, ~minutes)
+### Path 1 — Rebuilding the figures (laptop, ~minutes)
 
 Download pre-computed intermediates from Zenodo and run the figure-assembly
 pipeline only. No GPU, no SLURM, no training.
@@ -84,7 +84,7 @@ make figures
 # Outputs land in figures/setFinal/figS{10..15}/final/
 ```
 
-### Path 2 — "Full re-run from scratch" (HPC, days to weeks)
+### Path 2 — End-to-end interpretability (HPC, days to weeks depending on compute access)
 
 Re-execute the entire end-to-end pipeline including training. Requires a
 SLURM-managed GPU cluster (developed and tested on MIT Engaging / ORCD;
