@@ -3,6 +3,7 @@
 [![smoke](https://github.com/V-SCode/DeepCirc-interp/actions/workflows/smoke.yml/badge.svg)](https://github.com/V-SCode/DeepCirc-interp/actions/workflows/smoke.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20576207.svg)](https://doi.org/10.5281/zenodo.20576207)
 
 End-to-end interpretability pipeline for the DeepCirc paper (Palacios et al.),
 covering the cross-topology design-rule analyses and per-design attribution
@@ -21,7 +22,7 @@ figure-assembly pipeline needed to reproduce S10–S15 end-to-end.
 
 - **Paper:** Palacios et al., *DeepCirc* (citation pending)
 - **Upstream training framework:** https://github.com/sebastianrpalacios/DeepCirc
-- **Zenodo data deposit (trained MLPs + design-space predictions + raw artifacts):** DOI pending
+- **Zenodo deposit (code archive + data tiers):** [`10.5281/zenodo.20576207`](https://doi.org/10.5281/zenodo.20576207)
 - **Working archive (internal):** `V-SCode/DeepCircMI` (private)
 
 ## What this repo contains
@@ -181,7 +182,19 @@ If you use this repository, please cite the DeepCirc paper:
 }
 ```
 
-And the Zenodo deposit for this companion repository (DOI pending).
+And the Zenodo deposit for this companion repository:
+
+```bibtex
+@software{vege2026deepcirc_interp,
+  title     = {DeepCirc-interp: end-to-end interpretability companion code for the DeepCirc paper},
+  author    = {Vege, Venkat},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {v1.0.1},
+  doi       = {10.5281/zenodo.20576207},
+  url       = {https://doi.org/10.5281/zenodo.20576207}
+}
+```
 
 ## License
 

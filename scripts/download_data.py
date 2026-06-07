@@ -24,7 +24,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-DEFAULT_DOI = "10.XXXX/XXXXX"  # placeholder — replace at submission
+DEFAULT_DOI = "10.5281/zenodo.20576207"
 ZENODO_API = "https://zenodo.org/api/records/{record_id}"
 
 
@@ -74,13 +74,6 @@ def main() -> int:
     p.add_argument("--dry-run", action="store_true",
                    help="List what would be downloaded without fetching.")
     args = p.parse_args()
-
-    if args.doi == DEFAULT_DOI:
-        sys.stderr.write(
-            "ERROR: Zenodo DOI is still the placeholder value. Set --doi or\n"
-            "       edit DEFAULT_DOI in this script after the deposit is minted.\n"
-        )
-        return 2
 
     print(f"Resolving Zenodo record for DOI {args.doi}...", flush=True)
     record_id = _resolve_record_id(args.doi)

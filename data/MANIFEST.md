@@ -9,8 +9,8 @@ analysis + figure scripts expect after path rewrites in Phase 3.
 | Tier | Hosting | Size | Purpose |
 |---|---|---|---|
 | **0 — In-repo** | This repository (`data/topology_g3/` + `data/interp_processed/`) | ~3 MB | Small CSV/JSON intermediates that feed the S10–S15 panel build scripts. Committed directly so `make figures` works after `git clone` alone. |
-| **1 — Zenodo "figures" tier** | Zenodo deposit (DOI pending) — `figures__*` files | ~10 MB (superset of tier 0) | Same as tier 0 + a handful of larger CSVs used by `topology/scripts/2X*.py` re-runs. Fetched via `scripts/download_data.py --tier figures`. |
-| **2 — Zenodo "full" tier** | Zenodo deposit (DOI pending) — `full__*` files | ~tens of GB | Trained MLP checkpoints, design-space predictions, raw exemplar HDF5 + checkpoints, PPO+GAT agent registries. Fetched via `scripts/download_data.py --tier full`. |
+| **1 — Zenodo "figures" tier** | Zenodo deposit [`10.5281/zenodo.20576207`](https://doi.org/10.5281/zenodo.20576207) — `figures__*` files | ~10 MB (superset of tier 0) | Same as tier 0 + a handful of larger CSVs used by `topology/scripts/2X*.py` re-runs. Fetched via `scripts/download_data.py --tier figures`. |
+| **2 — Zenodo "full" tier** | Zenodo deposit [`10.5281/zenodo.20576207`](https://doi.org/10.5281/zenodo.20576207) — `full__*` files | ~tens of GB | Trained MLP checkpoints, design-space predictions, raw exemplar HDF5 + checkpoints, PPO+GAT agent registries. Fetched via `scripts/download_data.py --tier full`. |
 
 ## Tier 0 — In-repo data (committed)
 
@@ -110,7 +110,7 @@ make figures
 Download Tier 1:
 
 ```bash
-python scripts/download_data.py --tier figures --doi 10.XXXX/XXXXX
+python scripts/download_data.py --tier figures --doi 10.5281/zenodo.20576207
 make analyses
 make figures
 ```
@@ -122,7 +122,7 @@ download them or regenerate from upstream DeepCirc + SLURM. See top-level
 README "Path 2" section.
 
 ```bash
-python scripts/download_data.py --tier full --doi 10.XXXX/XXXXX
+python scripts/download_data.py --tier full --doi 10.5281/zenodo.20576207
 # OR generate from scratch via:
 make targets && make topologies && make population && make mlps && \
   make qc && make scoring && make analyses && make interp && make figures
