@@ -67,7 +67,13 @@ conda activate deepcirc-interp
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# Install the upstream DeepCirc training framework (vendored submodule)
+# Install this package in editable mode so `from topology.X import ...`,
+# `from interp.X import ...`, and `from figures.X import ...` resolve.
+pip install -e .
+
+# Install the upstream DeepCirc training framework (vendored submodule).
+# Required for Path 2 full re-runs (PPO+GAT topology generation, MLP training,
+# simulator-valued Shapley-Taylor); not needed for Path 1 figure rebuilds.
 pip install -e upstream/DeepCirc
 ```
 

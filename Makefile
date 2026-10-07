@@ -115,17 +115,29 @@ interp:
 
 figures: figures-s10 figures-s11 figures-s12 figures-s13 figures-s14 figures-s15
 
+# Canonical panel scripts per figure. Avoids the wildcard `build_panel_*.py`
+# glob, which would also pick up archival drafts (`*_draft.py`,
+# `*_mock_*.py`, `*_v0.py`, …) that have missing Tier-1 dependencies or
+# pre-existing errors and would make `make figures` noisy. Listed
+# explicitly so `make figures` always runs clean on the Tier-0 bundle.
+PANELS_S10 := build_panel_a.py build_panel_b.py build_panel_c.py build_panel_d.py
+PANELS_S11 := build_panel_a.py
+PANELS_S12 := build_panel_b.py
+PANELS_S13 := build_panel_c.py
+PANELS_S14 := build_panel_a.py build_panel_b.py build_panel_c.py
+PANELS_S15 := build_panel_d_stacked.py build_panel_e.py
+
 define BUILD_FIG
-	for s in $(FIG_OUT)/$(1)/scripts/build_panel_*.py; do $(PY) "$$s"; done
+	for s in $(2); do $(PY) "$(FIG_OUT)/$(1)/scripts/$$s"; done
 	$(PY) figures/scripts/build_figure.py --manifest $(FIG_OUT)/$(1)/manifest.yaml
 endef
 
-figures-s10: ; $(call BUILD_FIG,figS10)
-figures-s11: ; $(call BUILD_FIG,figS11)
-figures-s12: ; $(call BUILD_FIG,figS12)
-figures-s13: ; $(call BUILD_FIG,figS13)
-figures-s14: ; $(call BUILD_FIG,figS14)
-figures-s15: ; $(call BUILD_FIG,figS15)
+figures-s10: ; $(call BUILD_FIG,figS10,$(PANELS_S10))
+figures-s11: ; $(call BUILD_FIG,figS11,$(PANELS_S11))
+figures-s12: ; $(call BUILD_FIG,figS12,$(PANELS_S12))
+figures-s13: ; $(call BUILD_FIG,figS13,$(PANELS_S13))
+figures-s14: ; $(call BUILD_FIG,figS14,$(PANELS_S14))
+figures-s15: ; $(call BUILD_FIG,figS15,$(PANELS_S15))
 
 # --- Cleanup ---
 
