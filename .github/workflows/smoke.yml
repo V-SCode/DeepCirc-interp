@@ -37,6 +37,19 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: pip
 
+      - name: Install Microsoft core fonts (Arial, etc.) + clear matplotlib cache
+        run: |
+          echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" \
+            | sudo debconf-set-selections
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            ttf-mscorefonts-installer fonts-liberation
+          sudo fc-cache -fv > /dev/null
+          # Verify Arial is now findable
+          fc-list | grep -i "Arial" | head -3 || (echo "Arial NOT installed"; exit 1)
+          # Clear matplotlib's font cache so the next run picks up the new fonts
+          rm -rf ~/.cache/matplotlib
+
       - name: Install pip dependencies
         run: |
           python -m pip install --upgrade pip
