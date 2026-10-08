@@ -2,7 +2,7 @@
 
 Iterative v2 of the [setFinal/](../setFinal/) supplementary figure set for the DeepCirc paper. Purpose: tighten and consolidate the S10–S15 arc, including converting two of the figures to tables.
 
-**Distribution model is additive, not replacement.** setFinal/ stays frozen as the v1.0 deliverable already published to DeepCirc-interp + Zenodo (concept DOI [`10.5281/zenodo.20576709`](https://doi.org/10.5281/zenodo.20576709)); setFinalvF/ ships alongside as a new version DOI under the same concept.
+**Distribution model is additive, not replacement.** setFinal/ stays frozen as the v1.0 deliverable already published to DeepCirc-interp + Zenodo (v1.0.0 version DOI [`10.5281/zenodo.20576709`](https://doi.org/10.5281/zenodo.20576709); all-versions DOI [`10.5281/zenodo.20576708`](https://doi.org/10.5281/zenodo.20576708)); setFinalvF/ ships alongside as a new version DOI under the same concept.
 
 ## Per-figure structure
 

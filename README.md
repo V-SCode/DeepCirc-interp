@@ -3,7 +3,7 @@
 [![smoke](https://github.com/V-SCode/DeepCirc-interp/actions/workflows/smoke.yml/badge.svg)](https://github.com/V-SCode/DeepCirc-interp/actions/workflows/smoke.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20576709.svg)](https://doi.org/10.5281/zenodo.20576709)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20576708.svg)](https://doi.org/10.5281/zenodo.20576708)
 
 End-to-end interpretability pipeline for the DeepCirc paper (Palacios et al.),
 covering the cross-topology design-rule analyses and per-design attribution
@@ -24,7 +24,7 @@ figure-assembly pipeline needed to reproduce S10–S15 end-to-end.
 
 - **Paper:** Palacios et al., *DeepCirc* (citation pending)
 - **Upstream training framework:** https://github.com/sebastianrpalacios/DeepCirc
-- **Zenodo deposit (code archive + data tiers):** [`10.5281/zenodo.20576709`](https://doi.org/10.5281/zenodo.20576709)
+- **Zenodo archive (all versions):** [`10.5281/zenodo.20576708`](https://doi.org/10.5281/zenodo.20576708). Published v1.0.0: [`10.5281/zenodo.20576709`](https://doi.org/10.5281/zenodo.20576709). See [release status and upload instructions](docs/zenodo_release.md).
 - **Working archive (internal):** `V-SCode/DeepCircMI` (private)
 
 ## What this repo contains
@@ -114,11 +114,14 @@ pip install -e upstream/DeepCirc
 
 ### Path 1 — Rebuilding the figures (laptop, ~minutes)
 
-Download pre-computed intermediates from Zenodo and run the figure-assembly
-pipeline only. No GPU, no SLURM, no training.
+Use the pre-computed intermediates bundled in this checkout or its versioned
+source archive and run the figure-assembly pipeline. No GPU, no SLURM, no training.
 
 ```bash
-python scripts/download_data.py --tier figures   # ~10 MB
+# A checkout/source ZIP already includes the small figure-input data.
+# Optional: restore data from the version-pinned Zenodo archive (currently v1.0.0).
+# Do not replace v1.1 corrected data with v1.0 data.
+# python scripts/download_data.py --tier figures
 make figures
 # Outputs land in figures/setFinal/figS{10..15}/final/
 ```

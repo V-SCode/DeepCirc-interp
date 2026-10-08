@@ -1,6 +1,6 @@
 {
-  "title": "DeepCirc-interp: end-to-end interpretability companion code for the DeepCirc paper (Supplementary Figures S10–S15)",
-  "description": "End-to-end interpretability pipeline for the DeepCirc paper (Palacios et al.), covering the cross-topology design-rule analyses and per-design attribution work behind supplementary figures S10–S15. Includes target Boolean function selection, topology population generation (via PPO+GAT, upstream DeepCirc), Stage-2 MLP training and design-space scoring, downstream L1/L2/L3 cross-topology analyses, single-topology slot-level Shapley + pairwise Shapley–Taylor epistasis on the three yellow-dot exemplars (0x2B / 0x17 / 0x6D), and the vector-first manifest-driven figure-assembly pipeline. The upstream training framework (sebastianrpalacios/DeepCirc) is vendored as a pinned git submodule.",
+  "title": "DeepCirc-interp: interpretability companion code, supplementary figures and tables",
+  "description": "Interpretability companion code for the DeepCirc paper (Palacios et al.). Includes target Boolean function selection, topology population generation via upstream DeepCirc, Stage-2 MLP training and design-space scoring, cross-topology analyses, and per-design Shapley and Shapley-Taylor attribution. The v1.1 setFinalvF update adds consolidated supplementary figures S10 and S11 and tables S1-S3, with family-unique coalition sampling corrections and regenerated intermediate data, alongside the preserved v1.0 setFinal figure set. Source archives contain scripts, small intermediate data, and tracked supplementary table deliverables. Generated figure artwork must be attached separately. The upstream training framework is referenced as a pinned Git submodule.",
   "creators": [
     {
       "name": "Vege, Venkat",
@@ -31,5 +31,5 @@
     }
   ],
   "communities": [],
-  "notes": "This deposit accompanies the DeepCirc paper (citation pending). The deposit's 'figures' tier (~10 MB) holds the small CSV/JSON intermediates needed to rebuild supplementary figures S10–S15 from the assembly scripts on a laptop. The 'full' tier (tens of GB) additionally holds trained Stage-2 MLP checkpoints, design-space predictions, per-exemplar HDF5 samples, and PPO+GAT agent registries needed for full end-to-end re-runs from population scoring onward."
+  "notes": "The source repository includes small intermediate data for figure rebuilding. Full training checkpoints, design-space predictions, exemplar HDF5 data, and the upstream private submodule are not bundled in a standard source archive; do not assume a full-data tier is available unless listed in the record. The manually uploaded archive series has concept DOI 10.5281/zenodo.20576708; use its new-version workflow to continue that series. See docs/zenodo_release.md."
 }

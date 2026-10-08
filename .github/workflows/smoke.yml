@@ -56,6 +56,9 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
 
+      - name: Test Zenodo data download and restore
+        run: python -m unittest discover -s tests -p "test_download_data.py"
+
       - name: Build v1.0 setFinal figures (6 figures, S10–S15)
         env:
           PYTHONPATH: ${{ github.workspace }}
