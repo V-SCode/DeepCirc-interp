@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env /opt/miniconda3/bin/python
 """Module B extension — full-K Shapley main + Shapley-Taylor pairwise interactions.
 
 Upgrades over `04_yellow_dot_local_analysis.py`:
@@ -61,41 +61,50 @@ def load_completion_pool(name: str) -> np.ndarray:
     return np.stack([np.asarray(p, dtype=np.int64) for p in td["permutation"]])
 
 
-def v_of_S_batch(model, perm, pool, S_maskS, n_marginal: int, rng):
+def v_of_S_batch(model, perm, pool, S_maskS, n_marginal: int, rng,
+                  safe_sample=None):
     """Compute v(S) = E_completion [ f(x_S = yd[S], x_{-S} ~ pool) ]
     for a BATCH of masks S (each a length-l boolean array).
 
-    Uses a shared set of marginal draws across all masks for variance reduction.
+    Family-safe (2026-09-28): each mask gets its own family-valid pool
+    draw via `safe_sample`. The shared-draw variance-reduction technique
+    is traded for correctness; increase n_samples if needed.
+
     Returns an array v of length len(S_maskS).
     """
-    idx = rng.integers(0, len(pool), size=n_marginal)
-    drawn = pool[idx]  # (n_marginal, l)
+    from _family_safe import make_family_safe_sampler
+    if safe_sample is None:
+        safe_sample = make_family_safe_sampler(pool, perm)
     vs = np.empty(len(S_maskS), dtype=np.float64)
     for i, mask in enumerate(S_maskS):
-        out = drawn.copy()
-        out[:, mask] = perm[mask]
+        out = safe_sample(mask, n_marginal, rng)
         preds = L.predict(model, out, batch_size=max(n_marginal, 1024))
         vs[i] = float(preds.mean())
     return vs
 
 
 def main_shapley(perm, model, pool, n_samples=400, n_marginal=32, rng=None) -> np.ndarray:
-    """Monte-Carlo Shapley main effect per slot (1D array length l)."""
+    """Monte-Carlo Shapley main effect per slot (1D array length l).
+
+    Family-safe (2026-09-28): coalition swaps go through the shared
+    family-safe sampler.
+    """
+    from _family_safe import make_family_safe_sampler
     if rng is None:
         rng = np.random.default_rng(0)
     l = len(perm)
     perm = np.asarray(perm, dtype=np.int64)
+    safe_sample = make_family_safe_sampler(pool, perm)
     shap = np.zeros(l, dtype=np.float64)
     for _ in range(n_samples):
         order = rng.permutation(l)
         mask = np.zeros(l, dtype=bool)
-        idx = rng.integers(0, len(pool), size=n_marginal)
-        drawn = pool[idx]
-        v_prev = L.predict(model, drawn, batch_size=1024).mean()
+        # v(∅) — empty coalition, no swap needed; any pool draw is valid.
+        drawn0 = safe_sample(mask, n_marginal, rng)
+        v_prev = L.predict(model, drawn0, batch_size=1024).mean()
         for p in order:
             mask[p] = True
-            out = drawn.copy()
-            out[:, mask] = perm[mask]
+            out = safe_sample(mask, n_marginal, rng)
             v_new = float(L.predict(model, out, batch_size=1024).mean())
             shap[p] += v_new - v_prev
             v_prev = v_new
@@ -103,22 +112,29 @@ def main_shapley(perm, model, pool, n_samples=400, n_marginal=32, rng=None) -> n
 
 
 def shapley_taylor_pair(perm, model, pool, i, j,
-                        n_samples=150, n_marginal=32, rng=None) -> float:
+                        n_samples=150, n_marginal=32, rng=None,
+                        safe_sample=None) -> float:
     """Shapley-Taylor 2nd-order pair interaction Φ_{ij}.
 
     Φ_{ij} = E_{S ⊂ N\\{i,j}} [v(S∪{i,j}) − v(S∪{i}) − v(S∪{j}) + v(S)]
     with S drawn uniformly over subsets of N\\{i,j} (this corresponds to the
     symmetric Monte-Carlo weighting; exact Shapley-Taylor weights emphasise
     balanced coalition sizes via w(s)).
+
+    Family-safe (2026-09-28): each of the four v(·) calls uses its own
+    family-valid pool draw; shared-draws variance reduction traded for
+    correctness. Increase n_samples to compensate if variance is large.
     """
+    from _family_safe import make_family_safe_sampler
     if rng is None:
         rng = np.random.default_rng(1000 + i * 100 + j)
+    if safe_sample is None:
+        safe_sample = make_family_safe_sampler(pool, perm)
     l = len(perm)
     perm = np.asarray(perm, dtype=np.int64)
     others = [k for k in range(l) if k not in (i, j)]
     acc = 0.0
     for _ in range(n_samples):
-        # Random subset size s ∈ {0..l-2}, then choose s elements of `others`
         s_size = rng.integers(0, len(others) + 1)
         sel = rng.choice(others, size=s_size, replace=False) if s_size > 0 else np.array([], dtype=int)
         m_base = np.zeros(l, dtype=bool)
@@ -127,12 +143,9 @@ def shapley_taylor_pair(perm, model, pool, i, j,
         mask_Si = m_base.copy(); mask_Si[i] = True
         mask_Sj = m_base.copy(); mask_Sj[j] = True
         mask_Sij = m_base.copy(); mask_Sij[i] = True; mask_Sij[j] = True
-        # Shared marginal draws
-        idx = rng.integers(0, len(pool), size=n_marginal)
-        drawn = pool[idx]
+
         def v(mask):
-            out = drawn.copy()
-            out[:, mask] = perm[mask]
+            out = safe_sample(mask, n_marginal, rng)
             return float(L.predict(model, out, batch_size=1024).mean())
         acc += v(mask_Sij) - v(mask_Si) - v(mask_Sj) + v(mask_S)
     return acc / n_samples

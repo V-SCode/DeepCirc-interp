@@ -14,11 +14,15 @@ PY         ?= python
 DATA_ROOT  ?= ./data
 ZENODO_DOI ?= 10.5281/zenodo.20576709
 FIG_OUT    := figures/setFinal
+FIG_OUT_VF := figures/setFinalvF
 
 .PHONY: help env data data-figures data-full \
         targets topologies population mlps qc scoring \
         analyses interp figures figures-s10 figures-s11 figures-s12 \
-        figures-s13 figures-s14 figures-s15 clean clean-figures
+        figures-s13 figures-s14 figures-s15 \
+        figures-vf figures-s10vf figures-s11vf \
+        tables-vf tables-s1 tables-s2 tables-s3 \
+        clean clean-figures
 
 help:
 	@echo "DeepCirc-interp Makefile targets:"
@@ -40,9 +44,16 @@ help:
 	@echo "    analyses         Phase G: L1/L2/L3 cross-topology analyses"
 	@echo "    interp           Phase H: single-topology Shapley + epistasis"
 	@echo ""
-	@echo "  Figure assembly (Phase I):"
-	@echo "    figures          Build all S10–S15 figures"
+	@echo "  Figure assembly (Phase I) — v1.0 full set (setFinal/):"
+	@echo "    figures          Build all S10–S15 figures (frozen v1.0 content)"
 	@echo "    figures-s10..s15 Build a single figure"
+	@echo ""
+	@echo "  Figure + table assembly — v1.1 tightened Nature-SI set (setFinalvF/):"
+	@echo "    figures-vf       Build the 2 figures (figS10, figS11) in setFinalvF"
+	@echo "    figures-s10vf    Build figS10 only (consolidates old S10 + old S14 a,b)"
+	@echo "    figures-s11vf    Build figS11 only (= old S15 verbatim, Shapley corrected)"
+	@echo "    tables-vf        Render the 3 supplementary tables (S1, S2, S3)"
+	@echo "    tables-s1..s3    Render a single table"
 	@echo ""
 	@echo "  Cleanup:"
 	@echo "    clean            Remove all generated artifacts"
@@ -138,6 +149,26 @@ figures-s12: ; $(call BUILD_FIG,figS12,$(PANELS_S12))
 figures-s13: ; $(call BUILD_FIG,figS13,$(PANELS_S13))
 figures-s14: ; $(call BUILD_FIG,figS14,$(PANELS_S14))
 figures-s15: ; $(call BUILD_FIG,figS15,$(PANELS_S15))
+
+# --- Figure + table assembly (Phase I) — v1.1 tightened set (setFinalvF/) ---
+
+# Canonical panel scripts for the setFinalvF (v1.1) figures.
+PANELS_S10VF := build_panel_d.py build_panel_e.py
+PANELS_S11VF := build_panel_d_stacked.py build_panel_e.py
+
+define BUILD_FIG_VF
+	for s in $(2); do $(PY) "$(FIG_OUT_VF)/$(1)/scripts/$$s"; done
+	$(PY) figures/scripts/build_figure.py --manifest $(FIG_OUT_VF)/$(1)/manifest.yaml
+endef
+
+figures-vf: figures-s10vf figures-s11vf
+figures-s10vf: ; $(call BUILD_FIG_VF,figS10,$(PANELS_S10VF))
+figures-s11vf: ; $(call BUILD_FIG_VF,figS11,$(PANELS_S11VF))
+
+tables-vf: tables-s1 tables-s2 tables-s3
+tables-s1: ; $(PY) $(FIG_OUT_VF)/tabS01/scripts/render_table.py
+tables-s2: ; $(PY) $(FIG_OUT_VF)/tabS02/scripts/render_table.py
+tables-s3: ; $(PY) $(FIG_OUT_VF)/tabS03/scripts/render_table.py
 
 # --- Cleanup ---
 

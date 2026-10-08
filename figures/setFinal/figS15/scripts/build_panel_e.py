@@ -53,7 +53,12 @@ from figures.styles.colors import (  # noqa: E402
 
 PANELS_VEC = (PKG_ROOT / "figures" / "setFinal" / "figS15"
               / "panels" / "vector")
-MAIN_PROC  = REPO_ROOT / "data" / "interp_processed"
+# v1.1 note: pinned to the pre-family-fix data so this setFinal figure
+# reproduces the published v1.0 FigS15.ai artifact exactly. The
+# family-safe correction ships in the new figS11 under
+# figures/setFinalvF/, reading from the current (corrected) JSONs at
+# data/interp_processed/.
+MAIN_PROC  = REPO_ROOT / "data" / "interp_processed" / "_pre_family_fix"
 
 TOPOLOGIES       = ["0x2B", "0x17", "0x6D"]
 TOPOLOGY_DISPLAY = {"0x2B": "5 regulators", "0x17": "6 regulators", "0x6D": "7 regulators"}

@@ -51,8 +51,13 @@ from figures.styles.colors import (  # noqa: E402
 PANELS_VEC = (PKG_ROOT / "figures" / "setFinal" / "figS15"
               / "panels" / "vector")
 
-JSON_PATH = (REPO_ROOT / "data" / "topology_g3"
-             / "panel_c_shapley" / "shapley_per_design.json")
+# v1.1 note: pinned to the pre-family-fix data so this setFinal figure
+# reproduces the published v1.0 FigS15.ai artifact exactly. The
+# family-safe correction ships in the new figS11 under
+# figures/setFinalvF/, reading from the current (corrected) JSON at
+# data/topology_g3/panel_c_shapley/shapley_per_design.json.
+JSON_PATH = (REPO_ROOT / "data" / "topology_g3" / "panel_c_shapley"
+             / "_pre_family_fix" / "shapley_per_design.json")
 
 TEXT_GREY = "#666666"
 

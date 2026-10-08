@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env /opt/miniconda3/bin/python
 """Module B — Local yellow-dot explanation.
 
 For each yellow-dot assignment, compute:
@@ -143,16 +143,14 @@ def slot_shapley(perm: tuple, cm, gm, K_perms: np.ndarray,
     model = cm if model_circuit else gm
     # Pool of completions
     completions = K_perms  # (N, l)
-    N = len(completions)
     shap = np.zeros(l, dtype=np.float64)
+    # Family-safe sampler (2026-09-28): coalition swaps go through the
+    # shared helper so completions never violate family-uniqueness.
+    from _family_safe import make_family_safe_sampler
+    safe_sample = make_family_safe_sampler(completions, perm)
 
     def v_S(S_mask, n_marginal=128):
-        # Fix x_S = yellow-dot; sample remaining slots from completions' values in those slots
-        # We marginalize by sampling random rows from K and only using their non-S entries.
-        idx = rng.integers(0, N, size=n_marginal)
-        drawn = completions[idx]               # (n_marginal, l)
-        out = drawn.copy()
-        out[:, S_mask] = perm[S_mask]
+        out = safe_sample(S_mask, n_marginal, rng)
         preds = L.predict(model, out, batch_size=max(n_marginal, 1024))
         return float(preds.mean())
 

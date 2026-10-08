@@ -14,6 +14,8 @@ target-function selection, topology population generation, Stage-2 MLP
 training, design-space scoring, downstream design-rule analyses, and the
 figure-assembly pipeline needed to reproduce S10–S15 end-to-end.
 
+**v1.1 adds a tightened supplementary set under `figures/setFinalvF/`** (2 figures + 3 CSV/PDF tables) that fits Nature's Supplementary Information scope restriction while keeping the v1.0 six-figure set (`figures/setFinal/`) intact alongside — see [Two figure sets](#two-figure-sets-v10-vs-v11) below.
+
 > The upstream **DeepCirc** training framework (PPO+GAT topology agent + simulator)
 > lives at [sebastianrpalacios/DeepCirc](https://github.com/sebastianrpalacios/DeepCirc)
 > and is vendored here as a pinned git submodule under `upstream/DeepCirc`.
@@ -52,6 +54,37 @@ Supplementary figure → primary analysis script(s):
 | **S14a, b, c** | `figures/setFinal/figS14/scripts/build_panel_{a,b,c}.py` | `09_l2_graph_role.py` |
 | **S15a** | `figures/setFinal/figS15/scripts/build_panel_d.py` | `29_panel_c_shapley.py` |
 | **S15b** | `figures/setFinal/figS15/scripts/build_panel_e.py` | `interp/scripts/04d_shapley_taylor_sim.py` (primary), `04b_pairwise_interactions.py` (fallback) |
+
+## Two figure sets: v1.0 vs v1.1
+
+v1.1 ships the Nature-SI-tightened set **alongside** the full v1.0 six-figure set. Neither replaces the other — the complete arc is useful for readers who want depth, and the tightened arc fits Nature's SI scope.
+
+| Set | Where | Content | Status |
+|---|---|---|---|
+| **v1.0 full set** | [`figures/setFinal/`](figures/setFinal/) | 6 figures: S10, S11, S12, S13, S14, S15 — comprehensive analysis arc | **Frozen** — reproduces the published v1.0 DOI artifacts exactly |
+| **v1.1 tightened set** | [`figures/setFinalvF/`](figures/setFinalvF/) | 2 figures (S10, S11) + 3 supplementary tables (S1, S2, S3) — Nature-SI-fit | Added in v1.1, uses the family-safe Shapley correction |
+
+**figures/setFinalvF/figS10** consolidates panels from old-S10 (b, c, d) with old-S14 (a, b). **figures/setFinalvF/figS11** is old-S15 verbatim, re-rendered with the corrected family-safe Shapley / Shapley-Taylor attribution (see [Methods — Shapley family-uniqueness correction](#methods--shapley-family-uniqueness-correction) below). The three supplementary tables are derived from old-S13 and old-S14/c content.
+
+Build the tightened set:
+```bash
+make figures-vf       # 2 figures (S10, S11)
+make tables-vf        # 3 tables (S1, S2, S3)
+```
+
+## Methods — Shapley family-uniqueness correction
+
+The Shapley and Shapley-Taylor attribution routines in `interp/scripts/04*.py` and `topology/scripts/29_panel_c_shapley.py` were updated in v1.1 to enforce DeepCirc's **family-uniqueness constraint** when drawing coalition completions: a valid 5-to-7-regulator circuit uses at most one part per TF family (e.g. only one of PhlF/P1, PhlF/P2, PhlF/P3). The pre-v1.1 implementations drew family-unique background completions from the training pool but did not re-check family uniqueness after swapping the yellow-dot parts into coalition slots, so ~49% of coalition evaluations landed on family-invalid designs (77% peak at |S|=3–4 on 0x6D 7-reg); the MLP and simulator still returned scores for those invalid designs, biasing the integrated Shapley / Shapley-Taylor values.
+
+The v1.1 fix introduces `interp/scripts/_family_safe.py` — a precomputed per-pool family-filter sampler that returns only completions whose non-coalition slots carry no family overlap with the yellow-dot's parts at the coalition slots. All eleven swap sites across `04b_pairwise_interactions.py`, `04c_shapley_sim.py`, `04d_shapley_taylor_sim.py`, `04d_yd_vs_average.py`, `04_yellow_dot_local_analysis.py`, `04e_shapley_pairs.py`, `04e_shapley_taylor_3body_sim.py`, `04f_shapley_triples.py`, `04g_shapley_population.py`, and the valid-replacement enumeration in `29_panel_c_shapley.py` were converted to use this sampler.
+
+Impact on the published numbers:
+- **Panel A (per-design Shapley bars)**: max |ΔΦᵢ| = 971 on raw circuit score (up to 79.9% relative shift on individual slots); **0 sign-flips on circuit** across all 175 slots × 30 designs; 3 small sign-flips on growth (near-zero Φᵍ values).
+- **Panel B (Shapley-Taylor Φᵢⱼ heatmap)**: max |ΔΦᵢⱼ| = 14.4 (circuit, 0x17); **0 sign-flips on circuit** across all three yellow-dots; growth-side sign-flips limited to |Φᵍ| < 0.02 values (13.3% on 0x17, 14.3% on 0x6D).
+
+**Interpretive conclusions are preserved**: all slot-wise and pair-wise rankings on circuit survive, and the paper's "most-positive / most-destructive part at this slot" claims remain intact; the quantitative Φ values shift and the published `figures/setFinalvF/figS11/final/figure_S11.pdf` reflects the corrected numbers.
+
+For reproducibility, the pre-correction (v1.0) outputs are preserved under `data/interp_processed/_pre_family_fix/` and `data/topology_g3/panel_c_shapley/_pre_family_fix/`; the v1.0 `figures/setFinal/figS15` build scripts are pinned to read from those backups so `make figures-s15` reproduces the exact v1.0 FigS15.ai numbers.
 
 ## Installation
 

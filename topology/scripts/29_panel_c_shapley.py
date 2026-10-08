@@ -11,19 +11,18 @@ manifold. For a k-reg design we enumerate ALL 21−k valid replacements
 per slot exactly (no sampling needed — it's tiny).
 
 Output JSON: data/G3/panel_c_shapley/shapley_per_design.json.
-Pulled by figures/setB_design_arc/figS05/scripts/
+Pulled by paper_figures/figures/setB_design_arc/figS05/scripts/
 build_panel_d_stacked.py to render figS05 Panel D.
 
 Run on cluster (CPU is plenty — MLP is 10×100 dense):
 
-    # TODO: substitute your cluster login + scratch paths
-    ssh <USER>@<your-cluster-login>
-    cd <REPO_ROOT> && git pull
-    salloc -p <partition> -c 4 --mem=16G -t 0:30:00
+    ssh venkatve@orcd-login.mit.edu
+    cd ~/deepcirc/DeepCircMI && git pull
+    salloc -p mit_normal -c 4 --mem=16G -t 0:30:00
     module purge && module load miniforge/24.3.0-0
     conda activate $HOME/envs/deepcirc
-    python topology/scripts/29_panel_c_shapley.py
-    git add data/topology_g3/panel_c_shapley/
+    python deepcirc_topology/scripts/29_panel_c_shapley.py
+    git add deepcirc_topology/data/G3/panel_c_shapley/
     git commit -m "P29: single-body Shapley for figS05 Panel D"
     git push origin main
 """
@@ -42,20 +41,21 @@ import torch
 import torch.nn as nn
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO_ROOT / "topology" / "figures"))
+sys.path.insert(0, str(REPO_ROOT / "deepcirc_topology" / "figures"))
 import _loaders as L  # noqa: E402
 
 _SCRATCH_ENV = os.environ.get("DEEPCIRC_SCRATCH")
 if not _SCRATCH_ENV:
     raise SystemExit(
         "DEEPCIRC_SCRATCH is not set. Export it before running, e.g.:\n"
-        "    export DEEPCIRC_SCRATCH=$HOME/deepcirc_scratch   # TODO: set to your cluster scratch path\n"
+        "    export DEEPCIRC_SCRATCH=/orcd/scratch/orcd/012/$USER/deepcirc\n"
+        "(canonical path per docs/engaging_cluster_setup.md)."
     )
 SCRATCH = Path(_SCRATCH_ENV)
 RUNS_DIR = SCRATCH / "runs" / "stage2"
 POP_PATH = SCRATCH / "population" / "G3" / "population.pkl"
 
-OUT_DIR = REPO_ROOT / "data" / "topology_g3" / "panel_c_shapley"
+OUT_DIR = REPO_ROOT / "deepcirc_topology" / "data" / "G3" / "panel_c_shapley"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Paper MLP-gate thresholds (= figS04 Panel C buildable definition).
@@ -66,7 +66,7 @@ TOX_FLOOR        = 0.5
 LIBRARY_SIZE = 20   # paper Methods: 20-part TetR library
 
 
-# ---------- design selection (mirrors figures/.../build_panel_c.py) ----
+# ---------- design selection (mirrors paper_figures/.../build_panel_c.py) ----
 
 def _parse_source_list(src) -> list[str]:
     s = str(src).strip()
@@ -173,6 +173,16 @@ def gates_to_onehot(gates: list[int], k_regs: int) -> torch.Tensor:
     return oh.flatten()
 
 
+# Family map — matches _family_safe.FAMILY_OF_INDEX in the interp module.
+# Duplicated here to avoid a cross-project import (topology package cannot
+# reach into deepcirc_interpretability_work in the packaged pipeline).
+_FAMILY_OF_INDEX = (
+    "AmeR", "AmtR", "BetI", "BM3R1", "BM3R1", "BM3R1", "HlyIIR", "IcaRA",
+    "LitR", "LmrA", "PhlF", "PhlF", "PhlF", "PsrA", "QacR", "QacR",
+    "SrpR", "SrpR", "SrpR", "SrpR",
+)
+
+
 def slot_shapleys(mlp: nn.Sequential, gates: list[int], k_regs: int
                    ) -> tuple[float, list[float]]:
     """Per-slot single-body Shapley.
@@ -182,16 +192,23 @@ def slot_shapleys(mlp: nn.Sequential, gates: list[int], k_regs: int
       mean_p = mean over all valid replacements p of MLP(d with p at slot k)
       Φ_k    = base − mean_p
 
-    Valid replacements = parts NOT already used at other slots (no-
-    repeated-protein constraint, k_regs ≤ LIBRARY_SIZE).
+    Valid replacements enforce the **family-uniqueness** constraint:
+    parts whose family is NOT already present at any other slot. This
+    supersedes the earlier part-index-only check, which allowed
+    cross-variant collisions (e.g. PhlF/P1 substituted into a circuit
+    already containing PhlF/P2 at another slot). Corrected 2026-09-28
+    for consistency with `deepcirc_interpretability_work/scripts/
+    _family_safe.py`.
     """
     with torch.no_grad():
         x  = gates_to_onehot(gates, k_regs).unsqueeze(0)
         base = float(mlp(x).item())
         phis: list[float] = []
         for slot in range(k_regs):
-            other = {int(g) for i, g in enumerate(gates) if i != slot}
-            valid = [p for p in range(LIBRARY_SIZE) if p not in other]
+            other_fams = {_FAMILY_OF_INDEX[int(g)]
+                          for i, g in enumerate(gates) if i != slot}
+            valid = [p for p in range(LIBRARY_SIZE)
+                      if _FAMILY_OF_INDEX[p] not in other_fams]
             batch = torch.stack([
                 gates_to_onehot(
                     [(p if i == slot else int(g)) for i, g in enumerate(gates)],

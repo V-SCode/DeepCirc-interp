@@ -5,6 +5,10 @@ Thumbs.db
 *.swo
 .idea/
 .vscode/
+# macOS AppleDouble resource-fork sidecars (scattered by Finder on
+# non-APFS volumes; produce "non-monotonic index" git warnings on *.pack.idx
+# files and clutter listings).
+._*
 
 # --- Python ---
 __pycache__/
@@ -33,6 +37,16 @@ figures/setFinal/*/final/*.pdf
 figures/setFinal/*/final/*.png
 figures/setFinal/*/final/*.linked_assets.json
 figures/setFinal/*/preview/contact_sheet.png
+
+# Same for the setFinalvF (v1.1) figures; the tables (tabS0*/final/*)
+# are shipped deliverables and intentionally tracked.
+figures/setFinalvF/fig*/panels/raster/*.png
+figures/setFinalvF/fig*/panels/vector/*.pdf
+figures/setFinalvF/fig*/panels/vector/*.svg
+figures/setFinalvF/fig*/final/*.pdf
+figures/setFinalvF/fig*/final/*.png
+figures/setFinalvF/fig*/final/*.linked_assets.json
+figures/setFinalvF/fig*/preview/contact_sheet.png
 
 # --- Large data — fetched from Zenodo, not tracked here ---
 data/exemplars/0x*_design/

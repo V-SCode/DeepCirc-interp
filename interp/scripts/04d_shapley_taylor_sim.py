@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env /opt/miniconda3/bin/python
 """Module B simulator-valued — main Shapley AND Shapley-Taylor pairwise.
 
 Combines two methodological-caveat upgrades:
@@ -52,11 +52,21 @@ def load_completion_pool(name: str) -> np.ndarray:
 
 
 def v_of_S(name: str, perm: np.ndarray, pool: np.ndarray,
-           S_mask: np.ndarray, n_marginal: int, rng) -> tuple[float, float]:
-    """E_completion[ simulator(x_S=yd, x_{-S} ~ pool) ] — returns (c, g) jointly."""
-    idx = rng.integers(0, len(pool), size=n_marginal)
-    out = pool[idx].copy()
-    out[:, S_mask] = perm[S_mask]
+           S_mask: np.ndarray, n_marginal: int, rng,
+           safe_sample=None) -> tuple[float, float]:
+    """E_completion[ simulator(x_S=yd, x_{-S} ~ pool) ] — returns (c, g) jointly.
+
+    Family-safe (2026-09-28): if `safe_sample` is provided, the coalition
+    swap is filtered through the family-safe sampler so completions never
+    violate DeepCirc's family-uniqueness constraint. `safe_sample` is
+    built once via `_family_safe.make_family_safe_sampler(pool, perm)`
+    and passed in for reuse across coalition draws.
+    """
+    if safe_sample is None:
+        # Backwards-compatible: build a one-shot sampler if none passed.
+        from _family_safe import make_family_safe_sampler
+        safe_sample = make_family_safe_sampler(pool, perm)
+    out = safe_sample(S_mask, n_marginal, rng)
     df = simulate_perms_batch(name, out)
     return float(df["circuit_score"].mean()), float(df["growth_score"].mean())
 
@@ -64,16 +74,16 @@ def v_of_S(name: str, perm: np.ndarray, pool: np.ndarray,
 def main_shapley_sim(name: str, perm: np.ndarray, pool: np.ndarray,
                      *, n_samples: int, n_marginal: int,
                      rng=None) -> tuple[np.ndarray, np.ndarray, float, float]:
+    from _family_safe import make_family_safe_sampler
     if rng is None:
         rng = np.random.default_rng(42)
     l = len(perm)
-    # v(∅) once with a larger sample (variance reduction)
+    safe_sample = make_family_safe_sampler(pool, perm)
+    # v(∅) once with a larger sample (variance reduction).
     v_empty_c, v_empty_g = v_of_S(name, perm, pool,
-                                  np.zeros(l, dtype=bool),
-                                  n=512 if False else 1024, rng=rng) if False else \
-                            v_of_S(name, perm, pool,
                                    np.zeros(l, dtype=bool),
-                                   n_marginal=1024, rng=rng)
+                                   n_marginal=1024, rng=rng,
+                                   safe_sample=safe_sample)
     shap_c = np.zeros(l, dtype=np.float64)
     shap_g = np.zeros(l, dtype=np.float64)
     total_sims = n_samples * l * n_marginal
@@ -84,7 +94,8 @@ def main_shapley_sim(name: str, perm: np.ndarray, pool: np.ndarray,
         v_prev_c, v_prev_g = v_empty_c, v_empty_g
         for p in order:
             S_mask[p] = True
-            vc, vg = v_of_S(name, perm, pool, S_mask, n_marginal, rng)
+            vc, vg = v_of_S(name, perm, pool, S_mask, n_marginal, rng,
+                             safe_sample=safe_sample)
             shap_c[p] += vc - v_prev_c
             shap_g[p] += vg - v_prev_g
             v_prev_c, v_prev_g = vc, vg
@@ -100,10 +111,22 @@ def main_shapley_sim(name: str, perm: np.ndarray, pool: np.ndarray,
 def shapley_taylor_pair_sim(name: str, perm: np.ndarray, pool: np.ndarray,
                             i: int, j: int, *,
                             n_samples: int, n_marginal: int,
-                            rng=None) -> tuple[float, float]:
-    """Shapley-Taylor 2-body Φᵢⱼ on (circuit, growth) jointly."""
+                            rng=None,
+                            safe_sample=None) -> tuple[float, float]:
+    """Shapley-Taylor 2-body Φᵢⱼ on (circuit, growth) jointly.
+
+    Family-safe (2026-09-28): coalition swaps for v(S), v(S∪{i}),
+    v(S∪{j}), v(S∪{i,j}) each go through the family-safe sampler.
+    This means each of the four v(·) calls uses independently drawn
+    (family-valid) pool rows rather than a shared draw; the shared-
+    draws variance-reduction technique is traded for validity. Increase
+    n_samples if you need to compensate.
+    """
+    from _family_safe import make_family_safe_sampler
     if rng is None:
         rng = np.random.default_rng(1000 + i * 100 + j)
+    if safe_sample is None:
+        safe_sample = make_family_safe_sampler(pool, perm)
     l = len(perm)
     others = [k for k in range(l) if k not in (i, j)]
     acc_c = 0.0
@@ -118,13 +141,9 @@ def shapley_taylor_pair_sim(name: str, perm: np.ndarray, pool: np.ndarray,
         mask_Si = m_base.copy(); mask_Si[i] = True
         mask_Sj = m_base.copy(); mask_Sj[j] = True
         mask_Sij = m_base.copy(); mask_Sij[i] = True; mask_Sij[j] = True
-        # Use shared marginal draws for variance reduction
-        idx = rng.integers(0, len(pool), size=n_marginal)
-        drawn = pool[idx]
 
         def vboth(mask):
-            out = drawn.copy()
-            out[:, mask] = perm[mask]
+            out = safe_sample(mask, n_marginal, rng)
             df = simulate_perms_batch(name, out)
             return (float(df["circuit_score"].mean()),
                     float(df["growth_score"].mean()))

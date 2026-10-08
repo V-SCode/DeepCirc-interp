@@ -1,0 +1,79 @@
+# Figure S10 (setFinalvF) — tightened supplementary figure combining the
+# structural/motif discovery content from old S10 (panels b/c/d) with the
+# per-part landscapes from old S14 (panels a/b).
+#
+# Ordering change vs setFinal/figS10:
+#   old S10 panel a (interp-pipeline schematic)  -> DROPPED
+#   old S10 panel b (design-score dist by size)  -> new panel a
+#   old S10 panel c (design-score dist, elite)   -> new panel b
+#   old S10 panel d (structural motif scaffolds) -> new panel c
+#   old S14 panel a (per-part landscape 1)       -> new panel d
+#   old S14 panel b (per-part landscape 2)       -> new panel e
+#
+# Panel-source PDFs were copied into panels/ with the new letter naming.
+#
+# Draft 3 (2026-09-28): d/e panel scripts regenerated at native 115x105 mm
+# with S10 typography (8 pt body / 8 pt tick / 7 pt legend / 9 pt title)
+# so all five panels speak with the same voice. Top<->bottom gap tightened
+# from 12 mm to 4 mm (canvas 310 -> 302) since this reads as a single
+# coherent figure, not two stacked figures.
+#
+#   Canvas 240 x 302 mm
+#     Top row (y = 4..188)
+#       col-left  : a (95x90) at x=4, stacked over b (95x90) at x=4, y=98
+#       col-right : c (136x184) at x=100, y=4
+#     Bottom row (y = 192..297)
+#       d (115x105) at x=4  + e (115x105) at x=121, 2 mm gap between them
+
+figure_id: figure_S10
+canvas:
+  width_mm: 240.0
+  height_mm: 302.0
+
+panels:
+  # --- top row: shifted-up S10 b/c/d ---------------------------------------
+  - id: a
+    file: panels/vector/panel_a.pdf
+    preview_file: panels/raster/panel_a.png
+    x_mm: 4.0
+    y_mm: 4.0
+    w_mm: 95.0
+    h_mm: 90.0
+    label: {text: a, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 12}
+
+  - id: b
+    file: panels/vector/panel_b.pdf
+    preview_file: panels/raster/panel_b.png
+    x_mm: 4.0
+    y_mm: 98.0
+    w_mm: 95.0
+    h_mm: 90.0
+    label: {text: b, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 12}
+
+  - id: c
+    file: panels/vector/panel_c.pdf
+    preview_file: panels/raster/panel_c.png
+    x_mm: 100.0
+    y_mm: 4.0
+    w_mm: 136.0
+    h_mm: 184.0
+    label: {text: c, x_offset_mm: -5.0, y_offset_mm: -2.0, size_pt: 12}
+
+  # --- bottom row: old S14 a/b scaled down to fit S10 width ---------------
+  - id: d
+    file: panels/vector/panel_d.pdf
+    preview_file: panels/raster/panel_d.png
+    x_mm: 4.0
+    y_mm: 192.0
+    w_mm: 115.0
+    h_mm: 105.0
+    label: {text: d, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 12}
+
+  - id: e
+    file: panels/vector/panel_e.pdf
+    preview_file: panels/raster/panel_e.png
+    x_mm: 121.0
+    y_mm: 192.0
+    w_mm: 115.0
+    h_mm: 105.0
+    label: {text: e, x_offset_mm: -2.5, y_offset_mm: -2.0, size_pt: 12}

@@ -1,0 +1,16 @@
+rank,target,size,circuit_score,growth_score,part_names
+1,0xCC,6-reg,8955.9,0.514,SrpR/S1 → AmtR/A1 → BM3R1/B1 → PsrA/R1 → QacR/Q1 → PhlF/P2
+2,0x33,7-reg,8474.63,0.588,AmeR/F1 → BM3R1/B1 → BetI/E1 → SrpR/S1 → QacR/Q2 → PsrA/R1 → PhlF/P2
+3,0x0F,7-reg,5998.27,0.674,BetI/E1 → SrpR/S1 → AmtR/A1 → BM3R1/B2 → QacR/Q2 → PsrA/R1 → PhlF/P2
+4,0xEE,5-reg,2892.16,0.732,QacR/Q2 → AmtR/A1 → BetI/E1 → SrpR/S1 → PhlF/P2
+5,0x03,7-reg,2351.93,0.58,BM3R1/B3 → BetI/E1 → QacR/Q1 → AmtR/A1 → SrpR/S1 → PsrA/R1 → PhlF/P2
+6,0x8E,7-reg,974.64,0.597,BM3R1/B3 → AmtR/A1 → QacR/Q1 → SrpR/S4 → BetI/E1 → PsrA/R1 → PhlF/P2
+7,0x07,6-reg,860.99,0.656,SrpR/S4 → QacR/Q1 → BM3R1/B3 → AmtR/A1 → PsrA/R1 → PhlF/P2
+8,0x1B,7-reg,714.54,0.54,IcaRA/I1 → AmtR/A1 → BetI/E1 → QacR/Q2 → SrpR/S4 → PsrA/R1 → PhlF/P2
+9,0x47,7-reg,714.54,0.54,IcaRA/I1 → AmtR/A1 → BetI/E1 → QacR/Q2 → SrpR/S4 → PsrA/R1 → PhlF/P2
+10,0x66,6-reg,679.26,0.746,BM3R1/B2 → AmtR/A1 → PsrA/R1 → SrpR/S4 → QacR/Q2 → PhlF/P2
+11,0x06,6-reg,660.42,0.776,SrpR/S4 → BM3R1/B2 → QacR/Q2 → AmtR/A1 → PsrA/R1 → PhlF/P2
+12,0x2B,6-reg,644.46,0.557,SrpR/S3 → BetI/E1 → QacR/Q1 → BM3R1/B2 → PsrA/R1 → PhlF/P2
+13,0x77,6-reg,627.77,0.657,SrpR/S1 → QacR/Q2 → AmtR/A1 → PsrA/R1 → BM3R1/B3 → PhlF/P2
+14,0xE8,6-reg,620.32,0.515,IcaRA/I1 → BetI/E1 → PsrA/R1 → SrpR/S4 → QacR/Q2 → PhlF/P2
+15,0x3C,7-reg,520.63,0.615,BM3R1/B1 → LitR/L1 → QacR/Q2 → PsrA/R1 → SrpR/S4 → BetI/E1 → PhlF/P2

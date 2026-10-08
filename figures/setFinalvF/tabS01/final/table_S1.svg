@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="651.5pt" height="311.5pt" viewBox="0 0 651.5 311.5" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-07T20:18:26.977069</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 311.5 
+L 651.5 311.5 
+L 651.5 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 16.995652 16.990909 
+L 634.504348 16.990909 
+L 634.504348 48.140909 
+L 16.995652 48.140909 
+z
+" clip-path="url(#pc4f27a811e)" style="fill: #9ec7e8; opacity: 0.16"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 16.995652 16.990909 
+L 634.504348 16.990909 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #18a8e8; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 16.995652 48.140909 
+L 634.504348 48.140909 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #4a4a4a; stroke-width: 0.55"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 16.995652 64.565455 
+L 634.504348 64.565455 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 16.995652 80.99 
+L 634.504348 80.99 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 16.995652 97.414545 
+L 634.504348 97.414545 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 16.995652 113.839091 
+L 634.504348 113.839091 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 16.995652 130.263636 
+L 634.504348 130.263636 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 16.995652 146.688182 
+L 634.504348 146.688182 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 16.995652 163.112727 
+L 634.504348 163.112727 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 16.995652 179.537273 
+L 634.504348 179.537273 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 16.995652 195.961818 
+L 634.504348 195.961818 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 16.995652 212.386364 
+L 634.504348 212.386364 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 16.995652 228.810909 
+L 634.504348 228.810909 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 16.995652 245.235455 
+L 634.504348 245.235455 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 16.995652 261.66 
+L 634.504348 261.66 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 16.995652 278.084545 
+L 634.504348 278.084545 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 16.995652 294.509091 
+L 634.504348 294.509091 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #d9d9d9; stroke-width: 0.35"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 16.995652 294.509091 
+L 634.504348 294.509091 
+" clip-path="url(#pc4f27a811e)" style="fill: none; stroke: #4a4a4a; stroke-width: 0.55"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="34.769268" transform="rotate(-0 16.995652 34.769268)">Rank</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; fill: #4a4a4a" transform="translate(53.819565 30.072188)">Target</text>
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; fill: #4a4a4a" transform="translate(53.819565 39.466349)">function</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; text-anchor: middle; fill: #4a4a4a" x="121.802174" y="34.769268" transform="rotate(-0 121.802174 34.769268)">Size</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; fill: #4a4a4a" transform="translate(165.698954 30.12797)">Circuit</text>
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; fill: #4a4a4a" transform="translate(169.937001 39.410567)">score</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; fill: #4a4a4a" transform="translate(222.357486 30.12797)">Growth</text>
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; fill: #4a4a4a" transform="translate(229.421783 39.410567)">score</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="277.595652" y="34.821065" transform="rotate(-0 277.595652 34.821065)">Part names of circuit components</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="58.679822" transform="rotate(-0 16.995652 58.679822)">1</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="58.679822" transform="rotate(-0 53.819565 58.679822)">0xCC</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="58.640447" transform="rotate(-0 121.802174 58.640447)">6-reg</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="58.679822" transform="rotate(-0 192.617391 58.679822)">8,955.90</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="58.679822" transform="rotate(-0 252.102174 58.679822)">0.514</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="58.734666" transform="rotate(-0 277.595652 58.734666)">SrpR/S1</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="311.633675" y="58.679822" transform="rotate(-0 311.633675 58.679822)"> → </text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="325.623615" y="58.686151" transform="rotate(-0 325.623615 58.686151)">AmtR/A1</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="363.658763" y="58.679822" transform="rotate(-0 363.658763 58.679822)"> → </text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="377.648702" y="58.679822" transform="rotate(-0 377.648702 58.679822)">BM3R1/B1</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="421.148671" y="58.679822" transform="rotate(-0 421.148671 58.679822)"> → </text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="435.138611" y="58.679822" transform="rotate(-0 435.138611 58.679822)">PsrA/R1</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="468.645765" y="58.679822" transform="rotate(-0 468.645765 58.679822)"> → </text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="482.635705" y="58.679822" transform="rotate(-0 482.635705 58.679822)">QacR/Q1</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="520.07753" y="58.679822" transform="rotate(-0 520.07753 58.679822)"> → </text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="534.067469" y="58.686151" transform="rotate(-0 534.067469 58.686151)">PhlF/P2</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="75.104368" transform="rotate(-0 16.995652 75.104368)">2</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="75.104368" transform="rotate(-0 53.819565 75.104368)">0x33</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="75.010149" transform="rotate(-0 121.802174 75.010149)">7-reg</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="75.104368" transform="rotate(-0 192.617391 75.104368)">8,474.63</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="75.104368" transform="rotate(-0 252.102174 75.104368)">0.588</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="75.104368" transform="rotate(-0 277.595652 75.104368)">AmeR/F1</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="315.6308" y="75.104368" transform="rotate(-0 315.6308 75.104368)"> → </text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="329.62074" y="75.104368" transform="rotate(-0 329.62074 75.104368)">BM3R1/B1</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="373.120709" y="75.104368" transform="rotate(-0 373.120709 75.104368)"> → </text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="387.110648" y="75.110696" transform="rotate(-0 387.110648 75.110696)">BetI/E1</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="417.651186" y="75.104368" transform="rotate(-0 417.651186 75.104368)"> → </text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="431.641126" y="75.159212" transform="rotate(-0 431.641126 75.159212)">SrpR/S1</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="465.679148" y="75.104368" transform="rotate(-0 465.679148 75.104368)"> → </text>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="479.669088" y="75.110696" transform="rotate(-0 479.669088 75.110696)">QacR/Q2</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="517.735464" y="75.104368" transform="rotate(-0 517.735464 75.104368)"> → </text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="531.725403" y="75.104368" transform="rotate(-0 531.725403 75.104368)">PsrA/R1</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="565.232558" y="75.104368" transform="rotate(-0 565.232558 75.104368)"> → </text>
+   </g>
+   <g id="text_40">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="579.222498" y="75.110696" transform="rotate(-0 579.222498 75.110696)">PhlF/P2</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="91.528913" transform="rotate(-0 16.995652 91.528913)">3</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="91.528913" transform="rotate(-0 53.819565 91.528913)">0x0F</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="91.434695" transform="rotate(-0 121.802174 91.434695)">7-reg</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="91.528913" transform="rotate(-0 192.617391 91.528913)">5,998.27</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="91.528913" transform="rotate(-0 252.102174 91.528913)">0.674</text>
+   </g>
+   <g id="text_46">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="277.595652" y="91.535241" transform="rotate(-0 277.595652 91.535241)">BetI/E1</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="308.13619" y="91.528913" transform="rotate(-0 308.13619 91.528913)"> → </text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="322.12613" y="91.583757" transform="rotate(-0 322.12613 91.583757)">SrpR/S1</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="356.164152" y="91.528913" transform="rotate(-0 356.164152 91.528913)"> → </text>
+   </g>
+   <g id="text_50">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="370.154092" y="91.535241" transform="rotate(-0 370.154092 91.535241)">AmtR/A1</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="408.18924" y="91.528913" transform="rotate(-0 408.18924 91.528913)"> → </text>
+   </g>
+   <g id="text_52">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="422.17918" y="91.528913" transform="rotate(-0 422.17918 91.528913)">BM3R1/B2</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="465.679148" y="91.528913" transform="rotate(-0 465.679148 91.528913)"> → </text>
+   </g>
+   <g id="text_54">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="479.669088" y="91.535241" transform="rotate(-0 479.669088 91.535241)">QacR/Q2</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="517.735464" y="91.528913" transform="rotate(-0 517.735464 91.528913)"> → </text>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="531.725403" y="91.528913" transform="rotate(-0 531.725403 91.528913)">PsrA/R1</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="565.232558" y="91.528913" transform="rotate(-0 565.232558 91.528913)"> → </text>
+   </g>
+   <g id="text_58">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="579.222498" y="91.535241" transform="rotate(-0 579.222498 91.535241)">PhlF/P2</text>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="107.953459" transform="rotate(-0 16.995652 107.953459)">4</text>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="107.953459" transform="rotate(-0 53.819565 107.953459)">0xEE</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="107.857131" transform="rotate(-0 121.802174 107.857131)">5-reg</text>
+   </g>
+   <g id="text_62">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="107.953459" transform="rotate(-0 192.617391 107.953459)">2,892.16</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="107.953459" transform="rotate(-0 252.102174 107.953459)">0.732</text>
+   </g>
+   <g id="text_64">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="277.595652" y="107.959787" transform="rotate(-0 277.595652 107.959787)">QacR/Q2</text>
+   </g>
+   <g id="text_65">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="315.662028" y="107.953459" transform="rotate(-0 315.662028 107.953459)"> → </text>
+   </g>
+   <g id="text_66">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="329.651968" y="107.959787" transform="rotate(-0 329.651968 107.959787)">AmtR/A1</text>
+   </g>
+   <g id="text_67">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="367.687116" y="107.953459" transform="rotate(-0 367.687116 107.953459)"> → </text>
+   </g>
+   <g id="text_68">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="381.677056" y="107.959787" transform="rotate(-0 381.677056 107.959787)">BetI/E1</text>
+   </g>
+   <g id="text_69">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="412.217593" y="107.953459" transform="rotate(-0 412.217593 107.953459)"> → </text>
+   </g>
+   <g id="text_70">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="426.207533" y="108.008303" transform="rotate(-0 426.207533 108.008303)">SrpR/S1</text>
+   </g>
+   <g id="text_71">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="460.245556" y="107.953459" transform="rotate(-0 460.245556 107.953459)"> → </text>
+   </g>
+   <g id="text_72">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="474.235495" y="107.959787" transform="rotate(-0 474.235495 107.959787)">PhlF/P2</text>
+   </g>
+   <g id="text_73">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="124.378004" transform="rotate(-0 16.995652 124.378004)">5</text>
+   </g>
+   <g id="text_74">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="124.378004" transform="rotate(-0 53.819565 124.378004)">0x03</text>
+   </g>
+   <g id="text_75">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="124.283786" transform="rotate(-0 121.802174 124.283786)">7-reg</text>
+   </g>
+   <g id="text_76">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="124.378004" transform="rotate(-0 192.617391 124.378004)">2,351.93</text>
+   </g>
+   <g id="text_77">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="124.378004" transform="rotate(-0 252.102174 124.378004)">0.580</text>
+   </g>
+   <g id="text_78">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="124.378004" transform="rotate(-0 277.595652 124.378004)">BM3R1/B3</text>
+   </g>
+   <g id="text_79">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="321.095621" y="124.378004" transform="rotate(-0 321.095621 124.378004)"> → </text>
+   </g>
+   <g id="text_80">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="335.08556" y="124.384332" transform="rotate(-0 335.08556 124.384332)">BetI/E1</text>
+   </g>
+   <g id="text_81">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="365.626098" y="124.378004" transform="rotate(-0 365.626098 124.378004)"> → </text>
+   </g>
+   <g id="text_82">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="379.616038" y="124.378004" transform="rotate(-0 379.616038 124.378004)">QacR/Q1</text>
+   </g>
+   <g id="text_83">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="417.057863" y="124.378004" transform="rotate(-0 417.057863 124.378004)"> → </text>
+   </g>
+   <g id="text_84">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="431.047802" y="124.384332" transform="rotate(-0 431.047802 124.384332)">AmtR/A1</text>
+   </g>
+   <g id="text_85">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="469.082951" y="124.378004" transform="rotate(-0 469.082951 124.378004)"> → </text>
+   </g>
+   <g id="text_86">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="483.07289" y="124.432848" transform="rotate(-0 483.07289 124.432848)">SrpR/S1</text>
+   </g>
+   <g id="text_87">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="517.110913" y="124.378004" transform="rotate(-0 517.110913 124.378004)"> → </text>
+   </g>
+   <g id="text_88">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="531.100853" y="124.378004" transform="rotate(-0 531.100853 124.378004)">PsrA/R1</text>
+   </g>
+   <g id="text_89">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="564.608007" y="124.378004" transform="rotate(-0 564.608007 124.378004)"> → </text>
+   </g>
+   <g id="text_90">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="578.597947" y="124.384332" transform="rotate(-0 578.597947 124.384332)">PhlF/P2</text>
+   </g>
+   <g id="text_91">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="140.80255" transform="rotate(-0 16.995652 140.80255)">6</text>
+   </g>
+   <g id="text_92">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="140.80255" transform="rotate(-0 53.819565 140.80255)">0x8E</text>
+   </g>
+   <g id="text_93">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="140.708331" transform="rotate(-0 121.802174 140.708331)">7-reg</text>
+   </g>
+   <g id="text_94">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="140.80255" transform="rotate(-0 192.617391 140.80255)">974.64</text>
+   </g>
+   <g id="text_95">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="140.80255" transform="rotate(-0 252.102174 140.80255)">0.597</text>
+   </g>
+   <g id="text_96">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="140.80255" transform="rotate(-0 277.595652 140.80255)">BM3R1/B3</text>
+   </g>
+   <g id="text_97">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="321.095621" y="140.80255" transform="rotate(-0 321.095621 140.80255)"> → </text>
+   </g>
+   <g id="text_98">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="335.08556" y="140.808878" transform="rotate(-0 335.08556 140.808878)">AmtR/A1</text>
+   </g>
+   <g id="text_99">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="373.120709" y="140.80255" transform="rotate(-0 373.120709 140.80255)"> → </text>
+   </g>
+   <g id="text_100">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="387.110648" y="140.80255" transform="rotate(-0 387.110648 140.80255)">QacR/Q1</text>
+   </g>
+   <g id="text_101">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="424.552473" y="140.80255" transform="rotate(-0 424.552473 140.80255)"> → </text>
+   </g>
+   <g id="text_102">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #5080c0" x="438.542413" y="140.863722" transform="rotate(-0 438.542413 140.863722)">SrpR/S4</text>
+   </g>
+   <g id="text_103">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="473.579717" y="140.80255" transform="rotate(-0 473.579717 140.80255)"> → </text>
+   </g>
+   <g id="text_104">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="487.569657" y="140.808878" transform="rotate(-0 487.569657 140.808878)">BetI/E1</text>
+   </g>
+   <g id="text_105">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="518.110194" y="140.80255" transform="rotate(-0 518.110194 140.80255)"> → </text>
+   </g>
+   <g id="text_106">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="532.100134" y="140.80255" transform="rotate(-0 532.100134 140.80255)">PsrA/R1</text>
+   </g>
+   <g id="text_107">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="565.607288" y="140.80255" transform="rotate(-0 565.607288 140.80255)"> → </text>
+   </g>
+   <g id="text_108">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="579.597228" y="140.808878" transform="rotate(-0 579.597228 140.808878)">PhlF/P2</text>
+   </g>
+   <g id="text_109">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="157.227095" transform="rotate(-0 16.995652 157.227095)">7</text>
+   </g>
+   <g id="text_110">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="157.227095" transform="rotate(-0 53.819565 157.227095)">0x07</text>
+   </g>
+   <g id="text_111">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="157.18772" transform="rotate(-0 121.802174 157.18772)">6-reg</text>
+   </g>
+   <g id="text_112">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="157.227095" transform="rotate(-0 192.617391 157.227095)">860.99</text>
+   </g>
+   <g id="text_113">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="157.227095" transform="rotate(-0 252.102174 157.227095)">0.656</text>
+   </g>
+   <g id="text_114">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #5080c0" x="277.595652" y="157.288267" transform="rotate(-0 277.595652 157.288267)">SrpR/S4</text>
+   </g>
+   <g id="text_115">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="312.632956" y="157.227095" transform="rotate(-0 312.632956 157.227095)"> → </text>
+   </g>
+   <g id="text_116">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="326.622896" y="157.227095" transform="rotate(-0 326.622896 157.227095)">QacR/Q1</text>
+   </g>
+   <g id="text_117">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="364.064721" y="157.227095" transform="rotate(-0 364.064721 157.227095)"> → </text>
+   </g>
+   <g id="text_118">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="378.054661" y="157.227095" transform="rotate(-0 378.054661 157.227095)">BM3R1/B3</text>
+   </g>
+   <g id="text_119">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="421.554629" y="157.227095" transform="rotate(-0 421.554629 157.227095)"> → </text>
+   </g>
+   <g id="text_120">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="435.544569" y="157.233423" transform="rotate(-0 435.544569 157.233423)">AmtR/A1</text>
+   </g>
+   <g id="text_121">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="473.579717" y="157.227095" transform="rotate(-0 473.579717 157.227095)"> → </text>
+   </g>
+   <g id="text_122">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="487.569657" y="157.227095" transform="rotate(-0 487.569657 157.227095)">PsrA/R1</text>
+   </g>
+   <g id="text_123">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="521.076811" y="157.227095" transform="rotate(-0 521.076811 157.227095)"> → </text>
+   </g>
+   <g id="text_124">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="535.066751" y="157.233423" transform="rotate(-0 535.066751 157.233423)">PhlF/P2</text>
+   </g>
+   <g id="text_125">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="173.651641" transform="rotate(-0 16.995652 173.651641)">8</text>
+   </g>
+   <g id="text_126">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="173.651641" transform="rotate(-0 53.819565 173.651641)">0x1B</text>
+   </g>
+   <g id="text_127">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="173.557422" transform="rotate(-0 121.802174 173.557422)">7-reg</text>
+   </g>
+   <g id="text_128">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="173.651641" transform="rotate(-0 192.617391 173.651641)">714.54</text>
+   </g>
+   <g id="text_129">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="173.651641" transform="rotate(-0 252.102174 173.651641)">0.540</text>
+   </g>
+   <g id="text_130">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="173.651641" transform="rotate(-0 277.595652 173.651641)">IcaRA/I1</text>
+   </g>
+   <g id="text_131">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="312.102088" y="173.651641" transform="rotate(-0 312.102088 173.651641)"> → </text>
+   </g>
+   <g id="text_132">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="326.092028" y="173.657969" transform="rotate(-0 326.092028 173.657969)">AmtR/A1</text>
+   </g>
+   <g id="text_133">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="364.127176" y="173.651641" transform="rotate(-0 364.127176 173.651641)"> → </text>
+   </g>
+   <g id="text_134">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="378.117116" y="173.657969" transform="rotate(-0 378.117116 173.657969)">BetI/E1</text>
+   </g>
+   <g id="text_135">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="408.657653" y="173.651641" transform="rotate(-0 408.657653 173.651641)"> → </text>
+   </g>
+   <g id="text_136">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="422.647593" y="173.657969" transform="rotate(-0 422.647593 173.657969)">QacR/Q2</text>
+   </g>
+   <g id="text_137">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="460.713969" y="173.651641" transform="rotate(-0 460.713969 173.651641)"> → </text>
+   </g>
+   <g id="text_138">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #5080c0" x="474.703909" y="173.712812" transform="rotate(-0 474.703909 173.712812)">SrpR/S4</text>
+   </g>
+   <g id="text_139">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="509.741213" y="173.651641" transform="rotate(-0 509.741213 173.651641)"> → </text>
+   </g>
+   <g id="text_140">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="523.731152" y="173.651641" transform="rotate(-0 523.731152 173.651641)">PsrA/R1</text>
+   </g>
+   <g id="text_141">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="557.238307" y="173.651641" transform="rotate(-0 557.238307 173.651641)"> → </text>
+   </g>
+   <g id="text_142">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="571.228246" y="173.657969" transform="rotate(-0 571.228246 173.657969)">PhlF/P2</text>
+   </g>
+   <g id="text_143">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="190.076186" transform="rotate(-0 16.995652 190.076186)">9</text>
+   </g>
+   <g id="text_144">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="190.076186" transform="rotate(-0 53.819565 190.076186)">0x47</text>
+   </g>
+   <g id="text_145">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="189.981967" transform="rotate(-0 121.802174 189.981967)">7-reg</text>
+   </g>
+   <g id="text_146">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="190.076186" transform="rotate(-0 192.617391 190.076186)">714.54</text>
+   </g>
+   <g id="text_147">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="190.076186" transform="rotate(-0 252.102174 190.076186)">0.540</text>
+   </g>
+   <g id="text_148">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="190.076186" transform="rotate(-0 277.595652 190.076186)">IcaRA/I1</text>
+   </g>
+   <g id="text_149">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="312.102088" y="190.076186" transform="rotate(-0 312.102088 190.076186)"> → </text>
+   </g>
+   <g id="text_150">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="326.092028" y="190.082514" transform="rotate(-0 326.092028 190.082514)">AmtR/A1</text>
+   </g>
+   <g id="text_151">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="364.127176" y="190.076186" transform="rotate(-0 364.127176 190.076186)"> → </text>
+   </g>
+   <g id="text_152">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="378.117116" y="190.082514" transform="rotate(-0 378.117116 190.082514)">BetI/E1</text>
+   </g>
+   <g id="text_153">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="408.657653" y="190.076186" transform="rotate(-0 408.657653 190.076186)"> → </text>
+   </g>
+   <g id="text_154">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="422.647593" y="190.082514" transform="rotate(-0 422.647593 190.082514)">QacR/Q2</text>
+   </g>
+   <g id="text_155">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="460.713969" y="190.076186" transform="rotate(-0 460.713969 190.076186)"> → </text>
+   </g>
+   <g id="text_156">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #5080c0" x="474.703909" y="190.137358" transform="rotate(-0 474.703909 190.137358)">SrpR/S4</text>
+   </g>
+   <g id="text_157">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="509.741213" y="190.076186" transform="rotate(-0 509.741213 190.076186)"> → </text>
+   </g>
+   <g id="text_158">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="523.731152" y="190.076186" transform="rotate(-0 523.731152 190.076186)">PsrA/R1</text>
+   </g>
+   <g id="text_159">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="557.238307" y="190.076186" transform="rotate(-0 557.238307 190.076186)"> → </text>
+   </g>
+   <g id="text_160">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="571.228246" y="190.082514" transform="rotate(-0 571.228246 190.082514)">PhlF/P2</text>
+   </g>
+   <g id="text_161">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="206.500732" transform="rotate(-0 16.995652 206.500732)">10</text>
+   </g>
+   <g id="text_162">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="206.500732" transform="rotate(-0 53.819565 206.500732)">0x66</text>
+   </g>
+   <g id="text_163">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="206.461357" transform="rotate(-0 121.802174 206.461357)">6-reg</text>
+   </g>
+   <g id="text_164">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="206.500732" transform="rotate(-0 192.617391 206.500732)">679.26</text>
+   </g>
+   <g id="text_165">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="206.500732" transform="rotate(-0 252.102174 206.500732)">0.746</text>
+   </g>
+   <g id="text_166">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="206.500732" transform="rotate(-0 277.595652 206.500732)">BM3R1/B2</text>
+   </g>
+   <g id="text_167">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="321.095621" y="206.500732" transform="rotate(-0 321.095621 206.500732)"> → </text>
+   </g>
+   <g id="text_168">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="335.08556" y="206.50706" transform="rotate(-0 335.08556 206.50706)">AmtR/A1</text>
+   </g>
+   <g id="text_169">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="373.120709" y="206.500732" transform="rotate(-0 373.120709 206.500732)"> → </text>
+   </g>
+   <g id="text_170">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="387.110648" y="206.500732" transform="rotate(-0 387.110648 206.500732)">PsrA/R1</text>
+   </g>
+   <g id="text_171">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="420.617803" y="206.500732" transform="rotate(-0 420.617803 206.500732)"> → </text>
+   </g>
+   <g id="text_172">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #5080c0" x="434.607742" y="206.561903" transform="rotate(-0 434.607742 206.561903)">SrpR/S4</text>
+   </g>
+   <g id="text_173">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="469.645046" y="206.500732" transform="rotate(-0 469.645046 206.500732)"> → </text>
+   </g>
+   <g id="text_174">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="483.634986" y="206.50706" transform="rotate(-0 483.634986 206.50706)">QacR/Q2</text>
+   </g>
+   <g id="text_175">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="521.701362" y="206.500732" transform="rotate(-0 521.701362 206.500732)"> → </text>
+   </g>
+   <g id="text_176">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="535.691302" y="206.50706" transform="rotate(-0 535.691302 206.50706)">PhlF/P2</text>
+   </g>
+   <g id="text_177">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="222.925277" transform="rotate(-0 16.995652 222.925277)">11</text>
+   </g>
+   <g id="text_178">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="222.925277" transform="rotate(-0 53.819565 222.925277)">0x06</text>
+   </g>
+   <g id="text_179">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="222.885902" transform="rotate(-0 121.802174 222.885902)">6-reg</text>
+   </g>
+   <g id="text_180">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="222.925277" transform="rotate(-0 192.617391 222.925277)">660.42</text>
+   </g>
+   <g id="text_181">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="222.925277" transform="rotate(-0 252.102174 222.925277)">0.776</text>
+   </g>
+   <g id="text_182">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #5080c0" x="277.595652" y="222.986449" transform="rotate(-0 277.595652 222.986449)">SrpR/S4</text>
+   </g>
+   <g id="text_183">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="312.632956" y="222.925277" transform="rotate(-0 312.632956 222.925277)"> → </text>
+   </g>
+   <g id="text_184">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="326.622896" y="222.925277" transform="rotate(-0 326.622896 222.925277)">BM3R1/B2</text>
+   </g>
+   <g id="text_185">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="370.122864" y="222.925277" transform="rotate(-0 370.122864 222.925277)"> → </text>
+   </g>
+   <g id="text_186">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="384.112804" y="222.931605" transform="rotate(-0 384.112804 222.931605)">QacR/Q2</text>
+   </g>
+   <g id="text_187">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="422.17918" y="222.925277" transform="rotate(-0 422.17918 222.925277)"> → </text>
+   </g>
+   <g id="text_188">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="436.169119" y="222.931605" transform="rotate(-0 436.169119 222.931605)">AmtR/A1</text>
+   </g>
+   <g id="text_189">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="474.204268" y="222.925277" transform="rotate(-0 474.204268 222.925277)"> → </text>
+   </g>
+   <g id="text_190">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="488.194207" y="222.925277" transform="rotate(-0 488.194207 222.925277)">PsrA/R1</text>
+   </g>
+   <g id="text_191">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="521.701362" y="222.925277" transform="rotate(-0 521.701362 222.925277)"> → </text>
+   </g>
+   <g id="text_192">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="535.691302" y="222.931605" transform="rotate(-0 535.691302 222.931605)">PhlF/P2</text>
+   </g>
+   <g id="text_193">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="239.349822" transform="rotate(-0 16.995652 239.349822)">12</text>
+   </g>
+   <g id="text_194">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="239.349822" transform="rotate(-0 53.819565 239.349822)">0x2B</text>
+   </g>
+   <g id="text_195">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="239.310447" transform="rotate(-0 121.802174 239.310447)">6-reg</text>
+   </g>
+   <g id="text_196">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="239.349822" transform="rotate(-0 192.617391 239.349822)">644.46</text>
+   </g>
+   <g id="text_197">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="239.349822" transform="rotate(-0 252.102174 239.349822)">0.557</text>
+   </g>
+   <g id="text_198">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="239.404666" transform="rotate(-0 277.595652 239.404666)">SrpR/S3</text>
+   </g>
+   <g id="text_199">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="311.633675" y="239.349822" transform="rotate(-0 311.633675 239.349822)"> → </text>
+   </g>
+   <g id="text_200">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="325.623615" y="239.356151" transform="rotate(-0 325.623615 239.356151)">BetI/E1</text>
+   </g>
+   <g id="text_201">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="356.164152" y="239.349822" transform="rotate(-0 356.164152 239.349822)"> → </text>
+   </g>
+   <g id="text_202">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="370.154092" y="239.349822" transform="rotate(-0 370.154092 239.349822)">QacR/Q1</text>
+   </g>
+   <g id="text_203">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="407.595917" y="239.349822" transform="rotate(-0 407.595917 239.349822)"> → </text>
+   </g>
+   <g id="text_204">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="421.585857" y="239.349822" transform="rotate(-0 421.585857 239.349822)">BM3R1/B2</text>
+   </g>
+   <g id="text_205">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="465.085825" y="239.349822" transform="rotate(-0 465.085825 239.349822)"> → </text>
+   </g>
+   <g id="text_206">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="479.075765" y="239.349822" transform="rotate(-0 479.075765 239.349822)">PsrA/R1</text>
+   </g>
+   <g id="text_207">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="512.582919" y="239.349822" transform="rotate(-0 512.582919 239.349822)"> → </text>
+   </g>
+   <g id="text_208">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="526.572859" y="239.356151" transform="rotate(-0 526.572859 239.356151)">PhlF/P2</text>
+   </g>
+   <g id="text_209">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="255.774368" transform="rotate(-0 16.995652 255.774368)">13</text>
+   </g>
+   <g id="text_210">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="255.774368" transform="rotate(-0 53.819565 255.774368)">0x77</text>
+   </g>
+   <g id="text_211">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="255.734993" transform="rotate(-0 121.802174 255.734993)">6-reg</text>
+   </g>
+   <g id="text_212">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="255.774368" transform="rotate(-0 192.617391 255.774368)">627.77</text>
+   </g>
+   <g id="text_213">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="255.774368" transform="rotate(-0 252.102174 255.774368)">0.657</text>
+   </g>
+   <g id="text_214">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="255.829212" transform="rotate(-0 277.595652 255.829212)">SrpR/S1</text>
+   </g>
+   <g id="text_215">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="311.633675" y="255.774368" transform="rotate(-0 311.633675 255.774368)"> → </text>
+   </g>
+   <g id="text_216">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="325.623615" y="255.780696" transform="rotate(-0 325.623615 255.780696)">QacR/Q2</text>
+   </g>
+   <g id="text_217">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="363.68999" y="255.774368" transform="rotate(-0 363.68999 255.774368)"> → </text>
+   </g>
+   <g id="text_218">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90c080" x="377.67993" y="255.780696" transform="rotate(-0 377.67993 255.780696)">AmtR/A1</text>
+   </g>
+   <g id="text_219">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="415.715078" y="255.774368" transform="rotate(-0 415.715078 255.774368)"> → </text>
+   </g>
+   <g id="text_220">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="429.705018" y="255.774368" transform="rotate(-0 429.705018 255.774368)">PsrA/R1</text>
+   </g>
+   <g id="text_221">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="463.212172" y="255.774368" transform="rotate(-0 463.212172 255.774368)"> → </text>
+   </g>
+   <g id="text_222">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="477.202112" y="255.774368" transform="rotate(-0 477.202112 255.774368)">BM3R1/B3</text>
+   </g>
+   <g id="text_223">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="520.702081" y="255.774368" transform="rotate(-0 520.702081 255.774368)"> → </text>
+   </g>
+   <g id="text_224">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="534.69202" y="255.780696" transform="rotate(-0 534.69202 255.780696)">PhlF/P2</text>
+   </g>
+   <g id="text_225">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="272.198913" transform="rotate(-0 16.995652 272.198913)">14</text>
+   </g>
+   <g id="text_226">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="272.198913" transform="rotate(-0 53.819565 272.198913)">0xE8</text>
+   </g>
+   <g id="text_227">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="272.159538" transform="rotate(-0 121.802174 272.159538)">6-reg</text>
+   </g>
+   <g id="text_228">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="272.198913" transform="rotate(-0 192.617391 272.198913)">620.32</text>
+   </g>
+   <g id="text_229">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="272.198913" transform="rotate(-0 252.102174 272.198913)">0.515</text>
+   </g>
+   <g id="text_230">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="272.198913" transform="rotate(-0 277.595652 272.198913)">IcaRA/I1</text>
+   </g>
+   <g id="text_231">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="312.102088" y="272.198913" transform="rotate(-0 312.102088 272.198913)"> → </text>
+   </g>
+   <g id="text_232">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="326.092028" y="272.205241" transform="rotate(-0 326.092028 272.205241)">BetI/E1</text>
+   </g>
+   <g id="text_233">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="356.632565" y="272.198913" transform="rotate(-0 356.632565 272.198913)"> → </text>
+   </g>
+   <g id="text_234">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="370.622505" y="272.198913" transform="rotate(-0 370.622505 272.198913)">PsrA/R1</text>
+   </g>
+   <g id="text_235">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="404.12966" y="272.198913" transform="rotate(-0 404.12966 272.198913)"> → </text>
+   </g>
+   <g id="text_236">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #5080c0" x="418.119599" y="272.260085" transform="rotate(-0 418.119599 272.260085)">SrpR/S4</text>
+   </g>
+   <g id="text_237">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="453.156903" y="272.198913" transform="rotate(-0 453.156903 272.198913)"> → </text>
+   </g>
+   <g id="text_238">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="467.146843" y="272.205241" transform="rotate(-0 467.146843 272.205241)">QacR/Q2</text>
+   </g>
+   <g id="text_239">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="505.213219" y="272.198913" transform="rotate(-0 505.213219 272.198913)"> → </text>
+   </g>
+   <g id="text_240">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="519.203158" y="272.205241" transform="rotate(-0 519.203158 272.205241)">PhlF/P2</text>
+   </g>
+   <g id="text_241">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="16.995652" y="288.623459" transform="rotate(-0 16.995652 288.623459)">15</text>
+   </g>
+   <g id="text_242">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="53.819565" y="288.623459" transform="rotate(-0 53.819565 288.623459)">0x3C</text>
+   </g>
+   <g id="text_243">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: middle" x="121.802174" y="288.52924" transform="rotate(-0 121.802174 288.52924)">7-reg</text>
+   </g>
+   <g id="text_244">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="192.617391" y="288.623459" transform="rotate(-0 192.617391 288.623459)">520.63</text>
+   </g>
+   <g id="text_245">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: end" x="252.102174" y="288.623459" transform="rotate(-0 252.102174 288.623459)">0.615</text>
+   </g>
+   <g id="text_246">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="277.595652" y="288.623459" transform="rotate(-0 277.595652 288.623459)">BM3R1/B1</text>
+   </g>
+   <g id="text_247">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="321.095621" y="288.623459" transform="rotate(-0 321.095621 288.623459)"> → </text>
+   </g>
+   <g id="text_248">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="335.08556" y="288.623459" transform="rotate(-0 335.08556 288.623459)">LitR/L1</text>
+   </g>
+   <g id="text_249">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="363.596308" y="288.623459" transform="rotate(-0 363.596308 288.623459)"> → </text>
+   </g>
+   <g id="text_250">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #e06070" x="377.586247" y="288.629787" transform="rotate(-0 377.586247 288.629787)">QacR/Q2</text>
+   </g>
+   <g id="text_251">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="415.652623" y="288.623459" transform="rotate(-0 415.652623 288.623459)"> → </text>
+   </g>
+   <g id="text_252">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start" x="429.642563" y="288.623459" transform="rotate(-0 429.642563 288.623459)">PsrA/R1</text>
+   </g>
+   <g id="text_253">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="463.149717" y="288.623459" transform="rotate(-0 463.149717 288.623459)"> → </text>
+   </g>
+   <g id="text_254">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #5080c0" x="477.139657" y="288.684631" transform="rotate(-0 477.139657 288.684631)">SrpR/S4</text>
+   </g>
+   <g id="text_255">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="512.176961" y="288.623459" transform="rotate(-0 512.176961 288.623459)"> → </text>
+   </g>
+   <g id="text_256">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #90b5d0" x="526.166901" y="288.629787" transform="rotate(-0 526.166901 288.629787)">BetI/E1</text>
+   </g>
+   <g id="text_257">
+    <text style="font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="556.707438" y="288.623459" transform="rotate(-0 556.707438 288.623459)"> → </text>
+   </g>
+   <g id="text_258">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial'; text-anchor: start; fill: #f0b070" x="570.697378" y="288.629787" transform="rotate(-0 570.697378 288.629787)">PhlF/P2</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc4f27a811e">
+   <rect x="0" y="0" width="651.5" height="311.5"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,24 @@
+rank,target,size,circuit_score,growth_score,combined_score,part_names
+1,0x33,5-reg,2511.68,0.843,1.6062,BetI/E1 → BM3R1/B3 → QacR/Q2 → SrpR/S4 → PhlF/P2
+2,0x0F,5-reg,2511.68,0.843,1.6062,BetI/E1 → BM3R1/B3 → QacR/Q2 → SrpR/S4 → PhlF/P2
+3,0xCC,6-reg,3386.61,0.814,1.5862,BM3R1/B3 → QacR/Q2 → AmtR/A1 → BetI/E1 → SrpR/S4 → PhlF/P2
+4,0x03,5-reg,1016.76,0.852,1.5065,SrpR/S4 → BM3R1/B3 → BetI/E1 → QacR/Q2 → PhlF/P2
+5,0xEE,4-reg,383.87,0.902,1.4817,BetI/E1 → BM3R1/B2 → QacR/Q2 → PhlF/P2
+6,0x07,5-reg,650.27,0.819,1.384,BM3R1/B2 → SrpR/S4 → BetI/E1 → QacR/Q2 → PhlF/P2
+7,0x06,6-reg,469.91,0.821,1.3455,BM3R1/B2 → SrpR/S4 → AmtR/A1 → BetI/E1 → QacR/Q2 → PhlF/P2
+8,0x66,6-reg,514.83,0.787,1.2886,BM3R1/B2 → AmtR/A1 → BetI/E1 → SrpR/S4 → QacR/Q2 → PhlF/P2
+9,0x2B,6-reg,510.21,0.781,1.2763,AmtR/A1 → BetI/E1 → SrpR/S4 → BM3R1/B3 → QacR/Q2 → PhlF/P2
+10,0x8E,5-reg,328.42,0.8,1.257,BM3R1/B3 → SrpR/S4 → BetI/E1 → QacR/Q2 → PhlF/P2
+11,0x3C,6-reg,432.37,0.775,1.2429,BM3R1/B2 → BetI/E1 → AmtR/A1 → QacR/Q2 → SrpR/S4 → PhlF/P2
+12,0x77,4-reg,73.2,0.874,1.2122,BM3R1/B2 → BetI/E1 → QacR/Q2 → PhlF/P2
+13,0xE8,6-reg,169.37,0.801,1.1748,BM3R1/B2 → AmtR/A1 → SrpR/S4 → BetI/E1 → QacR/Q2 → PhlF/P2
+14,0x4D,5-reg,65.41,0.847,1.1431,SrpR/S2 → QacR/Q2 → AmtR/A1 → BM3R1/B2 → PhlF/P2
+15,0x71,5-reg,65.41,0.847,1.1431,SrpR/S2 → QacR/Q2 → AmtR/A1 → BM3R1/B2 → PhlF/P2
+
+Top-5 most frequent parts across the union of Table S1 (top-15 max-circuit) and Table S2 (top-15 Pareto-knee) designs
+rank,part_name,count_in_top15_maxcirc,count_in_top15_knee,total_count_out_of_30
+1,PhlF/P2,15,15,30
+2,QacR/Q2,10,15,25
+3,BetI/E1,10,13,23
+4,AmtR/A1,11,8,19
+5,SrpR/S4,8,11,19
