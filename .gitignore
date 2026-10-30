@@ -9,6 +9,7 @@ Thumbs.db
 # non-APFS volumes; produce "non-monotonic index" git warnings on *.pack.idx
 # files and clutter listings).
 ._*
+.!*._*
 
 # --- Python ---
 __pycache__/
@@ -47,6 +48,10 @@ figures/setFinalvF/fig*/final/*.pdf
 figures/setFinalvF/fig*/final/*.png
 figures/setFinalvF/fig*/final/*.linked_assets.json
 figures/setFinalvF/fig*/preview/contact_sheet.png
+figures/setFinalvF/publication/panels/
+figures/setFinalvF/publication/config.json
+figures/setFinalvF/publication/config.jsx
+figures/setFinalvF/publication/padding_audit.json
 
 # --- Large data — fetched from Zenodo, not tracked here ---
 data/exemplars/0x*_design/

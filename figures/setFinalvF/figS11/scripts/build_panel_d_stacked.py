@@ -1,7 +1,7 @@
-"""figS05 Panel D — Single-body Shapley stacked bars (REAL data).
+"""Figure S11a — Fractional single-slot replacement contributions.
 
-Renders per-design fractional Shapley contributions across the 30 Panel
-C designs (15 max-circuit per-target + 15 knee per-target at paper
+Renders per-design fractional replacement contributions across 30 selected
+entries (15 max-circuit per-target + 15 knee per-target at paper
 MLP-gate thresholds), one panel per score type (circuit / growth).
 
 Data source: data/G3/panel_c_shapley/shapley_per_design.json — produced
@@ -10,17 +10,16 @@ by deepcirc_topology/scripts/29_panel_c_shapley.py on cluster.
 For each design d, slot k holding part p:
   fractional Φ_k = Φ_k / Σ_l |Φ_l|
 where Φ_k = MLP(d) − E_{q valid at slot k}[MLP(d with q at slot k)].
-Per-design fractions sum to ±1.0 (sign depends on whether the design's
-parts collectively beat or lag random valid completions on that score).
+Absolute fractions sum to 1.0 for each nonzero bar. Signed fractions need
+not sum to either +1 or -1. All-zero contributions remain zero. These
+contrasts hold the other slots fixed and are not conventional Shapley values.
 
 Layout follows the mock variant (build_panel_d_mock_stacked.py); only
 the data source changed.
 
 Outputs:
-  panels/vector/panel_d.{pdf,svg}     ← canonical figS05 Panel D
+  panels/vector/panel_d.{pdf,svg}
   panels/raster/panel_d.png
-  panels/vector/panel_draft_d_stacked_real.{pdf,svg}  ← duplicate for QA
-  panels/raster/panel_draft_d_stacked_real.png
 """
 from __future__ import annotations
 
@@ -38,8 +37,8 @@ REPO_ROOT   = PKG_ROOT
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-sys.path.insert(0, str(REPO_ROOT / "figures" / "setFinal" / "figS13"
-                       / "scripts"))
+sys.path.insert(0, str(REPO_ROOT / "figures"
+                       / "setFinal" / "figS13" / "scripts"))
 import build_panel_c as bc  # noqa: E402  — for TOP5_COLORS only
 
 from figures.figtools import use_style, save_panel, figsize_mm  # noqa: E402
@@ -57,7 +56,7 @@ JSON_PATH = (REPO_ROOT / "data" / "topology_g3"
 TEXT_GREY = "#666666"
 
 CLUSTER_MAXCIRC = "#9E9E9E"   # MID_GRAY — matches S04 Panel C max-circuit dots
-CLUSTER_KNEE    = "#111111"   # near-black — matches S04 Panel C pareto-optimal dots
+CLUSTER_KNEE    = "#111111"   # near-black Pareto-knee markers
 
 # Top-10 colour palette — all paper-aligned (FAMILY_COLORS + PASTEL +
 # 2 ACCENT_*_DARK for the sibling-RBS variants that need a distinct
@@ -90,7 +89,7 @@ CANVAS_H_MM = 210
 # ---------- data assembly ---------------------------------------------------
 
 def _load_designs() -> list[dict]:
-    """Returns a sort-stable list of designs from the Shapley JSON.
+    """Returns a sort-stable list of entries from the attribution JSON.
 
     Each design carries:
       target / topology_id / gate_count / group / part_names /
@@ -166,7 +165,7 @@ def _render_stacked(ax, designs: list[dict], score: str,
     ax.axhline(0, color=DARK_GRAY, linewidth=0.6, zorder=4)
 
     # Per-design group marker: small filled circle directly below
-    # each bar. Black dot = pareto-optimal, grey dot = max circuit
+    # each bar. Black dot = Pareto-knee, grey dot = max circuit
     # score. Replaces the previous full-width "stripe" — at small
     # bar widths the stripes read as additional data bars and
     # confused readers; a dot is unambiguously a marker, not data.
@@ -285,7 +284,7 @@ def build_panel() -> None:
               fontsize=12, fontweight="bold", color="#000000",
               ha="left", va="center")
     group_items = [
-        (CLUSTER_KNEE,    "Pareto-optimal"),
+        (CLUSTER_KNEE,    "Pareto-knee"),
         (CLUSTER_MAXCIRC, "Max circuit score"),
     ]
     for i, (color, label) in enumerate(group_items):

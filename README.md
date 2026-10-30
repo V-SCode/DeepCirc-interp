@@ -1,5 +1,8 @@
 # DeepCirc-interp
 
+> **v1.1.1 source correction, 2026-10-30.** The current `setFinalvF` data and source panels now normalize part presence by each tier's evaluated-design count, retaining original cutoff ties. S11 uses clarified raw-score units and attribution labels. This revision includes source panel PDFs/SVGs/PNGs, complete review previews and the corrected S3 table. Final Illustrator exports and paper text/Methods/legends are deferred for a separate review. Existing manuscript legend files are retained as historical material and do not describe the corrected normalization. See [the correction status](docs/source_revision_v1.1.1.md) before using this revision. The older v1.0/v1.1 descriptions below document those historical releases.
+
+
 [![smoke](https://github.com/V-SCode/DeepCirc-interp/actions/workflows/smoke.yml/badge.svg)](https://github.com/V-SCode/DeepCirc-interp/actions/workflows/smoke.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)

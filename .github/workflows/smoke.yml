@@ -56,20 +56,27 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
 
-      - name: Test Zenodo data download and restore
-        run: python -m unittest discover -s tests -p "test_download_data.py"
+      - name: Test Zenodo download, restore, and release packaging
+        run: |
+          python -m unittest discover -s tests -p "test_download_data.py"
+          python -m unittest discover -s tests -p "test_prepare_zenodo_release.py"
+
+      - name: Check normalized enrichment and S11 scientific contracts
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: make test-vf
 
       - name: Build v1.0 setFinal figures (6 figures, S10–S15)
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: make figures
 
-      - name: Build v1.1 setFinalvF figures (2 figures, S10 + S11)
+      - name: Build current setFinalvF source panels and complete previews
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: make figures-vf
 
-      - name: Build v1.1 setFinalvF supplementary tables (3 tables, S1–S3)
+      - name: Build current setFinalvF supplementary tables (S1–S3)
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: make tables-vf
@@ -105,6 +112,7 @@ jobs:
             fi
             echo "  OK  $pdf  ($size bytes)"
           done
+
           for n in 1 2 3; do
             pdf="figures/setFinalvF/tabS0${n}/final/table_S${n}.pdf"
             if [ ! -f "$pdf" ]; then
@@ -119,6 +127,19 @@ jobs:
             echo "  OK  $pdf  ($size bytes)"
           done
 
+      - name: Reject missing preview placeholders
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import fitz
+          from figures.setFinalvF.scripts.build_previews import require_manifest_panels
+          for n in (10, 11):
+              base = Path(f"figures/setFinalvF/figS{n}")
+              require_manifest_panels(base / "manifest.yaml")
+              with fitz.open(base / "final" / f"figure_S{n}.pdf") as document:
+                  assert "[missing preview]" not in "".join(page.get_text() for page in document)
+          PY
+
       - name: Upload composed figures + tables as artifacts
         if: matrix.python-version == '3.12'
         uses: actions/upload-artifact@v4
@@ -127,5 +148,9 @@ jobs:
           path: |
             figures/setFinal/fig*/final/figure_*.pdf
             figures/setFinalvF/fig*/final/figure_*.pdf
+            figures/setFinalvF/fig*/panels/vector/*.pdf
+            figures/setFinalvF/fig*/panels/vector/*.svg
+            figures/setFinalvF/fig*/panels/raster/*.png
+            figures/setFinalvF/publication/panels/**/*
             figures/setFinalvF/tabS0*/final/table_*.pdf
           retention-days: 30

@@ -1,0 +1,159 @@
+{
+  "audit_date": "2026-10-30",
+  "scope": "Current setFinalvF S11 source panels; no Illustrator/master rebuild",
+  "attribution_inputs_sha256": {
+    "data/topology_g3/panel_c_shapley/shapley_per_design.json": "e5353da0164eb1c5f2e1e61770dbb3e9db7cdfa5aacff8d090228b99c3d93916",
+    "data/interp_processed/shapley_taylor_sim_0x2B.json": "cb5a75c148ca8821d87cfdc554ac2ca90d5d972a292b922fd4da20ee04be36fd",
+    "data/interp_processed/shapley_taylor_sim_0x17.json": "d6c1dea660736fde9f173e0bde2080d980bb6f5a2d60ccb9e98f06e9d6ba80de",
+    "data/interp_processed/shapley_taylor_sim_0x6D.json": "8cd5045ccb186a6ade26817e16ade0ffe406cadcc232e82a476a7e8ade10da3b"
+  },
+  "attribution_recomputed": false,
+  "source_panel_artifacts": [
+    {
+      "path": "figures/setFinalvF/figS11/panels/vector/panel_d.pdf",
+      "bytes": 54477,
+      "sha256": "f67a4a5dd7600b6f22525f57f815231cfea3520ed9a9b3d891c242166e5290c0"
+    },
+    {
+      "path": "figures/setFinalvF/figS11/panels/vector/panel_d.svg",
+      "bytes": 163418,
+      "sha256": "d89bc4d3bb50746255e746d46231457e5495d0ba281c445b586d8dec381b3ed8"
+    },
+    {
+      "path": "figures/setFinalvF/figS11/panels/raster/panel_d.png",
+      "bytes": 588658,
+      "sha256": "7f0882243be519d9377c9e5439d9784965fcc51291e4f980aa53b6dfa5162f5a"
+    },
+    {
+      "path": "figures/setFinalvF/figS11/panels/vector/panel_e.pdf",
+      "bytes": 44947,
+      "sha256": "47231b8ad83fe043b10367ade6ad6480f60e708b2a07f15275d945141b3124d1"
+    },
+    {
+      "path": "figures/setFinalvF/figS11/panels/vector/panel_e.svg",
+      "bytes": 187216,
+      "sha256": "ddd3298617c7b7e56c5ca88579cbdb739e0c82cbe7617eed1053c2287bc61335"
+    },
+    {
+      "path": "figures/setFinalvF/figS11/panels/raster/panel_e.png",
+      "bytes": 2337003,
+      "sha256": "d85a733bc6417359528e4541dc1506d120b286711393909e92e9cd25db7acf58"
+    }
+  ],
+  "source_fixes": [
+    "Raw c/g headers and conventional Shapley stripe labels",
+    "Signed point-estimate legend with matching grey/blue swatches",
+    "Unestimated diagonal labels, no Taylor-decomposition claim",
+    "Sign-preserving compact labels and unrounded colours",
+    "Required simulator inputs with scientific validation, no MLP fallback",
+    "Pareto-knee group label and replacement-attribution terminology",
+    "Selection generator uses log2/exp2; saved cohort unchanged"
+  ],
+  "panel_a": {
+    "target_entries": 30,
+    "part_positions": 175,
+    "unique_assignment_identities": 27,
+    "maximum_absolute_fraction_sum_error": 0.0,
+    "cohort_matches_corrected_log2_selection": true,
+    "all_30_entries_match_table_parts_sizes_and_scores": true,
+    "circuit_positive_slots": 174,
+    "max_circuit_entries_with_negative_growth": 9,
+    "knee_entries_with_negative_growth": 0
+  },
+  "panel_b": {
+    "units": {
+      "circuit": "raw c",
+      "growth": "raw g"
+    },
+    "checks": {
+      "0x2B": {
+        "circuit": {
+          "pairs": 10,
+          "positive": 10,
+          "negative": 0,
+          "zero": 0,
+          "main_efficiency_residual": -7.105427357601002e-15,
+          "pair_min": 4.518976554926383,
+          "pair_max": 8.682875940235352
+        },
+        "growth": {
+          "pairs": 10,
+          "positive": 10,
+          "negative": 0,
+          "zero": 0,
+          "main_efficiency_residual": 0.0,
+          "pair_min": 0.0009888768461868824,
+          "pair_max": 0.016587566614223448
+        }
+      },
+      "0x17": {
+        "circuit": {
+          "pairs": 15,
+          "positive": 15,
+          "negative": 0,
+          "zero": 0,
+          "main_efficiency_residual": -2.842170943040401e-14,
+          "pair_min": 13.260120271685594,
+          "pair_max": 27.321576777236103
+        },
+        "growth": {
+          "pairs": 15,
+          "positive": 15,
+          "negative": 0,
+          "zero": 0,
+          "main_efficiency_residual": 0.0,
+          "pair_min": 0.0022852362342108477,
+          "pair_max": 0.013770332076380724
+        }
+      },
+      "0x6D": {
+        "circuit": {
+          "pairs": 21,
+          "positive": 21,
+          "negative": 0,
+          "zero": 0,
+          "main_efficiency_residual": -8.881784197001252e-16,
+          "pair_min": 0.2576266959950075,
+          "pair_max": 0.9912115049124999
+        },
+        "growth": {
+          "pairs": 21,
+          "positive": 20,
+          "negative": 1,
+          "zero": 0,
+          "main_efficiency_residual": 0.0,
+          "pair_min": -0.000244782755214803,
+          "pair_max": 0.02084401137046721
+        }
+      }
+    },
+    "growth_colour_limits": [
+      -0.05,
+      0.05
+    ],
+    "growth_stripe_saturated_values": [
+      {
+        "target": "0x2B",
+        "slot": 1,
+        "part": "SrpR-S4",
+        "raw_value": 0.050393135491263126
+      },
+      {
+        "target": "0x17",
+        "slot": 0,
+        "part": "QacR-Q2",
+        "raw_value": 0.054809910935477615
+      }
+    ],
+    "tiny_negative_growth_value": -0.000244782755214803,
+    "tiny_negative_display": "-2e-4",
+    "colour_values_rounded": false,
+    "uncertainty": "Monte Carlo point estimates; no confidence intervals stored",
+    "legacy_mlp_fallback": false
+  },
+  "validation": {
+    "tests_run": 8,
+    "failures": 0,
+    "errors": 0
+  }
+}

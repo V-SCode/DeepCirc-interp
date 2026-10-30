@@ -1,22 +1,20 @@
-"""Figure S05 — Panel E: pairwise epistasis heatmap (2×3 matrix grid).
+"""Figure S11b — Simulator-derived pairwise Shapley interaction estimates.
 
-Faithful paper-pipeline port of `deepcirc_sae/outputs/figures/presentation/
-E2_epistasis_heatmap_v2`. Same Shapley-Taylor 2-body coefficients $\Phi_{ij}$
-rendered as an l × l matrix per yellow-dot topology, in the same 2-row ×
-3-col layout (Circuit / Growth × 5-reg / 6-reg / 7-reg), restyled to the
-paper PASTEL palette and grey/non-bold labels.
+Rows show raw circuit and growth scores; columns show the five-, six- and
+seven-regulator Fig. 3 designs. Blue indicates positive estimates and grey
+negative estimates. Diagonal pair interactions are not estimated and are
+hatched. The adjacent stripe shows conventional single-slot Shapley values.
+The stripe and pair matrix are not a Shapley–Taylor decomposition.
 
-Cells coloured on a paper-pastel diverging palette
-  green = synergy   ($\Phi_{ij}$ > 0)
-  red   = antagonism ($\Phi_{ij}$ < 0)
-Diagonal cells hatched (self-interaction absorbed into the main effect
-$\Phi_i$, shown as a right-side stripe per panel). Axis labels colored by TF
-family per paper FAMILY_COLORS.
+Circuit matrices and stripes have independent colour scales. Growth matrices
+and stripes share a fixed ±0.05 scale; colours saturate outside that range,
+while numerical labels retain the values. Nonzero estimates keep their sign
+when extra display precision is needed. No confidence intervals are implied.
 
 Source data: deepcirc_interpretability_work/processed/
               shapley_taylor_sim_{0x2B,0x17,0x6D}.json
-              (falls back to pairwise_*.json if simulator-valued
-               coefficients are absent)
+These corrected simulator files are required. Legacy MLP-valued pairwise
+files cannot be substituted for missing simulator data.
 
 Outputs:
   panels/vector/panel_e.pdf | .svg
@@ -24,7 +22,7 @@ Outputs:
 
 Run:
     /opt/miniconda3/bin/python \
-        paper_figures/figures/setFinal/figS15/scripts/build_panel_e.py
+        paper_figures/figures/setFinalvF/figS11/scripts/build_panel_e.py
 """
 from __future__ import annotations
 
@@ -63,7 +61,7 @@ TOPOLOGY_COLORS  = {
     "0x6D": PASTEL["orange"],
 }
 OBJECTIVES = ["circuit", "growth"]
-OBJECTIVE_UNIT = {"circuit": "log(c)", "growth": "-log(g)"}
+OBJECTIVE_UNIT = {"circuit": "c", "growth": "g"}
 OBJECTIVE_LABEL = {
     "circuit": "Circuit (c)",
     "growth":  "Growth (g)",
@@ -72,8 +70,8 @@ OBJECTIVE_LABEL = {
 TEXT_GREY = "#666666"
 
 DIVERGING_CMAP = LinearSegmentedColormap.from_list(
-    "paper_synergy_antagonism",
-    # MID_GRAY (antagonism) $\\rightarrow$ white $\\rightarrow$ ACCENT_BLUE (synergy). Softer
+    "paper_signed_interactions",
+    # MID_GRAY (negative) -> white -> ACCENT_BLUE (positive). Softer
     # negative endpoint than DARK_GRAY (per Panel C 2026-05-29
     # follow-up) — keeps the muted-negative identity without reading
     # as near-charcoal.
@@ -92,19 +90,42 @@ CANVAS_H_MM = 260
 
 def _load_pairwise(name: str) -> dict:
     sim_fp = MAIN_PROC / f"shapley_taylor_sim_{name}.json"
-    if sim_fp.exists():
-        with open(sim_fp) as f:
-            d = json.load(f)
-        return {
-            "slot_labels": d["slot_labels"],
-            "main_shapley_circuit": d["circuit"]["main_shap"],
-            "main_shapley_growth":  d["growth"]["main_shap"],
-            "pairwise_circuit": d["circuit"]["pair_shap"],
-            "pairwise_growth":  d["growth"]["pair_shap"],
-        }
-    with open(MAIN_PROC / f"pairwise_{name}.json") as f:
+    if not sim_fp.is_file():
+        raise FileNotFoundError(
+            f"Required corrected simulator attribution file is missing: {sim_fp}. "
+            "Legacy MLP pairwise files are not an equivalent data source."
+        )
+    with open(sim_fp) as f:
         d = json.load(f)
-    return d
+    n = {"0x2B": 5, "0x17": 6, "0x6D": 7}[name]
+    if d.get("name") != name or len(d.get("slot_labels", [])) != n:
+        raise ValueError(f"{sim_fp}: incorrect design identity or slot labels")
+    if len(d.get("perm", [])) != n or len(set(d["slot_labels"])) != n:
+        raise ValueError(f"{sim_fp}: invalid slot assignment dimensions")
+    for key in ("pool_size", "n_main_samples", "n_main_marginal",
+                "n_pair_samples", "n_pair_marginal"):
+        if not isinstance(d.get(key), int) or d[key] <= 0:
+            raise ValueError(f"{sim_fp}: missing or invalid simulator metadata {key}")
+    out = {"slot_labels": d["slot_labels"]}
+    for obj in OBJECTIVES:
+        main = np.asarray(d[obj]["main_shap"], dtype=float)
+        pair = np.asarray(d[obj]["pair_shap"], dtype=float)
+        baseline = float(d[obj]["baseline"])
+        total = float(d[obj]["total_at_yd"])
+        if main.shape != (n,) or pair.shape != (n, n):
+            raise ValueError(f"{sim_fp}: incorrect {obj} attribution dimensions")
+        if not (np.isfinite(main).all() and np.isfinite(pair).all()
+                and np.isfinite([baseline, total]).all()):
+            raise ValueError(f"{sim_fp}: nonfinite {obj} attribution values")
+        if not np.allclose(pair, pair.T, rtol=0, atol=1e-12):
+            raise ValueError(f"{sim_fp}: asymmetric {obj} pair matrix")
+        if not np.allclose(np.diag(pair), 0, rtol=0, atol=1e-12):
+            raise ValueError(f"{sim_fp}: diagonal pair interactions must be unestimated zeros")
+        if not np.isclose(main.sum(), total - baseline, rtol=1e-9, atol=1e-9):
+            raise ValueError(f"{sim_fp}: {obj} main Shapley values fail efficiency check")
+        out[f"main_shapley_{obj}"] = main
+        out[f"pairwise_{obj}"] = pair
+    return out
 
 
 def _family_of_slot_label(label: str) -> str:
@@ -112,12 +133,19 @@ def _family_of_slot_label(label: str) -> str:
 
 
 def _format_dp(v: float, dp: int) -> str:
-    """N-decimal-place signed value formatter. Any v that rounds to 0
-    at this precision is rendered as the bare "+0" rather than
-    "+0.00" / "-0.000", which removes trailing "-0.00" artefacts for
-    tiny negative values."""
+    """Keep the sign of nonzero estimates without lengthening ordinary labels."""
+    if not np.isfinite(v):
+        raise ValueError("Cannot format a nonfinite attribution")
+    if v == 0:
+        return "0"
     if round(v, dp) == 0:
-        return "+0"
+        extra = f"{v:+.{dp + 1}f}"
+        if round(v, dp + 1) != 0 and len(extra) <= 6:
+            return extra
+        # A seven-regulator cell fits six ordinary growth-label characters.
+        # Compact scientific notation keeps the sign without shrinking type.
+        mantissa, exponent = f"{v:+.0e}".split("e")
+        return f"{mantissa}e{int(exponent)}"
     return f"{v:+.{dp}f}"
 
 
@@ -161,12 +189,8 @@ def _panel_heatmap(ax, ax_main, *, name: str, obj: str, data: dict):
                     (j, y), 1, 1,
                     fc="#ECECEC", ec="white", lw=0.4, hatch="///"))
                 continue
-            # Growth cells: display at 3dp + quantize color to 0.001
-            # so every cell that displays as "+0" lands on the same
-            # exact white centre. Circuit cells: 2dp display, no
-            # color quantization (natural spectrum reads well).
-            v_color = round(v, 3) if obj == "growth" else v
-            color = DIVERGING_CMAP(norm(v_color))
+            # Colour the actual estimate, independently of label rounding.
+            color = DIVERGING_CMAP(norm(v))
             ax.add_patch(mpatches.Rectangle(
                 (j, y), 1, 1,
                 fc=color, ec="white", lw=0.5))
@@ -231,8 +255,7 @@ def _panel_heatmap(ax, ax_main, *, name: str, obj: str, data: dict):
     ax_main.axis("off")
     for i in range(n):
         v = main_arr[i]
-        v_color = round(v, 3) if obj == "growth" else v
-        color = DIVERGING_CMAP(main_norm(v_color))
+        color = DIVERGING_CMAP(main_norm(v))
         ax_main.add_patch(mpatches.Rectangle(
             (0.05, n - 1 - i), 0.90, 1,
             fc=color, ec="white", lw=0.5))
@@ -240,7 +263,7 @@ def _panel_heatmap(ax, ax_main, *, name: str, obj: str, data: dict):
                      _format_dp(v, 3 if obj == "growth" else 2),
                      ha="center", va="center",
                      fontsize=main_fs, color="#222")
-    ax_main.set_title("$\Phi_i$\n(main)", loc="center",
+    ax_main.set_title(r"$\Phi_i$" + "\n(Shapley)", loc="center",
                       fontsize=11, color="#000000", pad=2)
 
 
@@ -282,11 +305,11 @@ def build_panel() -> None:
 
     # Bottom legend strip.
     handles = [
-        mpatches.Patch(color=ACCENT_BLUE, label=r"synergy   ($\Phi_{ij}$ > 0)"),
-        mpatches.Patch(color="#000000",   label=r"antagonism ($\Phi_{ij}$ < 0)"),
+        mpatches.Patch(color=ACCENT_BLUE, label=r"positive estimate ($\Phi_{ij}$ > 0)"),
+        mpatches.Patch(color=MID_GRAY, label=r"negative estimate ($\Phi_{ij}$ < 0)"),
         mpatches.Patch(facecolor="#ECECEC", edgecolor="white",
                        hatch="///",
-                       label="diagonal (self-interaction absorbed in $\Phi_i$)"),
+                       label="diagonal (not estimated)"),
     ]
     leg = fig.legend(handles=handles, loc="lower center",
                      ncol=3, bbox_to_anchor=(0.5, 0.005),
@@ -298,8 +321,7 @@ def build_panel() -> None:
 
     # Hero title.
     fig.text(0.50, 0.965,
-             "Pairwise epistasis heatmap on part cooperativity in "
-             "Figure 3 yellow dot designs",
+             "Pairwise interactions in the Figure 3 yellow-dot designs",
              fontsize=16, fontweight="normal", color="#000000",
              ha="center", va="top")
 

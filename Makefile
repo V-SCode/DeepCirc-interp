@@ -20,7 +20,7 @@ FIG_OUT_VF := figures/setFinalvF
         targets topologies population mlps qc scoring \
         analyses interp figures figures-s10 figures-s11 figures-s12 \
         figures-s13 figures-s14 figures-s15 \
-        figures-vf figures-s10vf figures-s11vf \
+        figures-vf figures-s10vf figures-s11vf presence-data-vf test-vf \
         tables-vf tables-s1 tables-s2 tables-s3 \
         clean clean-figures
 
@@ -152,23 +152,32 @@ figures-s15: ; $(call BUILD_FIG,figS15,$(PANELS_S15))
 
 # --- Figure + table assembly (Phase I) — v1.1 tightened set (setFinalvF/) ---
 
-# Canonical panel scripts for the setFinalvF (v1.1) figures.
-PANELS_S10VF := build_panel_d.py build_panel_e.py
-PANELS_S11VF := build_panel_d_stacked.py build_panel_e.py
+# v1.1.1 builds every source panel, applies native-scale page margins, and
+# rejects incomplete manifests. Existing normalized inputs are bundled.
+presence-data-vf:
+	$(PY) $(FIG_OUT_VF)/scripts/build_presence_enrichment.py
 
-define BUILD_FIG_VF
-	for s in $(2); do $(PY) "$(FIG_OUT_VF)/$(1)/scripts/$$s"; done
-	$(PY) figures/scripts/build_figure.py --manifest $(FIG_OUT_VF)/$(1)/manifest.yaml
-endef
+test-vf:
+	$(PY) -m unittest discover -s tests -p 'test_current_preview.py'
+	$(PY) -m unittest discover -s tests -p 'test_prepare_zenodo_release.py'
+	$(PY) -m unittest discover -s topology/tests -p 'test_presence_enrichment.py'
+	$(PY) $(FIG_OUT_VF)/scripts/test_presence_enrichment.py
+	$(PY) $(FIG_OUT_VF)/scripts/test_presence_panels.py
+	$(PY) $(FIG_OUT_VF)/figS11/scripts/test_scientific_contract.py
 
-figures-vf: figures-s10vf figures-s11vf
-figures-s10vf: ; $(call BUILD_FIG_VF,figS10,$(PANELS_S10VF))
-figures-s11vf: ; $(call BUILD_FIG_VF,figS11,$(PANELS_S11VF))
+figures-vf:
+	$(PY) $(FIG_OUT_VF)/scripts/build_previews.py
+figures-s10vf:
+	$(PY) $(FIG_OUT_VF)/scripts/build_previews.py --figure 10
+figures-s11vf:
+	$(PY) $(FIG_OUT_VF)/scripts/build_previews.py --figure 11
 
 tables-vf: tables-s1 tables-s2 tables-s3
 tables-s1: ; $(PY) $(FIG_OUT_VF)/tabS01/scripts/render_table.py
 tables-s2: ; $(PY) $(FIG_OUT_VF)/tabS02/scripts/render_table.py
-tables-s3: ; $(PY) $(FIG_OUT_VF)/tabS03/scripts/render_table.py
+tables-s3:
+	$(PY) $(FIG_OUT_VF)/tabS03/scripts/build_table.py
+	$(PY) $(FIG_OUT_VF)/tabS03/scripts/render_table.py
 
 # --- Cleanup ---
 

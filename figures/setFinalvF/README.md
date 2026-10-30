@@ -1,5 +1,8 @@
 # setFinalvF — tightened / consolidated supplementary figure set
 
+> **Current source revision: v1.1.1.** Rebuild all seven source panels and complete, native-scale review previews with `make figures-vf`. Rebuild the tables with `make tables-vf`. S10d/e and S3 now use circuit-presence probabilities with explicit tier denominators; S11 units, attribution labels and tiny-value display have been corrected. The manuscript legends below/alongside this folder remain historical and await the user's text review. No updated Illustrator masters are included in this source revision. See [release scope](../../docs/source_revision_v1.1.1.md).
+
+
 Iterative v2 of the [setFinal/](../setFinal/) supplementary figure set for the DeepCirc paper. Purpose: tighten and consolidate the S10–S15 arc, including converting two of the figures to tables.
 
 **Distribution model is additive, not replacement.** setFinal/ stays frozen as the v1.0 deliverable already published to DeepCirc-interp + Zenodo (v1.0.0 version DOI [`10.5281/zenodo.20576709`](https://doi.org/10.5281/zenodo.20576709); all-versions DOI [`10.5281/zenodo.20576708`](https://doi.org/10.5281/zenodo.20576708)); setFinalvF/ ships alongside as a new version DOI under the same concept.

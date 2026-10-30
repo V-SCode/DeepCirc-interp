@@ -1,14 +1,15 @@
-"""29 — Single-body Shapley for the 30 designs in figS04 Panel C.
+"""29 — Single-slot replacement contributions for the 30 selected entries.
 
 For each of the 30 designs (15 max-circ per-target + 15 knee per-target,
-both at paper MLP-gate thresholds), compute per-slot Shapley contributions
+both at paper MLP-gate thresholds), compute per-slot replacement contributions
 to circuit_score and growth_score MLP predictions.
 
   Φ_k(d) = MLP(d) − E_{p valid at slot k}[MLP(d with p at slot k)]
 
-Where "valid" enforces the no-repeated-protein constraint of the design
-manifold. For a k-reg design we enumerate ALL 21−k valid replacements
-per slot exactly (no sampling needed — it's tiny).
+"Valid" enforces family uniqueness against the other slots. Enumerate all
+compatible library parts, including the original part; the count depends on
+which families occupy the other slots. This single-slot contrast holds all
+other slots fixed and is not a coalition-averaged Shapley value.
 
 Output JSON: data/G3/panel_c_shapley/shapley_per_design.json.
 Pulled by paper_figures/figures/setB_design_arc/figS05/scripts/
@@ -41,7 +42,7 @@ import torch
 import torch.nn as nn
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO_ROOT / "deepcirc_topology" / "figures"))
+sys.path.insert(0, str(REPO_ROOT / "topology" / "figures"))
 import _loaders as L  # noqa: E402
 
 _SCRATCH_ENV = os.environ.get("DEEPCIRC_SCRATCH")
@@ -55,12 +56,12 @@ SCRATCH = Path(_SCRATCH_ENV)
 RUNS_DIR = SCRATCH / "runs" / "stage2"
 POP_PATH = SCRATCH / "population" / "G3" / "population.pkl"
 
-OUT_DIR = REPO_ROOT / "deepcirc_topology" / "data" / "G3" / "panel_c_shapley"
+OUT_DIR = REPO_ROOT / "data" / "topology_g3" / "panel_c_shapley"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Paper MLP-gate thresholds (= figS04 Panel C buildable definition).
 CIRC_SCORE_FLOOR = 2.0
-CIRC_LOG_FLOOR   = float(np.log(CIRC_SCORE_FLOOR))
+CIRC_LOG_FLOOR   = float(np.log2(CIRC_SCORE_FLOOR))
 TOX_FLOOR        = 0.5
 
 LIBRARY_SIZE = 20   # paper Methods: 20-part TetR library
@@ -81,7 +82,7 @@ def _parse_source_list(src) -> list[str]:
 def _top15_maxcirc() -> pd.DataFrame:
     """Top 15 max-circuit per-target buildable designs."""
     fronts = L.load_pareto_fronts("G3").copy()
-    fronts["circuit_score"] = np.exp(fronts["circuit_log"])
+    fronts["circuit_score"] = np.exp2(fronts["circuit_log"])
     mask = ((fronts["circuit_score"] >= CIRC_SCORE_FLOOR)
             & (fronts["toxicity"] >= TOX_FLOOR))
     buildable = fronts[mask].copy()
@@ -125,7 +126,7 @@ def _top15_knee() -> pd.DataFrame:
     # Normalise columns to the max-circ schema so downstream code is uniform.
     best["circuit_log"]      = best["knee_A_circuit_log"]
     best["toxicity"]         = best["knee_A_toxicity"]
-    best["circuit_score"]    = np.exp(best["circuit_log"])
+    best["circuit_score"]    = np.exp2(best["circuit_log"])
     best["part_names"]       = best["knee_A_part_names"]
     best["gate_assignments"] = best["knee_A_gate_assignments"]
     best["perm_idx"]         = best["knee_A_perm"]
@@ -164,7 +165,7 @@ def load_mlp(ckpt_path: Path, k_regs: int) -> nn.Sequential:
     return mlp
 
 
-# ---------- Shapley ---------------------------------------------------------
+# ---------- single-slot replacement contributions --------------------------
 
 def gates_to_onehot(gates: list[int], k_regs: int) -> torch.Tensor:
     oh = torch.zeros(k_regs, LIBRARY_SIZE)
@@ -185,7 +186,7 @@ _FAMILY_OF_INDEX = (
 
 def slot_shapleys(mlp: nn.Sequential, gates: list[int], k_regs: int
                    ) -> tuple[float, list[float]]:
-    """Per-slot single-body Shapley.
+    """Per-slot replacement contrasts (legacy function name retained).
 
     For each slot k:
       base   = MLP(d)

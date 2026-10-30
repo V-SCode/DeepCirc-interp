@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "deepcirc-interp"
-version = "0.1.0"
-description = "Interpretability companion code for DeepCirc supplementary figures S10-S15."
+version = "1.1.1"
+description = "DeepCirc interpretability code, corrected setFinalvF source panels, and supplementary tables."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -46,3 +46,4 @@ exclude = [
 "topology.configs" = ["*.yaml"]
 "figures.styles" = ["*.mplstyle"]
 "figures.setFinal" = ["**/manifest*.yaml"]
+"figures.setFinalvF" = ["**/manifest*.yaml", "data/*.csv", "data/*.json"]

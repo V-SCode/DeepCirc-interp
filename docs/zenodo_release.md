@@ -1,105 +1,126 @@
-# Releasing this repository to Zenodo
+# Preparing the v1.1.1 correction release
 
-## Record identity
+This is a source-panel and data correction. Illustrator master regeneration
+and all manuscript text, Methods, figure legends and table legends are deferred.
+No Word document or existing Illustrator master belongs in this upload.
 
-- All versions (concept DOI): [10.5281/zenodo.20576708](https://doi.org/10.5281/zenodo.20576708).
-- Published v1.0.0 (version DOI): [10.5281/zenodo.20576709](https://doi.org/10.5281/zenodo.20576709).
-- Use a version DOI for an exact reproducible citation. The concept DOI points to the latest published version.
+The published baseline is v1.1.0, [record 23227964](https://zenodo.org/records/23227964).
+The all-versions concept DOI is [10.5281/zenodo.20576708](https://doi.org/10.5281/zenodo.20576708).
+Record 20576709 is the older v1.0.0 version, not the concept record.
+The public title remains **DeepCirc-Interp: Data Files and Code**.
 
-The v1.0.0 record was uploaded manually. Do not assume that the GitHub integration
-will continue its series. The integration follows its own previously linked
-GitHub release; adding a DOI or related identifier to `.zenodo.json` does not
-attach it to an existing manual series. See the [Zenodo GitHub integration FAQ](https://support.zenodo.org/help/en-gb/24-github-integration/73-can-i-pre-reserved-a-doi-before-a-github-release).
+The research source for this correction is `V-SCode/DeepCircMI` commit
+`0556a8bb137b03f67951cdca93d0161aed4565f4`. The companion ports the scientific
+changes into its portable paths. Its own reviewed source commit is recorded
+separately in each tagged package.
 
-A pushed Git tag is not a published GitHub Release. Zenodo's GitHub webhook
-listens for release events. Creating a release merely to retry the manual
-upload can create an unrelated series if that integration is not already linked.
+## Build and review locally
 
-## Prepare a reviewable package
-
-Use a clean, already verified checkout containing the generated setFinalvF
-S10/S11 PDF and PNG previews. The packaging command checks that scientific
-scripts and inputs match the tag and refuses to overwrite an existing bundle.
-It does not rebuild figures, authenticate, upload, or publish.
+Install the repository requirements and editable package, including Arial for
+the intended typography, then build the complete previews and tables:
 
 ```bash
-python scripts/prepare_zenodo_release.py --ref v1.1.0 --out dist/zenodo-v1.1.0
+make figures-vf tables-vf
+python -m unittest discover -s tests -p test_prepare_zenodo_release.py -v
 ```
 
-It produces:
+To inspect an uncommitted candidate without inventing a release commit or tag:
 
-| File | Contents |
+```bash
+python scripts/prepare_zenodo_release.py --working-tree --version v1.1.1 \
+  --out dist/zenodo-v1.1.1-review
+```
+
+This mode uses an explicit source-file allowlist over Git's tracked and
+nonignored untracked files. It excludes credentials, runtime files, private
+submodule contents, resource forks, generated source panels, and stale
+Illustrator masters from the source snapshot. Generated artwork enters only
+through the separate explicit rendering roster. The manifest sets
+`source_tag` and `source_commit` to null, records the base commit and every
+file's hashes, and marks the bundle **not ready for upload**.
+
+After the reviewed changes have been committed and tagged separately, prepare
+the final bundle from the clean tagged source:
+
+```bash
+python scripts/prepare_zenodo_release.py --ref v1.1.1 \
+  --out dist/zenodo-v1.1.1
+```
+
+Tagged mode creates an exact `git archive` of the tag and rejects any difference
+between the working source and that archive, including new untracked source
+files. It also refuses excluded runtime/credential/artwork files in a tag.
+Neither packaging mode overwrites an existing output directory. Neither
+command rebuilds figures, authenticates, uploads, tags, commits, or publishes.
+
+## Package contents and checks
+
+| Outer file | Contents |
 |---|---|
-| `DeepCirc-interp-1.1.0.zip` | Exact tagged source, corrected intermediate data, figure scripts, and tracked S1-S3 table deliverables. |
-| `DeepCirc-interp-1.1.0-setFinalvF-previews-and-tables.zip` | Existing S10/S11 composer previews (PDF/PNG), tagged S1-S3 tables (CSV/PDF/PNG/SVG), and table legends. |
-| `README-ZENODO.md` | Provenance, reproduction instructions, and scope of the release. |
-| `manifest.json` | Source commit, per-file provenance, sizes, SHA256 and MD5 checksums. |
-| `metadata.json` | Proposed descriptive `metadata_patch`. Merge into existing draft metadata; it is not a complete API payload or an additional dataset. |
+| `DeepCirc-interp-1.1.1.zip` | Source, tests, small intermediate inputs, normalized presence data, manifests and tracked table deliverables. |
+| `DeepCirc-interp-1.1.1-setFinalvF-source-panels-and-tables.zip` | Seven source panels in PDF/SVG/PNG, four prepared native-scale placement pages in PDF/PNG, complete S10/S11 composer previews in PDF/PNG, two placement manifests, and three tables in CSV/PDF/PNG/SVG. |
+| `README-ZENODO.md` | Exact source provenance, scope, rebuilding instructions and deferred work. |
+| `metadata.json` | Descriptive `metadata_patch` only; it is not a complete deposition payload. |
+| `manifest.json` | Source and artifact provenance, byte counts, MD5 and SHA256 hashes, and deferred-work status. |
 
-Generated S10/S11 artwork is ignored by Git and would be absent from a normal
-source ZIP. The composer outputs are previews according to the figure workflow.
-Final hand-composed Illustrator exports, if required for publication, must be
-reviewed and added explicitly; do not rename a preview as final artwork.
+The artwork archive has 47 required assets plus its README. All seven source
+panels are included even when a panel's numerical values did not change.
+The packager requires every vector and raster asset referenced by each
+manifest, rejects incomplete panel rosters and missing-preview placeholders,
+parses PDFs/SVGs/PNGs/CSVs, and checks ZIP CRCs. Table and manifest bytes must
+agree between the source and artwork archives. It detects concurrent changes
+to source or artwork before writing the bundle.
 
-The archives do not bundle the private upstream submodule or the full training
-checkpoints/HDF5 datasets. The older `stage_for_zenodo.py` stages individual data
-files only; it is not an uploader or a complete source/figure release packager.
+S10d/e and Table S3 use normalized circuit-presence rates under the original
+inclusive percentile masks, including cutoff ties. The actual denominator is
+the number of evaluated circuits containing each structural context in that
+tier. S11 attribution data are unchanged; its units, terminology, signed-value
+display and source validation are corrected. See the scientific audit files
+for the full calculation and provenance.
 
-The v1.1.0 tag still contains the old downloader and version-pinned v1.0.0 DOI.
-Use the v1.1.0 archive's bundled data to build that version; do not overwrite it
-with v1.0.0 downloads. Packaging repairs on `main` do not rewrite an existing tag.
+Composer PDFs/PNGs are explicitly **previews**, not final Illustrator exports.
+The source may retain unchanged historical legend files for provenance; these
+do not describe the corrected statistic and are not current manuscript text.
+Standalone legends are omitted from the artwork archive. Do not use the old
+legend files as current descriptions of these panels.
 
-## Resume Step C through the Zenodo website
+The source archive excludes the private upstream submodule and large training
+checkpoints/HDF5 data. It is not a complete full-data tier. Use its bundled
+small inputs for this version instead of replacing them with older downloads.
 
-1. Sign into the account that owns [record 20576709](https://zenodo.org/records/20576709).
-2. Resume its existing unpublished new-version draft if present. Otherwise click
-   **New version** on that record. Do not create a standalone new upload.
-3. Check that the draft belongs to concept `20576708`, then set its version to
-   `v1.1.0` and review the prepared metadata.
-4. Review inherited files in the draft. Replace the old source archive with the
-   new source ZIP, then add the rendering ZIP, README and manifest. The published
-   v1.0.0 record remains unchanged.
-5. Wait until every upload finishes. Compare filenames, byte counts and checksums
-   against the manifest. Confirm the preview/final artwork distinction.
-6. Review the complete record before publishing. Publication fixes that version's
-   files, so complete the upload and validation first.
-7. Save the new version DOI and record ID in the release audit. Update citations
-   and version-pinned download defaults only after verifying the published files.
+## Continue the existing Zenodo series
 
-## Authenticated API recovery
+The original record series was uploaded manually. A pushed Git tag does not
+publish a Zenodo version. Do not create a GitHub Release merely to trigger an
+unverified webhook connection; the integration can follow a different series.
+See the [Zenodo GitHub integration guidance](https://support.zenodo.org/help/en-gb/24-github-integration/73-can-i-pre-reserved-a-doi-before-a-github-release).
 
-Use the owner's existing authorized Zenodo session, or a personal token with
-`deposit:write` and `deposit:actions` scopes. Keep tokens in a local environment
-or a protected token file; do not put them in chat, Git, command-line URLs, or logs.
+Use an existing authorized owner session or a securely stored token with
+`deposit:write` and `deposit:actions`. Never put tokens in chat, Git, command-line
+URLs, ZIPs or logs. The packager neither reads nor needs credentials.
 
-Follow the [official deposition API](https://developers.zenodo.org/#depositions):
+For the [deposition API](https://developers.zenodo.org/#depositions):
 
-1. List drafts with `GET /api/deposit/depositions?status=draft&all_versions=true&size=100`,
-   following pagination if needed. Inspect only the relevant record series.
-2. Resume the draft whose `conceptrecid` is `20576708` and `submitted` is `false`.
-   A metadata edit of an already submitted record is not a new version.
-3. Only if there is no draft, call
-   `POST /api/deposit/depositions/20576709/actions/newversion`. Use the latest
-   **version record ID**, not the concept ID, as this endpoint's target.
-4. The new-version action returns the original resource. Follow its
-   `links.latest_draft` to obtain the actual draft and its `links.bucket`.
-5. Read the draft metadata and merge in the reviewed `metadata_patch` from
-   `metadata.json`. Preserve its existing creators, ORCIDs, affiliations, license,
-   and other bibliographic fields. The repository metadata differs from the
-   published record; do not blindly replace the draft with `.zenodo.json`.
-   Upload each file with a raw-byte
-   `PUT` to `<bucket>/<filename>`. Use the bucket endpoint, not the deprecated
-   multipart endpoint. Retrying a completed matching file is unnecessary.
-6. Re-read the draft and verify sizes and checksum algorithms. Zenodo commonly
-   supplies `md5:` checksums; compare MD5 with MD5, not SHA256 with MD5.
-7. Publish only after checking the complete draft. Re-read the public record to
-   verify the concept, version, file list and checksums, then record its DOI.
+1. Confirm the latest published version and concept identity. List unpublished
+   drafts with `GET /api/deposit/depositions?status=draft&all_versions=true&size=100`,
+   following pagination, and resume the draft for concept `20576708` if one exists.
+2. Only when there is no draft, request a new version from the latest version
+   record, currently `POST /api/deposit/depositions/23227964/actions/newversion`.
+   Follow `links.latest_draft` in the response. Do not target the concept record
+   or create a new standalone deposition.
+3. Read existing metadata and merge the reviewed `metadata_patch`. Preserve
+   creators, ORCIDs, affiliations, license, and other bibliographic fields;
+   do not replace the metadata wholesale with `.zenodo.json`.
+4. Replace inherited obsolete release files only in the unpublished draft.
+   Upload the five files with raw-byte `PUT` requests to its `links.bucket`.
+5. Re-read the draft. Verify every filename, byte count and MD5 against the
+   local artifacts. Compute the final manifest's MD5 directly because it cannot
+   contain its own checksum. Compare identical algorithms; a SHA256 value is
+   not comparable to Zenodo's MD5. Do not upload an untagged review snapshot.
+6. Review and publish only when separately authorized. Verify the public record
+   and record its new version DOI and checksum result in a release audit.
 
-Do not use an edit of a published record to replace or append its files. File
-changes require a new version. If an API call reports that a new version already
-exists, locate and resume that draft rather than creating another record.
-
-## Current recovery audit
-
-See [the v1.1.0 recovery audit](release_audits/2026-10-07-zenodo-v1.1.0.md)
-for the checked Git/Zenodo state and any remaining owner-side action.
+Published version files are immutable: changed files require a new version.
+If Zenodo reports that a draft already exists, resume it rather than creating
+duplicates. The [2026-10-07 audit](release_audits/2026-10-07-zenodo-v1.1.0.md)
+is a historical prepublication recovery record, not the current release state.

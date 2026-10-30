@@ -9,10 +9,13 @@ dependencies:
   - numpy>=1.26,<3
   - pandas>=2.0,<3
   - scipy>=1.11,<2
+  - sympy>=1.13,<2
   # I/O
   - h5py>=3.10,<4
   - pyyaml>=6.0,<7
   - pyarrow>=14
+  - pypdf>=5,<7
+  - pymupdf>=1.24,<2
   # Graphs
   - networkx>=3.1,<4
   # Plotting

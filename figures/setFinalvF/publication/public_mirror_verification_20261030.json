@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-30",
+  "upstream_repository": "V-SCode/DeepCircMI",
+  "upstream_commit": "0556a8bb137b03f67951cdca93d0161aed4565f4",
+  "companion_base_commit": "f056c9cf82fcfc0b54e94702c33c6abf6a92b2da",
+  "source_revision": "v1.1.1 review",
+  "scientific_tests_passed": 37,
+  "preview_completeness_tests_passed": 4,
+  "complete_manifest_panels": [
+    {
+      "figure": 10,
+      "panel": "a",
+      "vector": "figures/setFinalvF/figS10/panels/vector/panel_a.pdf",
+      "preview": "figures/setFinalvF/figS10/panels/raster/panel_a.png",
+      "pdf_mm": [
+        94.06530702379014,
+        81.82945289611816
+      ]
+    },
+    {
+      "figure": 10,
+      "panel": "b",
+      "vector": "figures/setFinalvF/figS10/panels/vector/panel_b.pdf",
+      "preview": "figures/setFinalvF/figS10/panels/raster/panel_b.png",
+      "pdf_mm": [
+        89.4228793674045,
+        81.82945289611816
+      ]
+    },
+    {
+      "figure": 10,
+      "panel": "c",
+      "vector": "figures/setFinalvF/figS10/panels/vector/panel_c.pdf",
+      "preview": "figures/setFinalvF/figS10/panels/raster/panel_c.png",
+      "pdf_mm": [
+        123.14400151570638,
+        180.04800016615124
+      ]
+    },
+    {
+      "figure": 10,
+      "panel": "d",
+      "vector": "figures/setFinalvF/publication/panels/figS10/panel_d.pdf",
+      "preview": "figures/setFinalvF/publication/panels/figS10/panel_d.png",
+      "pdf_mm": [
+        115.00000033908421,
+        104.99999703301324
+      ]
+    },
+    {
+      "figure": 10,
+      "panel": "e",
+      "vector": "figures/setFinalvF/publication/panels/figS10/panel_e.pdf",
+      "preview": "figures/setFinalvF/publication/panels/figS10/panel_e.png",
+      "pdf_mm": [
+        115.00000033908421,
+        104.99999703301324
+      ]
+    },
+    {
+      "figure": 11,
+      "panel": "a",
+      "vector": "figures/setFinalvF/publication/panels/figS11/panel_d.pdf",
+      "preview": "figures/setFinalvF/publication/panels/figS11/panel_d.png",
+      "pdf_mm": [
+        359.99998982747394,
+        209.9999940660265
+      ]
+    },
+    {
+      "figure": 11,
+      "panel": "b",
+      "vector": "figures/setFinalvF/publication/panels/figS11/panel_e.pdf",
+      "preview": "figures/setFinalvF/publication/panels/figS11/panel_e.png",
+      "pdf_mm": [
+        359.99998982747394,
+        259.9999998304579
+      ]
+    }
+  ],
+  "frozen_figures_and_archived_data_unchanged": true,
+  "existing_table_legend_unchanged": true,
+  "paper_text_methods_legends_deferred": true,
+  "illustrator_final_exports_deferred": true,
+  "source_panels_and_previews_rebuilt": true,
+  "s1_s2_render_check": "Rebuilt successfully; original tracked binaries retained to avoid unrelated changes.",
+  "s3_csv_matches_upstream": true,
+  "packaging_checks": "See manifest.json in separately prepared release bundle.",
+  "release_packager_tests_passed": 10,
+  "disposable_exact_tag_package_check": {
+    "passed": true,
+    "source_files": 331,
+    "artwork_assets": 47,
+    "actual_worktree_committed_or_tagged": false
+  },
+  "zenodo_metadata_bibliographic_fields_preserved": true
+}

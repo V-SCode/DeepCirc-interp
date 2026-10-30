@@ -1,6 +1,6 @@
 {
-  "title": "DeepCirc-interp: interpretability companion code, supplementary figures and tables",
-  "description": "Interpretability companion code for the DeepCirc paper (Palacios et al.). Includes target Boolean function selection, topology population generation via upstream DeepCirc, Stage-2 MLP training and design-space scoring, cross-topology analyses, and per-design Shapley and Shapley-Taylor attribution. The v1.1 setFinalvF update adds consolidated supplementary figures S10 and S11 and tables S1-S3, with family-unique coalition sampling corrections and regenerated intermediate data, alongside the preserved v1.0 setFinal figure set. Source archives contain scripts, small intermediate data, and tracked supplementary table deliverables. Generated figure artwork must be attached separately. The upstream training framework is referenced as a pinned Git submodule.",
+  "title": "DeepCirc-Interp: Data Files and Code",
+  "description": "Source-panel correction release for the DeepCirc interpretability companion. Includes denominator-normalized binary-presence enrichment data and code for Figure S10 and Table S3, scientifically corrected Figure S11 source-panel labels and rendering, portable complete preview builds, and focused validation tests. Figure S11 attribution estimates and archived simulation inputs are unchanged. The release provides source panels and review previews; final Illustrator composition and manuscript, Methods, and figure/table legend revisions are deferred. Historical legend files in the source archive are preserved for provenance and are not current descriptions of this correction.",
   "creators": [
     {
       "name": "Vege, Venkat",
@@ -31,5 +31,6 @@
     }
   ],
   "communities": [],
-  "notes": "The source repository includes small intermediate data for figure rebuilding. Full training checkpoints, design-space predictions, exemplar HDF5 data, and the upstream private submodule are not bundled in a standard source archive; do not assume a full-data tier is available unless listed in the record. The manually uploaded archive series has concept DOI 10.5281/zenodo.20576708; use its new-version workflow to continue that series. See docs/zenodo_release.md."
+  "notes": "Correction release derived from V-SCode/DeepCircMI commit 0556a8bb137b03f67951cdca93d0161aed4565f4. Continues the manual Zenodo version series under concept DOI 10.5281/zenodo.20576708 (previous version record 23227964). No new model or attribution simulations. Private full-data directories and stale Illustrator masters are excluded from the correction bundle. See docs/source_revision_v1.1.1.md and docs/zenodo_release.md for scope and provenance.",
+  "version": "v1.1.1"
 }

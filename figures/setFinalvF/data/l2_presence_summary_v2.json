@@ -1,0 +1,1225 @@
+{
+  "purpose": "Exact recovery of unique-circuit denominators for the original inclusive percentile masks.",
+  "scope": "Original G3 inputs preserved; derived v2 circuit-presence data only.",
+  "input_directory": "/Volumes/Extreme SSD/deepcirc/DeepCircMI-1/deepcirc_topology/data/G3/l2_top05",
+  "input_sha256": {
+    "l2_summary.json": "fdf70d4770d525786f10a28e3a9023aff2049bb8c3e87ab099c5488f784bb1fa",
+    "l2_enrichment.csv": "49d5a303af2c4b7c943d36151a9c28f389ecee3aff9e35fd1c0d31875c24b3be",
+    "l2_enrichment_by_target.csv": "bb06f68882cd53e230e0b99797e92524f3bfa8b9878e757195a574d9c38b8652"
+  },
+  "source_names": [
+    "0x03",
+    "0x06",
+    "0x07",
+    "0x0F",
+    "0x17",
+    "0x1B",
+    "0x2B",
+    "0x2C",
+    "0x33",
+    "0x3C",
+    "0x47",
+    "0x4D",
+    "0x66",
+    "0x6D",
+    "0x71",
+    "0x77",
+    "0x8E",
+    "0xCC",
+    "0xE8",
+    "0xEE"
+  ],
+  "n_topologies": 215,
+  "n_contexts": 189,
+  "n_task_contexts": 378,
+  "n_source_context_equations": 804,
+  "exact_rank": 211,
+  "nullity": 4,
+  "free_parameter_topology_ids": [
+    "0dc43646",
+    "02f0946b",
+    "16db710e",
+    "badf61a8"
+  ],
+  "exact_checks": {
+    "per_target_equations_reproduced": true,
+    "null_space_valid": true,
+    "binary_context_presence_annihilates_null_space": true,
+    "all_denominators_positive_integers": true,
+    "known_circuit_per_topology_control_matches": true,
+    "known_circuit_context_denominators_match": true,
+    "aggregate_slot_counts_reproduced": true,
+    "all_part_counts_within_circuit_denominators": true
+  },
+  "limitations": [
+    "Individual per-topology growth counts remain underdetermined and are not exported.",
+    "These denominators retain all cutoff ties from the original run.",
+    "Fixed-size five-percent selection requires revisiting saved prediction arrays.",
+    "Denominator recovery itself is independent of the chosen pseudocount.",
+    "Source target strings are matched exactly; no aliases or normalization were applied."
+  ],
+  "schema": "deepcirc.part_presence_enrichment.v2",
+  "observation_unit": "evaluated_design_row_with_context",
+  "numerator": "design_rows_with_part_at_any_position_matching_context",
+  "denominator": "design_rows_whose_topology_contains_context",
+  "smoothing": "binary_add_one",
+  "probability_formula": "(part_design_count + 1) / (design_count + 2)",
+  "enrichment_formula": "log2(top_probability / bottom_probability)",
+  "tier_policy": "inclusive_quantile_thresholds",
+  "quantile_method": "linear",
+  "top_comparison": ">=",
+  "bottom_comparison": "<=",
+  "metric": {
+    "schema": "deepcirc.part_presence_enrichment.v2",
+    "observation_unit": "evaluated_design_row_with_context",
+    "numerator": "design_rows_with_part_at_any_position_matching_context",
+    "denominator": "design_rows_whose_topology_contains_context",
+    "smoothing": "binary_add_one",
+    "probability_formula": "(part_design_count + 1) / (design_count + 2)",
+    "enrichment_formula": "log2(top_probability / bottom_probability)",
+    "tier_policy": "inclusive_quantile_thresholds",
+    "quantile_method": "linear",
+    "top_comparison": ">=",
+    "bottom_comparison": "<="
+  },
+  "weighting": "pooled_design_presence_separately_within_each_tier",
+  "sampled_rows_deduplicated": false,
+  "tier_cutoffs": {
+    "top_quantile": 0.95,
+    "bottom_quantile": 0.05
+  },
+  "output_rows": 7560,
+  "selection_policy": "Original per-topology inclusive >=q95 and <=q05 masks, with all cutoff ties retained.",
+  "counting_unit": "Circuit design containing the part in at least one slot with this structural context.",
+  "denominator_description": "Circuit designs containing this context, counted once even when multiple slots share it.",
+  "part_presence_basis": "Family-unique gate assignments prevent the same library part occurring twice in one design; original per-part counts therefore equal binary circuit-presence counts within each context.",
+  "context_policy": "Keep context-specific dots and original context eligibility; do not pool all contexts into one value per part.",
+  "support_filter": {
+    "n_topologies_min": 5,
+    "n_targets_min": 3,
+    "part_tier_support_min": 1000
+  },
+  "comparison_with_original_count_metric": {
+    "circuit_log": {
+      "eligible_part_context_cells": 1300,
+      "eligible_contexts": 65,
+      "sign_changes": 36,
+      "median_sign_changes": 0,
+      "maximum_absolute_change": 0.8494960161044501,
+      "minimum_circuit_tier_size_ratio": 0.5549783780423915,
+      "maximum_circuit_tier_size_ratio": 1.7605468258812933,
+      "part_comparison": [
+        {
+          "part_name": "AmeR/F1",
+          "old_median": -0.0152863086566284,
+          "new_median": -0.0152795760999687,
+          "old_positive_contexts": 32,
+          "new_positive_contexts": 30,
+          "old_negative_contexts": 33,
+          "new_negative_contexts": 35
+        },
+        {
+          "part_name": "AmtR/A1",
+          "old_median": 0.5802235319240111,
+          "new_median": 0.5684278543207079,
+          "old_positive_contexts": 60,
+          "new_positive_contexts": 61,
+          "old_negative_contexts": 5,
+          "new_negative_contexts": 4
+        },
+        {
+          "part_name": "BM3R1/B1",
+          "old_median": -0.2326793653510022,
+          "new_median": -0.2431347903811218,
+          "old_positive_contexts": 20,
+          "new_positive_contexts": 20,
+          "old_negative_contexts": 45,
+          "new_negative_contexts": 45
+        },
+        {
+          "part_name": "BM3R1/B2",
+          "old_median": 0.3877328533879459,
+          "new_median": 0.36738052746192257,
+          "old_positive_contexts": 59,
+          "new_positive_contexts": 60,
+          "old_negative_contexts": 6,
+          "new_negative_contexts": 5
+        },
+        {
+          "part_name": "BM3R1/B3",
+          "old_median": 0.3472806546954132,
+          "new_median": 0.32620117266618764,
+          "old_positive_contexts": 55,
+          "new_positive_contexts": 56,
+          "old_negative_contexts": 10,
+          "new_negative_contexts": 9
+        },
+        {
+          "part_name": "BetI/E1",
+          "old_median": 0.4558765877507893,
+          "new_median": 0.4235019431569368,
+          "old_positive_contexts": 54,
+          "new_positive_contexts": 56,
+          "old_negative_contexts": 11,
+          "new_negative_contexts": 9
+        },
+        {
+          "part_name": "HlyIIR/H1",
+          "old_median": -1.4011447187224906,
+          "new_median": -1.296270842201413,
+          "old_positive_contexts": 6,
+          "new_positive_contexts": 5,
+          "old_negative_contexts": 59,
+          "new_negative_contexts": 60
+        },
+        {
+          "part_name": "IcaRA/I1",
+          "old_median": 0.4513324019545049,
+          "new_median": 0.3644188969044877,
+          "old_positive_contexts": 57,
+          "new_positive_contexts": 59,
+          "old_negative_contexts": 8,
+          "new_negative_contexts": 6
+        },
+        {
+          "part_name": "LitR/L1",
+          "old_median": -1.324310909488233,
+          "new_median": -1.2893017504259074,
+          "old_positive_contexts": 6,
+          "new_positive_contexts": 5,
+          "old_negative_contexts": 59,
+          "new_negative_contexts": 60
+        },
+        {
+          "part_name": "LmrA/N1",
+          "old_median": -1.2559990786839217,
+          "new_median": -1.2559998298857034,
+          "old_positive_contexts": 4,
+          "new_positive_contexts": 2,
+          "old_negative_contexts": 61,
+          "new_negative_contexts": 63
+        },
+        {
+          "part_name": "PhlF/P1",
+          "old_median": -2.1166080110948404,
+          "new_median": -2.116608762296622,
+          "old_positive_contexts": 2,
+          "new_positive_contexts": 2,
+          "old_negative_contexts": 63,
+          "new_negative_contexts": 63
+        },
+        {
+          "part_name": "PhlF/P2",
+          "old_median": 0.8144308370469658,
+          "new_median": 0.8140190730063193,
+          "old_positive_contexts": 59,
+          "new_positive_contexts": 61,
+          "old_negative_contexts": 6,
+          "new_negative_contexts": 4
+        },
+        {
+          "part_name": "PhlF/P3",
+          "old_median": 0.7618339708841216,
+          "new_median": 0.7028150832179343,
+          "old_positive_contexts": 57,
+          "new_positive_contexts": 59,
+          "old_negative_contexts": 8,
+          "new_negative_contexts": 6
+        },
+        {
+          "part_name": "PsrA/R1",
+          "old_median": 0.2978727361753313,
+          "new_median": 0.287364597396869,
+          "old_positive_contexts": 48,
+          "new_positive_contexts": 49,
+          "old_negative_contexts": 17,
+          "new_negative_contexts": 16
+        },
+        {
+          "part_name": "QacR/Q1",
+          "old_median": 0.364313270893186,
+          "new_median": 0.3348117216840817,
+          "old_positive_contexts": 55,
+          "new_positive_contexts": 57,
+          "old_negative_contexts": 10,
+          "new_negative_contexts": 8
+        },
+        {
+          "part_name": "QacR/Q2",
+          "old_median": 0.1008646712700429,
+          "new_median": 0.08069019160578887,
+          "old_positive_contexts": 43,
+          "new_positive_contexts": 43,
+          "old_negative_contexts": 22,
+          "new_negative_contexts": 22
+        },
+        {
+          "part_name": "SrpR/S1",
+          "old_median": -1.7368864550640148,
+          "new_median": -1.7368873954385382,
+          "old_positive_contexts": 6,
+          "new_positive_contexts": 6,
+          "old_negative_contexts": 59,
+          "new_negative_contexts": 59
+        },
+        {
+          "part_name": "SrpR/S2",
+          "old_median": 0.6382368792512919,
+          "new_median": 0.5716305594332995,
+          "old_positive_contexts": 60,
+          "new_positive_contexts": 62,
+          "old_negative_contexts": 5,
+          "new_negative_contexts": 3
+        },
+        {
+          "part_name": "SrpR/S3",
+          "old_median": 0.5598723160594844,
+          "new_median": 0.4951904804904537,
+          "old_positive_contexts": 57,
+          "new_positive_contexts": 59,
+          "old_negative_contexts": 8,
+          "new_negative_contexts": 6
+        },
+        {
+          "part_name": "SrpR/S4",
+          "old_median": 0.6694309449007563,
+          "new_median": 0.669085140995058,
+          "old_positive_contexts": 62,
+          "new_positive_contexts": 64,
+          "old_negative_contexts": 3,
+          "new_negative_contexts": 1
+        }
+      ],
+      "table_s3": {
+        "n_cells": 120,
+        "sign_changes": 1,
+        "maximum_absolute_change": 0.0554686606925594,
+        "changed_sign_cells": [
+          {
+            "part_name": "AmeR/F1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.04621953381234023,
+            "log2_presence_enrichment": -0.009249126880218962
+          }
+        ],
+        "all_cells": [
+          {
+            "part_name": "AmeR/F1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.11895072160492495,
+            "log2_presence_enrichment": 0.08481733411831938
+          },
+          {
+            "part_name": "AmeR/F1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": -0.15519602473070615,
+            "log2_presence_enrichment": -0.13066796405597636
+          },
+          {
+            "part_name": "AmeR/F1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.04621953381234023,
+            "log2_presence_enrichment": -0.009249126880218962
+          },
+          {
+            "part_name": "AmeR/F1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.3185102250325621,
+            "log2_presence_enrichment": 0.31851893805032594
+          },
+          {
+            "part_name": "AmeR/F1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -7.330793556717838,
+            "log2_presence_enrichment": -7.330792807339444
+          },
+          {
+            "part_name": "AmeR/F1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.16259430214200327,
+            "log2_presence_enrichment": 0.16260046518651763
+          },
+          {
+            "part_name": "AmtR/A1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.4897909267939986,
+            "log2_presence_enrichment": 0.4556575393073931
+          },
+          {
+            "part_name": "AmtR/A1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.8832172312259878,
+            "log2_presence_enrichment": 0.9077452919007176
+          },
+          {
+            "part_name": "AmtR/A1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.8599846944180194,
+            "log2_presence_enrichment": 0.8045160337254603
+          },
+          {
+            "part_name": "AmtR/A1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.32148921239858935,
+            "log2_presence_enrichment": 0.32149792541635325
+          },
+          {
+            "part_name": "AmtR/A1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": 0.7318004797170083,
+            "log2_presence_enrichment": 0.7318012290954025
+          },
+          {
+            "part_name": "AmtR/A1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.6886693203433647,
+            "log2_presence_enrichment": 0.688675483387879
+          },
+          {
+            "part_name": "BM3R1/B1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": -0.4693271635557398,
+            "log2_presence_enrichment": -0.5034605510423454
+          },
+          {
+            "part_name": "BM3R1/B1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.09811556669124823,
+            "log2_presence_enrichment": 0.1226436273659779
+          },
+          {
+            "part_name": "BM3R1/B1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": -0.08182696036130756,
+            "log2_presence_enrichment": -0.13729562105386683
+          },
+          {
+            "part_name": "BM3R1/B1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": -0.42342151933921945,
+            "log2_presence_enrichment": -0.42341280632145567
+          },
+          {
+            "part_name": "BM3R1/B1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": 0.9999783920128587,
+            "log2_presence_enrichment": 0.9999791413912525
+          },
+          {
+            "part_name": "BM3R1/B1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": -0.09217017728999888,
+            "log2_presence_enrichment": -0.09216401424548472
+          },
+          {
+            "part_name": "BM3R1/B2",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.35440492622271075,
+            "log2_presence_enrichment": 0.3202715387361052
+          },
+          {
+            "part_name": "BM3R1/B2",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.512217572301982,
+            "log2_presence_enrichment": 0.5367456329767119
+          },
+          {
+            "part_name": "BM3R1/B2",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.5538956122970526,
+            "log2_presence_enrichment": 0.4984269516044936
+          },
+          {
+            "part_name": "BM3R1/B2",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.16836533503199297,
+            "log2_presence_enrichment": 0.1683740480497569
+          },
+          {
+            "part_name": "BM3R1/B2",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": 0.6078123559452556,
+            "log2_presence_enrichment": 0.6078131053236496
+          },
+          {
+            "part_name": "BM3R1/B2",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.36025989868400254,
+            "log2_presence_enrichment": 0.36026606172851705
+          },
+          {
+            "part_name": "BM3R1/B3",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.29313264387662985,
+            "log2_presence_enrichment": 0.2589992563900243
+          },
+          {
+            "part_name": "BM3R1/B3",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.4996637867361095,
+            "log2_presence_enrichment": 0.5241918474108394
+          },
+          {
+            "part_name": "BM3R1/B3",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.4824169489661697,
+            "log2_presence_enrichment": 0.4269482882736106
+          },
+          {
+            "part_name": "BM3R1/B3",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.15655905345384077,
+            "log2_presence_enrichment": 0.15656776647160464
+          },
+          {
+            "part_name": "BM3R1/B3",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": 1.3791774233551015,
+            "log2_presence_enrichment": 1.3791781727334955
+          },
+          {
+            "part_name": "BM3R1/B3",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.2943998754977156,
+            "log2_presence_enrichment": 0.2944060385422301
+          },
+          {
+            "part_name": "BetI/E1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.45615913584863044,
+            "log2_presence_enrichment": 0.4220257483620249
+          },
+          {
+            "part_name": "BetI/E1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.5264689599526126,
+            "log2_presence_enrichment": 0.5509970206273423
+          },
+          {
+            "part_name": "BetI/E1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.5715395574372848,
+            "log2_presence_enrichment": 0.5160708967447255
+          },
+          {
+            "part_name": "BetI/E1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.33276579776147425,
+            "log2_presence_enrichment": 0.33277451077923814
+          },
+          {
+            "part_name": "BetI/E1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": 0.4967952816266187,
+            "log2_presence_enrichment": 0.49679603100501235
+          },
+          {
+            "part_name": "BetI/E1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.4747289238836353,
+            "log2_presence_enrichment": 0.4747350869281496
+          },
+          {
+            "part_name": "HlyIIR/H1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": -1.9743172416551484,
+            "log2_presence_enrichment": -2.008450629141754
+          },
+          {
+            "part_name": "HlyIIR/H1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": -1.9819876081831622,
+            "log2_presence_enrichment": -1.9574595475084324
+          },
+          {
+            "part_name": "HlyIIR/H1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": -1.9068079797927475,
+            "log2_presence_enrichment": -1.9622766404853067
+          },
+          {
+            "part_name": "HlyIIR/H1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": -0.9921297537494489,
+            "log2_presence_enrichment": -0.9921210407316852
+          },
+          {
+            "part_name": "HlyIIR/H1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -1.3261873479752366,
+            "log2_presence_enrichment": -1.3261865985968426
+          },
+          {
+            "part_name": "HlyIIR/H1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": -1.5313993388429812,
+            "log2_presence_enrichment": -1.531393175798467
+          },
+          {
+            "part_name": "IcaRA/I1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.4679503563706887,
+            "log2_presence_enrichment": 0.4338169688840831
+          },
+          {
+            "part_name": "IcaRA/I1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.4852542707067223,
+            "log2_presence_enrichment": 0.5097823313814522
+          },
+          {
+            "part_name": "IcaRA/I1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.528807484411033,
+            "log2_presence_enrichment": 0.4733388237184739
+          },
+          {
+            "part_name": "IcaRA/I1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.3222806500784653,
+            "log2_presence_enrichment": 0.3222893630962293
+          },
+          {
+            "part_name": "IcaRA/I1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -0.5885001959619564,
+            "log2_presence_enrichment": -0.5884994465835622
+          },
+          {
+            "part_name": "IcaRA/I1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.5761959356362139,
+            "log2_presence_enrichment": 0.5762020986807281
+          },
+          {
+            "part_name": "LitR/L1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": -1.9279122259925545,
+            "log2_presence_enrichment": -1.9620456134791604
+          },
+          {
+            "part_name": "LitR/L1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": -1.9840680791983552,
+            "log2_presence_enrichment": -1.9595400185236251
+          },
+          {
+            "part_name": "LitR/L1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": -1.90249716759433,
+            "log2_presence_enrichment": -1.9579658282868893
+          },
+          {
+            "part_name": "LitR/L1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": -1.05525746686311,
+            "log2_presence_enrichment": -1.0552487538453466
+          },
+          {
+            "part_name": "LitR/L1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -1.4563174584461724,
+            "log2_presence_enrichment": -1.456316709067779
+          },
+          {
+            "part_name": "LitR/L1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": -1.5062524829787391,
+            "log2_presence_enrichment": -1.506246319934225
+          },
+          {
+            "part_name": "LmrA/N1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": -1.8491442768457649,
+            "log2_presence_enrichment": -1.8832776643323708
+          },
+          {
+            "part_name": "LmrA/N1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": -2.0605025143303006,
+            "log2_presence_enrichment": -2.035974453655571
+          },
+          {
+            "part_name": "LmrA/N1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": -2.1359484690048514,
+            "log2_presence_enrichment": -2.19141712969741
+          },
+          {
+            "part_name": "LmrA/N1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": -1.0299589101874465,
+            "log2_presence_enrichment": -1.0299501971696827
+          },
+          {
+            "part_name": "LmrA/N1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -1.7902789791856228,
+            "log2_presence_enrichment": -1.790278229807229
+          },
+          {
+            "part_name": "LmrA/N1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": -1.3949382812020772,
+            "log2_presence_enrichment": -1.3949321181575631
+          },
+          {
+            "part_name": "PhlF/P1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": -2.6701449194531,
+            "log2_presence_enrichment": -2.7042783069397056
+          },
+          {
+            "part_name": "PhlF/P1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": -2.627515158094431,
+            "log2_presence_enrichment": -2.6029870974197014
+          },
+          {
+            "part_name": "PhlF/P1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": -2.6171904218776776,
+            "log2_presence_enrichment": -2.6726590825702368
+          },
+          {
+            "part_name": "PhlF/P1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": -2.1926758618354603,
+            "log2_presence_enrichment": -2.192667148817696
+          },
+          {
+            "part_name": "PhlF/P1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -1.8629436554065903,
+            "log2_presence_enrichment": -1.8629429060281966
+          },
+          {
+            "part_name": "PhlF/P1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": -2.4468044538350346,
+            "log2_presence_enrichment": -2.4467982907905204
+          },
+          {
+            "part_name": "PhlF/P2",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.6509654761205802,
+            "log2_presence_enrichment": 0.6168320886339745
+          },
+          {
+            "part_name": "PhlF/P2",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 1.3071342512908213,
+            "log2_presence_enrichment": 1.331662311965551
+          },
+          {
+            "part_name": "PhlF/P2",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 1.1172986881686329,
+            "log2_presence_enrichment": 1.0618300274760735
+          },
+          {
+            "part_name": "PhlF/P2",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.4450702195073709,
+            "log2_presence_enrichment": 0.44507893252513475
+          },
+          {
+            "part_name": "PhlF/P2",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": 1.4883587813355255,
+            "log2_presence_enrichment": 1.4883595307139197
+          },
+          {
+            "part_name": "PhlF/P2",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.7291702481325842,
+            "log2_presence_enrichment": 0.7291764111770986
+          },
+          {
+            "part_name": "PhlF/P3",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.609784708752596,
+            "log2_presence_enrichment": 0.5756513212659904
+          },
+          {
+            "part_name": "PhlF/P3",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 1.17614009805919,
+            "log2_presence_enrichment": 1.20066815873392
+          },
+          {
+            "part_name": "PhlF/P3",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 1.0295322793126365,
+            "log2_presence_enrichment": 0.9740636186200772
+          },
+          {
+            "part_name": "PhlF/P3",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.3878594705827778,
+            "log2_presence_enrichment": 0.3878681836005417
+          },
+          {
+            "part_name": "PhlF/P3",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": 1.3952482548413996,
+            "log2_presence_enrichment": 1.3952490042197931
+          },
+          {
+            "part_name": "PhlF/P3",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.6676850938789121,
+            "log2_presence_enrichment": 0.6676912569234263
+          },
+          {
+            "part_name": "PsrA/R1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.305941655569292,
+            "log2_presence_enrichment": 0.2718082680826864
+          },
+          {
+            "part_name": "PsrA/R1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.39273516059511415,
+            "log2_presence_enrichment": 0.417263221269844
+          },
+          {
+            "part_name": "PsrA/R1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.45750856976957766,
+            "log2_presence_enrichment": 0.40203990907701853
+          },
+          {
+            "part_name": "PsrA/R1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.3157993971650159,
+            "log2_presence_enrichment": 0.31580811018277977
+          },
+          {
+            "part_name": "PsrA/R1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -1.0066489801571006,
+            "log2_presence_enrichment": -1.0066482307787064
+          },
+          {
+            "part_name": "PsrA/R1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.4090581742775406,
+            "log2_presence_enrichment": 0.4090643373220549
+          },
+          {
+            "part_name": "QacR/Q1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.34281718965729374,
+            "log2_presence_enrichment": 0.3086838021706882
+          },
+          {
+            "part_name": "QacR/Q1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.7387183092124189,
+            "log2_presence_enrichment": 0.7632463698871487
+          },
+          {
+            "part_name": "QacR/Q1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.6501062867086936,
+            "log2_presence_enrichment": 0.5946376260161345
+          },
+          {
+            "part_name": "QacR/Q1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.2419072280692934,
+            "log2_presence_enrichment": 0.24191594108705733
+          },
+          {
+            "part_name": "QacR/Q1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": 1.1305834708276188,
+            "log2_presence_enrichment": 1.1305842202060126
+          },
+          {
+            "part_name": "QacR/Q1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.4000961712965969,
+            "log2_presence_enrichment": 0.4001023343411111
+          },
+          {
+            "part_name": "QacR/Q2",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.16367674185032416,
+            "log2_presence_enrichment": 0.12954335436371864
+          },
+          {
+            "part_name": "QacR/Q2",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.23967361387323952,
+            "log2_presence_enrichment": 0.26420167454796933
+          },
+          {
+            "part_name": "QacR/Q2",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.20727593109325512,
+            "log2_presence_enrichment": 0.15180727040069586
+          },
+          {
+            "part_name": "QacR/Q2",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.061292839650160365,
+            "log2_presence_enrichment": 0.06130155266792419
+          },
+          {
+            "part_name": "QacR/Q2",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -0.023209247469555022,
+            "log2_presence_enrichment": -0.02320849809116088
+          },
+          {
+            "part_name": "QacR/Q2",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.11187422712455053,
+            "log2_presence_enrichment": 0.11188039016906488
+          },
+          {
+            "part_name": "SrpR/S1",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": -2.1253970264308197,
+            "log2_presence_enrichment": -2.1595304139174254
+          },
+          {
+            "part_name": "SrpR/S1",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": -2.222470878393046,
+            "log2_presence_enrichment": -2.197942817718316
+          },
+          {
+            "part_name": "SrpR/S1",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": -1.9157990760704577,
+            "log2_presence_enrichment": -1.9712677367630171
+          },
+          {
+            "part_name": "SrpR/S1",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": -1.1938235049123618,
+            "log2_presence_enrichment": -1.1938147918945978
+          },
+          {
+            "part_name": "SrpR/S1",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -0.9694085665319355,
+            "log2_presence_enrichment": -0.9694078171535415
+          },
+          {
+            "part_name": "SrpR/S1",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": -2.0977509455602346,
+            "log2_presence_enrichment": -2.0977447825157203
+          },
+          {
+            "part_name": "SrpR/S2",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.5988214648757464,
+            "log2_presence_enrichment": 0.564688077389141
+          },
+          {
+            "part_name": "SrpR/S2",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.7406741003304006,
+            "log2_presence_enrichment": 0.7652021610051304
+          },
+          {
+            "part_name": "SrpR/S2",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.7080675183050616,
+            "log2_presence_enrichment": 0.6525988576125026
+          },
+          {
+            "part_name": "SrpR/S2",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.47345969004872696,
+            "log2_presence_enrichment": 0.47346840306649085
+          },
+          {
+            "part_name": "SrpR/S2",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -0.5456971545112125,
+            "log2_presence_enrichment": -0.5456964051328186
+          },
+          {
+            "part_name": "SrpR/S2",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.6093371118872442,
+            "log2_presence_enrichment": 0.6093432749317585
+          },
+          {
+            "part_name": "SrpR/S3",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.535836081318293,
+            "log2_presence_enrichment": 0.5017026938316875
+          },
+          {
+            "part_name": "SrpR/S3",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.6369339572191995,
+            "log2_presence_enrichment": 0.6614620178939293
+          },
+          {
+            "part_name": "SrpR/S3",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.5885152235913395,
+            "log2_presence_enrichment": 0.5330465628987804
+          },
+          {
+            "part_name": "SrpR/S3",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.39870060134065816,
+            "log2_presence_enrichment": 0.398709314358422
+          },
+          {
+            "part_name": "SrpR/S3",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": -0.6113150906807838,
+            "log2_presence_enrichment": -0.6113143413023898
+          },
+          {
+            "part_name": "SrpR/S3",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.5694545298379721,
+            "log2_presence_enrichment": 0.5694606928824865
+          },
+          {
+            "part_name": "SrpR/S4",
+            "bucket": "NOR-early",
+            "raw_log2_count_ratio_reference": 0.6797568115792636,
+            "log2_presence_enrichment": 0.6456234240926579
+          },
+          {
+            "part_name": "SrpR/S4",
+            "bucket": "NOR-late",
+            "raw_log2_count_ratio_reference": 0.9128145767878749,
+            "log2_presence_enrichment": 0.9373426374626047
+          },
+          {
+            "part_name": "SrpR/S4",
+            "bucket": "NOR-middle",
+            "raw_log2_count_ratio_reference": 0.9161151858914862,
+            "log2_presence_enrichment": 0.860646525198927
+          },
+          {
+            "part_name": "SrpR/S4",
+            "bucket": "NOT-early",
+            "raw_log2_count_ratio_reference": 0.5621788094700333,
+            "log2_presence_enrichment": 0.5621875224877972
+          },
+          {
+            "part_name": "SrpR/S4",
+            "bucket": "NOT-late",
+            "raw_log2_count_ratio_reference": 1.230259439326923,
+            "log2_presence_enrichment": 1.2302601887053173
+          },
+          {
+            "part_name": "SrpR/S4",
+            "bucket": "NOT-middle",
+            "raw_log2_count_ratio_reference": 0.7252514622876154,
+            "log2_presence_enrichment": 0.7252576253321299
+          }
+        ]
+      }
+    },
+    "toxicity": {
+      "eligible_part_context_cells": 1300,
+      "eligible_contexts": 65,
+      "sign_changes": 0,
+      "median_sign_changes": 0,
+      "maximum_absolute_change": 6.089659072117115e-06,
+      "minimum_circuit_tier_size_ratio": 0.9999984553877362,
+      "maximum_circuit_tier_size_ratio": 1.0000042210448634,
+      "part_comparison": [
+        {
+          "part_name": "AmeR/F1",
+          "old_median": 0.2425808733561597,
+          "new_median": 0.24258142400637953,
+          "old_positive_contexts": 50,
+          "new_positive_contexts": 50,
+          "old_negative_contexts": 15,
+          "new_negative_contexts": 15
+        },
+        {
+          "part_name": "AmtR/A1",
+          "old_median": 1.3342212992908633,
+          "new_median": 1.3342216599641277,
+          "old_positive_contexts": 65,
+          "new_positive_contexts": 65,
+          "old_negative_contexts": 0,
+          "new_negative_contexts": 0
+        },
+        {
+          "part_name": "BM3R1/B1",
+          "old_median": -1.484678930492501,
+          "new_median": -1.484678569819237,
+          "old_positive_contexts": 1,
+          "new_positive_contexts": 1,
+          "old_negative_contexts": 64,
+          "new_negative_contexts": 64
+        },
+        {
+          "part_name": "BM3R1/B2",
+          "old_median": 1.4511475443056991,
+          "new_median": 1.4511480949559192,
+          "old_positive_contexts": 64,
+          "new_positive_contexts": 64,
+          "old_negative_contexts": 1,
+          "new_negative_contexts": 1
+        },
+        {
+          "part_name": "BM3R1/B3",
+          "old_median": 1.7487688238737924,
+          "new_median": 1.7487688238737926,
+          "old_positive_contexts": 65,
+          "new_positive_contexts": 65,
+          "old_negative_contexts": 0,
+          "new_negative_contexts": 0
+        },
+        {
+          "part_name": "BetI/E1",
+          "old_median": 1.7524676906902272,
+          "new_median": 1.7524663363357416,
+          "old_positive_contexts": 65,
+          "new_positive_contexts": 65,
+          "old_negative_contexts": 0,
+          "new_negative_contexts": 0
+        },
+        {
+          "part_name": "HlyIIR/H1",
+          "old_median": -2.416357070732389,
+          "new_median": -2.4163572585327,
+          "old_positive_contexts": 1,
+          "new_positive_contexts": 1,
+          "old_negative_contexts": 64,
+          "new_negative_contexts": 64
+        },
+        {
+          "part_name": "IcaRA/I1",
+          "old_median": -6.273110447307489,
+          "new_median": -6.273110299306593,
+          "old_positive_contexts": 0,
+          "new_positive_contexts": 0,
+          "old_negative_contexts": 65,
+          "new_negative_contexts": 65
+        },
+        {
+          "part_name": "LitR/L1",
+          "old_median": -0.0874797767753977,
+          "new_median": -0.08747977677539788,
+          "old_positive_contexts": 22,
+          "new_positive_contexts": 22,
+          "old_negative_contexts": 43,
+          "new_negative_contexts": 43
+        },
+        {
+          "part_name": "LmrA/N1",
+          "old_median": -0.3976746958167149,
+          "new_median": -0.3976807854757861,
+          "old_positive_contexts": 20,
+          "new_positive_contexts": 20,
+          "old_negative_contexts": 45,
+          "new_negative_contexts": 45
+        },
+        {
+          "part_name": "PhlF/P1",
+          "old_median": 2.5584490267992166,
+          "new_median": 2.5584478046711934,
+          "old_positive_contexts": 65,
+          "new_positive_contexts": 65,
+          "old_negative_contexts": 0,
+          "new_negative_contexts": 0
+        },
+        {
+          "part_name": "PhlF/P2",
+          "old_median": 0.0706673293070494,
+          "new_median": 0.0706673293070495,
+          "old_positive_contexts": 39,
+          "new_positive_contexts": 39,
+          "old_negative_contexts": 26,
+          "new_negative_contexts": 26
+        },
+        {
+          "part_name": "PhlF/P3",
+          "old_median": -1.1353333239253336,
+          "new_median": -1.135332591029761,
+          "old_positive_contexts": 0,
+          "new_positive_contexts": 0,
+          "old_negative_contexts": 65,
+          "new_negative_contexts": 65
+        },
+        {
+          "part_name": "PsrA/R1",
+          "old_median": 0.0783262439698072,
+          "new_median": 0.07832588809256026,
+          "old_positive_contexts": 47,
+          "new_positive_contexts": 47,
+          "old_negative_contexts": 18,
+          "new_negative_contexts": 18
+        },
+        {
+          "part_name": "QacR/Q1",
+          "old_median": -3.38614284818086,
+          "new_median": -3.3861423529285886,
+          "old_positive_contexts": 0,
+          "new_positive_contexts": 0,
+          "old_negative_contexts": 65,
+          "new_negative_contexts": 65
+        },
+        {
+          "part_name": "QacR/Q2",
+          "old_median": 3.2430704265352435,
+          "new_median": 3.243069996481377,
+          "old_positive_contexts": 65,
+          "new_positive_contexts": 65,
+          "old_negative_contexts": 0,
+          "new_negative_contexts": 0
+        },
+        {
+          "part_name": "SrpR/S1",
+          "old_median": -2.180582346108031,
+          "new_median": -2.1805835002622174,
+          "old_positive_contexts": 0,
+          "new_positive_contexts": 0,
+          "old_negative_contexts": 65,
+          "new_negative_contexts": 65
+        },
+        {
+          "part_name": "SrpR/S2",
+          "old_median": 1.3290032808396972,
+          "new_median": 1.3290038885616045,
+          "old_positive_contexts": 65,
+          "new_positive_contexts": 65,
+          "old_negative_contexts": 0,
+          "new_negative_contexts": 0
+        },
+        {
+          "part_name": "SrpR/S3",
+          "old_median": -1.6843468267252542,
+          "new_median": -1.6843468267252537,
+          "old_positive_contexts": 0,
+          "new_positive_contexts": 0,
+          "old_negative_contexts": 65,
+          "new_negative_contexts": 65
+        },
+        {
+          "part_name": "SrpR/S4",
+          "old_median": 2.4228501198395476,
+          "new_median": 2.4228506273974584,
+          "old_positive_contexts": 65,
+          "new_positive_contexts": 65,
+          "old_negative_contexts": 0,
+          "new_negative_contexts": 0
+        }
+      ]
+    }
+  },
+  "output_sha256": {
+    "l2_presence_enrichment_v2.csv": "834e73813293a69fb566d71099fda84b9ad361b7ade965544e7f9eab2297da22",
+    "l2_presence_denominators_v2.csv": "7575a5d6ee1c6d7743995c74eba5188cf73b3eeb59ca00f942967560f31fc983"
+  }
+}

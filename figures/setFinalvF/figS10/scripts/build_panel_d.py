@@ -1,41 +1,9 @@
-"""Figure S05 — Panel A: per-part log-odds beeswarm across universal-eligible roles.
+"""S10d: circuit-presence enrichment across structural contexts.
 
-Faithful paper-pipeline port of `deepcirc_topology/figures/output/g3/
-fig02_toxic_class` Panel A. Same data + same per-part strip-plot
-layout; restyled to paper PASTEL palette and grey/non-bold labels.
-
-Layout:
-  y-axis = 20 library parts sorted by median log-odds (most-toxic at
-           bottom, most-protective at top).
-  x-axis = log-odds(top-5% / bot-5% by growth_score) for each
-           (part, fp_key) cell that passes the universal-eligible
-           filter (n_topologies >= 5, n_targets >= 3,
-           total_designs >= 1000, task = toxicity).
-  per-part dots = one per fp_key cell, jittered vertically.
-  vertical reference lines at log_odds = 0, -2 (tier-2 threshold),
-                                          -4 (extreme threshold).
-  horizontal banding by toxic-class region (toxic_extreme +
-  toxic_tier2 at the bottom, protective at the top).
-
-Paper-style palette for the toxic / neutral / protective semantic
-class encoding (replaces the topology family's saturated divergent
-red$\\rightarrow$green ramp):
-  toxic_extreme  $\\rightarrow$ PASTEL["red"]    (IcaRA/I1)
-  toxic_tier2    $\\rightarrow$ PASTEL["orange"] (QacR/Q1, HlyIIR/H1)
-  protective     $\\rightarrow$ PASTEL["green"]  (QacR/Q2, PhlF/P1)
-  neutral        $\\rightarrow$ LIGHT_GRAY       (most parts)
-
-Source: deepcirc_topology/data/G3/l2_top05/l2_enrichment.csv (narrower
-top-5% / bot-5% tier cutoffs; sharper than the 25/25 version, paired
-with the new figS06 circuit-side counterpart for visual parity).
-
-Outputs:
-  panels/vector/panel_a.pdf | .svg
-  panels/raster/panel_a.png
-
-Run:
-    paper_figures/.venv_figs/bin/python \
-        paper_figures/figures/setFinal/figS14/scripts/build_panel_a.py
+Current inputs normalize part-presence counts by the actual number of
+evaluated circuits containing each context in each score tier. The original
+95th/5th-percentile masks retain all ties. One dot represents one context;
+this is not a position-independent or causal part-effect estimate.
 """
 from __future__ import annotations
 
@@ -53,8 +21,9 @@ REPO_ROOT   = PKG_ROOT
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-L2_TOP05_CSV = (REPO_ROOT / "data" / "topology_g3"
-                / "l2_top05" / "l2_enrichment.csv")
+from figures.setFinalvF._shared.presence_data import (
+    load_presence_data, VALUE_COLUMN,
+)
 
 from figures.figtools import use_style, save_panel, figsize_mm  # noqa: E402
 from figures.styles.colors import (  # noqa: E402
@@ -97,16 +66,10 @@ CANVAS_H_MM = 105
 def build_panel() -> None:
     use_style()
 
-    l2 = pd.read_csv(L2_TOP05_CSV)
-    l2_eligible = l2[
-        (l2["task"] == "toxicity")
-        & (l2["n_topologies"] >= 5)
-        & (l2["n_targets"] >= 3)
-        & (l2["total_designs"] >= 1000)
-    ].copy()
+    l2_eligible = load_presence_data("toxicity")
 
     parts_by_median = (
-        l2_eligible.groupby("part_name")["log_odds"]
+        l2_eligible.groupby("part_name")[VALUE_COLUMN]
         .median()
         .sort_values()
         .index.tolist()
@@ -134,7 +97,7 @@ def build_panel() -> None:
     rng = np.random.default_rng(42)
     for i, part in enumerate(parts_by_median):
         cells = l2_eligible[l2_eligible["part_name"] == part]
-        x = cells["log_odds"].values
+        x = cells[VALUE_COLUMN].values
         y = i + rng.uniform(-0.30, 0.30, size=len(x))
 
         category = PART_HIGHLIGHTS.get(part, ("neutral", "other"))[0]
@@ -172,8 +135,8 @@ def build_panel() -> None:
 
     ax.set_xlabel(r"log$_2$ enrichment (top-5% / bot-5% by growth score (raw))",
                    fontsize=8, color="#000000", labelpad=2.0)
-    ax.set_xlim(left=l2_eligible["log_odds"].min() - 0.4,
-                 right=l2_eligible["log_odds"].max() + 0.4)
+    ax.set_xlim(left=l2_eligible[VALUE_COLUMN].min() - 0.4,
+                 right=l2_eligible[VALUE_COLUMN].max() + 0.4)
     ax.set_ylim(-0.6, len(parts_by_median) - 0.4)
     ax.tick_params(axis="x", labelsize=8, labelcolor="#000000",
                     color="#000000", width=0.6, length=2.5)
@@ -181,13 +144,13 @@ def build_panel() -> None:
 
     # --- threshold labels ON the dashed lines mid-plot ------------------
     mid_y = len(parts_by_median) / 2
-    ax.text(-3, mid_y, "destructive thr",
+    ax.text(-3, mid_y, "reference -3",
              color=PART_CLASS_COLORS["destructive"],
              fontsize=8, ha="right", va="center",
              rotation=90, fontweight="normal",
              bbox=dict(boxstyle="round,pad=0.10", facecolor="white",
                         edgecolor="none", alpha=0.85), zorder=7)
-    ax.text(1.5, mid_y, "constructive thr",
+    ax.text(1.5, mid_y, "reference +1.5",
              color=PART_CLASS_COLORS["constructive"],
              fontsize=8, ha="left", va="center",
              rotation=90, fontweight="normal",
@@ -199,18 +162,18 @@ def build_panel() -> None:
     # x=0.58 lines the title up with the axes centre (axes is at
     # left=0.21 width=0.74 $\\rightarrow$ centre 0.58); using fig-x=0.5 would
     # shift the title ~8% left of the plot content below.
-    fig.text(0.58, 0.95, "Per part growth score probability enrichment",
+    fig.text(0.58, 0.95, "Per-part circuit-presence enrichment (growth)",
               ha="center", va="top",
               fontsize=9, fontweight="normal", color="#000000")
 
     # --- legend ---------------------------------------------------------
     handles = [
         mpatches.Patch(color=PART_CLASS_COLORS["destructive"],
-                        label="destructive"),
+                        label="depleted"),
         mpatches.Patch(color=PART_CLASS_COLORS["neutral"],
-                        label="neutral"),
+                        label="other"),
         mpatches.Patch(color=PART_CLASS_COLORS["constructive"],
-                        label="constructive"),
+                        label="enriched"),
     ]
     # labelspacing 0.25 $\\rightarrow$ 0.5 + handlelength/handleheight = 1.0 so the
     # swatches render as rough squares (default handlelength=2.0 made

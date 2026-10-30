@@ -1,22 +1,8 @@
-"""Supplementary Table S3 — Mean circuit-score log₂ enrichment per part × cascade position.
+"""Table S3: mean circuit-presence enrichment by gate type and depth.
 
-Derived from setFinal/figS14/panel_c (the position × part heatmap).
-Rows = 20 library parts (sorted by overall median log_odds, ascending —
-most-destructive first, most-constructive last, matching the heatmap).
-Columns = 6 cascade-position buckets: NOT-early / NOT-middle / NOT-late /
-NOR-early / NOR-middle / NOR-late, where 'late' means depth-to-output = 1
-(output-adjacent) and 'early' means d2o >= 3 (input-adjacent).
-
-Values = mean log₂ enrichment (top-5% / bot-5% by circuit score) across
-all (part, fp_key) cells that fall into that (part, bucket) combination
-after applying the universal-eligibility filter (n_topologies >= 5,
-n_targets >= 3, total_designs >= 1000, task = circuit_log).
-
-Empty cells (no fp_key with data for that combination) are left blank
-in the CSV — they render as "—" in the source heatmap.
-
-Output:
-  final/table_S3.csv
+Each value is an unweighted mean of context-specific log2 probability ratios.
+Each context denominator counts circuits once, regardless of repeated matching
+positions. Historical top/bottom score cutoffs and eligibility are preserved.
 """
 from __future__ import annotations
 
@@ -31,8 +17,9 @@ REPO_ROOT   = PKG_ROOT
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-L2_TOP05_CSV = (REPO_ROOT / "data" / "topology_g3"
-                / "l2_top05" / "l2_enrichment.csv")
+from figures.setFinalvF._shared.presence_data import (
+    load_presence_data, VALUE_COLUMN,
+)
 
 BUCKETS = [
     "NOT-early", "NOT-middle", "NOT-late",
@@ -54,25 +41,19 @@ def bucket_of(row: pd.Series) -> str:
 
 
 def build_table() -> pd.DataFrame:
-    l2 = pd.read_csv(L2_TOP05_CSV)
-    elig = l2[
-        (l2["task"] == "circuit_log")
-        & (l2["n_topologies"] >= 5)
-        & (l2["n_targets"] >= 3)
-        & (l2["total_designs"] >= 1000)
-    ].copy()
+    elig = load_presence_data("circuit_log")
 
     elig["bucket"] = elig.apply(bucket_of, axis=1)
 
     parts_by_median = (
-        elig.groupby("part_name")["log_odds"]
+        elig.groupby("part_name")[VALUE_COLUMN]
         .median()
         .sort_values()
         .index.tolist()
     )
 
     grid = (
-        elig.groupby(["part_name", "bucket"])["log_odds"]
+        elig.groupby(["part_name", "bucket"])[VALUE_COLUMN]
         .mean()
         .unstack("bucket")
         .reindex(index=parts_by_median, columns=BUCKETS)

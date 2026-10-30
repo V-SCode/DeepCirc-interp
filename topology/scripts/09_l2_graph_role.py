@@ -32,6 +32,15 @@ Output:
   <output_root>/l2_enrichment_by_target.csv  one row per (fp_key, part, task, source)
   <output_root>/l2_summary.json            top-K rules + meta
 
+Those files retain their legacy occurrence-count-ratio semantics. Additional
+versioned files report circuit-presence probabilities, normalized by actual
+inclusive-tier design counts and conditional on the context being present:
+  <output_root>/l2_presence_enrichment_v2.csv
+  <output_root>/l2_presence_enrichment_by_target_v2.csv
+  <output_root>/l2_presence_summary_v2.json
+The new binary add-one formula is p = (part_design_count + 1)/(design_count + 2).
+The score cutoffs and inclusion of all threshold ties are unchanged.
+
 (CSV chosen over parquet for portability; the data is small enough — ~7k
 aggregate + ~30k per-target rows — that compression isn't important.)
 
@@ -79,7 +88,7 @@ import argparse
 import json
 import pickle
 import time
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 import numpy as np
@@ -88,6 +97,7 @@ import pandas as pd
 from _population_filter import (
     add_scope_args, filter_topologies, scope_summary,
 )
+from _presence_enrichment import PRESENCE_METADATA, presence_statistics
 
 NUM_PARTS = 20
 ZERO_PERMS_MARKER = "_zero_perms_filtered.json"
@@ -119,7 +129,7 @@ def fingerprint_key(fp: dict) -> str:
     equality is well-defined.
 
     Field naming follows P3's emit format
-    (`topology/scripts/03_assemble_population.py`):
+    (`deepcirc_topology/scripts/03_assemble_population.py`):
       • `predecessor_depth_signature` — sorted depths of immediate
         predecessors, e.g. "0,2"
       • Successor signature is not currently emitted by P3 (state doc
@@ -160,6 +170,7 @@ def aggregate_one_topology(
     counters_by_target: dict,
     top_quantile: float = 0.75,
     bot_quantile: float = 0.25,
+    part_families: list[str] | None = None,
 ) -> dict:
     """Stream one (topology, perm) .npz into the global counters.
 
@@ -175,6 +186,23 @@ def aggregate_one_topology(
     circuit_pred = d["circuit_pred"].astype(np.float64)  # (N,)
     toxicity_pred = d["toxicity_pred"].astype(np.float64)
     n, l = gate_assignments.shape
+    if n == 0 or gate_assignments.dtype.kind not in "iu":
+        raise ValueError("gate assignments must be a nonempty integer matrix")
+    if np.any(gate_assignments < 0) or np.any(gate_assignments >= NUM_PARTS):
+        raise ValueError("gate assignment contains an out-of-library part ID")
+    for name, scores in (("circuit", circuit_pred), ("growth", toxicity_pred)):
+        if scores.shape != (n,) or not np.all(np.isfinite(scores)):
+            raise ValueError(f"{name} predictions must be finite with one value per design")
+    if part_families is not None:
+        if len(part_families) != NUM_PARTS:
+            raise ValueError("part-family mapping must match the part library")
+        family_lookup = {family: i for i, family in enumerate(sorted(set(part_families)))}
+        family_ids = np.array([family_lookup[f] for f in part_families], dtype=np.int16)
+        # Bound validation memory for large sampled seven-regulator spaces.
+        for start in range(0, n, 250_000):
+            assigned_families = np.sort(family_ids[gate_assignments[start:start + 250_000]], axis=1)
+            if np.any(assigned_families[:, 1:] == assigned_families[:, :-1]):
+                raise ValueError("a design assigns multiple parts from the same regulator family")
     assert l == len(fingerprints), (
         f"slot count mismatch: gate_assignments has {l} slots, "
         f"fingerprints has {len(fingerprints)}"
@@ -188,6 +216,9 @@ def aggregate_one_topology(
     else:
         sources = [raw_source] if raw_source else ["unknown"]
     fp_keys = [fingerprint_key(fp) for fp in fingerprints]
+    slots_by_fp: dict[str, list[int]] = defaultdict(list)
+    for slot, key in enumerate(fp_keys):
+        slots_by_fp[key].append(slot)
 
     # m_logic — log-transformed circuit, per Module D convention
     Y_per_task = {
@@ -197,12 +228,30 @@ def aggregate_one_topology(
 
     n_topology_top_designs = 0
     n_topology_bot_designs = 0
+    tier_statistics = {}
 
     for task, Y in Y_per_task.items():
-        top_thr = float(np.quantile(Y, top_quantile))
-        bot_thr = float(np.quantile(Y, bot_quantile))
+        top_thr = float(np.quantile(Y, top_quantile, method="linear"))
+        bot_thr = float(np.quantile(Y, bot_quantile, method="linear"))
         top_mask = Y >= top_thr
         bot_mask = Y <= bot_thr
+        top_size = int(top_mask.sum())
+        bottom_size = int(bot_mask.sum())
+        tier_statistics[task] = {
+            "top_threshold": top_thr,
+            "bottom_threshold": bot_thr,
+            "top_design_count": top_size,
+            "bottom_design_count": bottom_size,
+            "top_threshold_ties": int(np.count_nonzero(Y == top_thr)),
+            "bottom_threshold_ties": int(np.count_nonzero(Y == bot_thr)),
+            "overlap_design_count": int(np.count_nonzero(top_mask & bot_mask)),
+            "top_quantile": top_quantile,
+            "bottom_quantile": bot_quantile,
+            "quantile_method": "linear",
+            "top_comparison": ">=",
+            "bottom_comparison": "<=",
+            "score_transform": "ln(max(circuit_score, 1e-6))" if task == "circuit_log" else "raw_growth_score",
+        }
         if task == "circuit_log":
             n_topology_top_designs = int(top_mask.sum())
             n_topology_bot_designs = int(bot_mask.sum())
@@ -224,6 +273,21 @@ def aggregate_one_topology(
                 # in each contributing target's per-target table).
                 counters_by_target[task][src][fk]["top"] += top_counts
                 counters_by_target[task][src][fk]["bot"] += bot_counts
+                counters_by_target[task][src][fk]["topologies"].add(topology_meta["topology_id"])
+                counters_by_target[task][src][fk]["targets"].add(src)
+
+        # A topology can have several positions with the same fingerprint.
+        # Count its design exposure once per distinct context, not once per slot.
+        for fk, slots in slots_by_fp.items():
+            top_presence = count_part_presence(gate_assignments, top_mask, slots)
+            bottom_presence = count_part_presence(gate_assignments, bot_mask, slots)
+            cells = [counters[task][fk]]
+            cells.extend(counters_by_target[task][src][fk] for src in sources)
+            for cell in cells:
+                cell["top_design_count"] += top_size
+                cell["bottom_design_count"] += bottom_size
+                cell["top_part_design_count"] += top_presence
+                cell["bottom_part_design_count"] += bottom_presence
 
     return {
         "topology_id":     topology_meta["topology_id"],
@@ -233,6 +297,30 @@ def aggregate_one_topology(
         "n_top_designs":   n_topology_top_designs,
         "n_bot_designs":   n_topology_bot_designs,
         "fingerprint_keys": fp_keys,
+        "fingerprint_multiplicity": dict(Counter(fp_keys)),
+        "tier_statistics": tier_statistics,
+    }
+
+
+def count_part_presence(assignments: np.ndarray, tier_mask: np.ndarray, slots: list[int]) -> np.ndarray:
+    """Count each part at most once per selected design in matching slots.
+
+    Valid library assignments already have unique families, but explicit
+    row-wise deduplication also makes the presence counting operation correct
+    independently of that upstream constraint.
+    """
+    selected = np.sort(assignments[np.ix_(np.flatnonzero(tier_mask), slots)], axis=1)
+    unique = np.ones(selected.shape, dtype=bool)
+    unique[:, 1:] = selected[:, 1:] != selected[:, :-1]
+    return np.bincount(selected[unique], minlength=NUM_PARTS)
+
+
+def presence_counter_fields() -> dict:
+    return {
+        "top_design_count": 0,
+        "bottom_design_count": 0,
+        "top_part_design_count": np.zeros(NUM_PARTS, dtype=np.int64),
+        "bottom_part_design_count": np.zeros(NUM_PARTS, dtype=np.int64),
     }
 
 
@@ -242,6 +330,7 @@ def cell_factory():
         "bot": np.zeros(NUM_PARTS, dtype=np.int64),
         "topologies": set(),
         "targets":    set(),
+        **presence_counter_fields(),
     }
 
 
@@ -249,6 +338,9 @@ def cell_factory_target():
     return {
         "top": np.zeros(NUM_PARTS, dtype=np.int64),
         "bot": np.zeros(NUM_PARTS, dtype=np.int64),
+        "topologies": set(),
+        "targets": set(),
+        **presence_counter_fields(),
     }
 
 
@@ -315,6 +407,59 @@ def emit_per_target_dataframe(counters_by_target: dict, part_names: list[str]) -
                         "total_designs": int(top[part_idx] + bot[part_idx]),
                     })
     return pd.DataFrame(rows)
+
+
+def emit_presence_dataframe(counters: dict, part_names: list[str], *, by_target: bool = False) -> pd.DataFrame:
+    """Emit the explicit v2 circuit-presence contract without legacy aliases."""
+    rows = []
+    for task, task_counters in counters.items():
+        sources = task_counters.items() if by_target else [(None, task_counters)]
+        for source, fp_dict in sources:
+            for fk, cell in fp_dict.items():
+                top = cell["top_part_design_count"]
+                bottom = cell["bottom_part_design_count"]
+                stats = presence_statistics(
+                    top, bottom, cell["top_design_count"], cell["bottom_design_count"],
+                )
+                for part_idx, part_name in enumerate(part_names):
+                    row = {
+                        "task": task,
+                        "fp_key": fk,
+                        **dict(parse_fp_key(fk)),
+                        "part_idx": part_idx,
+                        "part_name": part_name,
+                        "top_design_count": int(cell["top_design_count"]),
+                        "bottom_design_count": int(cell["bottom_design_count"]),
+                        "top_part_design_count": int(top[part_idx]),
+                        "bottom_part_design_count": int(bottom[part_idx]),
+                        "part_tier_support": int(top[part_idx] + bottom[part_idx]),
+                        "top_probability": float(stats["top_probability"][part_idx]),
+                        "bottom_probability": float(stats["bottom_probability"][part_idx]),
+                        "log2_presence_enrichment": float(stats["log2_presence_enrichment"][part_idx]),
+                        "n_topologies": len(cell["topologies"]),
+                        "n_targets": len(cell["targets"]),
+                    }
+                    if by_target:
+                        row["source"] = source
+                    rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def emit_presence_rules_summary(df: pd.DataFrame, top_k: int = 30) -> dict:
+    """Versioned counterpart of the legacy summary, using normalized values."""
+    result = {}
+    for task in df["task"].unique():
+        eligible = df[(df["task"] == task)
+                      & (df["n_topologies"] >= 2)
+                      & (df["part_tier_support"] >= 1000)].copy()
+        eligible["absolute_enrichment"] = eligible["log2_presence_enrichment"].abs()
+        columns = ["part_name", "part_idx", "fp_key", "log2_presence_enrichment",
+                   "top_probability", "bottom_probability", "top_design_count",
+                   "bottom_design_count", "top_part_design_count",
+                   "bottom_part_design_count", "part_tier_support", "n_topologies",
+                   "n_targets"]
+        result[task] = eligible.nlargest(top_k, "absolute_enrichment")[columns].to_dict("records")
+    return result
 
 
 def parse_fp_key(fk: str) -> list[tuple[str, str]]:
@@ -410,6 +555,7 @@ def main() -> None:
     qc_by_tid = {r["topology_id"]: r for r in qc["records"]}
 
     part_names = load_part_names(args.part_response_data)
+    part_families = [name.split("/", 1)[0] for name in part_names]
     print(f"[setup] {len(part_names)} parts loaded; "
           f"first three: {part_names[:3]}; "
           f"part 7 (Module-A growth-toxic): {part_names[7]}")
@@ -435,6 +581,7 @@ def main() -> None:
         topologies = topologies[:args.limit_topologies]
 
     n_processed = n_skipped = 0
+    input_failures: list[str] = []
     per_topology_log: list[dict] = []
     t0 = time.perf_counter()
 
@@ -444,6 +591,7 @@ def main() -> None:
         if qc_rec is None:
             print(f"[{i}/{len(topologies)}] {tid} -- no QC record, skipping")
             n_skipped += 1
+            input_failures.append(f"{tid}: missing QC record")
             continue
         if qc_rec["tier"] in ("A3", "A0", "BROKEN"):
             print(f"[{i}/{len(topologies)}] {tid} -- SKIP (tier={qc_rec['tier']})")
@@ -454,6 +602,7 @@ def main() -> None:
         if best_perm is None:
             print(f"[{i}/{len(topologies)}] {tid} -- no best perm found, skipping")
             n_skipped += 1
+            input_failures.append(f"{tid}: missing representative permutation")
             continue
 
         npz_path = args.predictions_root / f"{tid}_{best_perm}.npz"
@@ -461,6 +610,7 @@ def main() -> None:
             print(f"[{i}/{len(topologies)}] {tid} -- no .npz for best perm "
                   f"{best_perm}, skipping")
             n_skipped += 1
+            input_failures.append(f"{tid}: missing predictions for permutation {best_perm}")
             continue
 
         fingerprints = t.get("fingerprints")
@@ -468,6 +618,7 @@ def main() -> None:
             print(f"[{i}/{len(topologies)}] {tid} -- no fingerprints in manifest, "
                   f"skipping (P3 may need re-running)")
             n_skipped += 1
+            input_failures.append(f"{tid}: missing fingerprints")
             continue
 
         t_start = time.perf_counter()
@@ -475,7 +626,8 @@ def main() -> None:
             stats = aggregate_one_topology(npz_path, t, fingerprints,
                                             counters, counters_by_target,
                                             top_quantile=args.top_quantile,
-                                            bot_quantile=args.bot_quantile)
+                                            bot_quantile=args.bot_quantile,
+                                            part_families=part_families)
             elapsed = time.perf_counter() - t_start
             per_topology_log.append({**stats, "elapsed_s": elapsed,
                                       "best_perm": best_perm,
@@ -487,10 +639,14 @@ def main() -> None:
         except Exception as e:
             print(f"[{i}/{len(topologies)}] {tid} -- ERROR {type(e).__name__}: {e}")
             n_skipped += 1
+            input_failures.append(f"{tid}: {type(e).__name__}: {e}")
 
     print()
     print(f"[aggregate] processed {n_processed} topologies, skipped {n_skipped}")
     print(f"[aggregate] {sum(len(c) for c in counters.values())} (task, fp_key) cells")
+    if input_failures or not n_processed:
+        details = "; ".join(input_failures) or "no eligible topologies were processed"
+        raise SystemExit(f"Refusing to emit an incomplete enrichment cohort: {details}")
 
     # Emit DataFrames
     print(f"[emit] flattening counters -> DataFrames")
@@ -503,6 +659,32 @@ def main() -> None:
     df_per_target.to_csv(out_per_target, index=False)
     print(f"[emit] wrote {out_agg}  ({len(df_agg):,} rows)")
     print(f"[emit] wrote {out_per_target}  ({len(df_per_target):,} rows)")
+
+    presence_df = emit_presence_dataframe(counters, part_names)
+    presence_target_df = emit_presence_dataframe(counters_by_target, part_names, by_target=True)
+    presence_path = args.output_root / "l2_presence_enrichment_v2.csv"
+    presence_target_path = args.output_root / "l2_presence_enrichment_by_target_v2.csv"
+    presence_df.to_csv(presence_path, index=False)
+    presence_target_df.to_csv(presence_target_path, index=False)
+    print(f"[emit] wrote {presence_path}  ({len(presence_df):,} rows)")
+    print(f"[emit] wrote {presence_target_path}  ({len(presence_target_df):,} rows)")
+    presence_summary_path = args.output_root / "l2_presence_summary_v2.json"
+    with open(presence_summary_path, "w") as f:
+        json.dump({
+            **PRESENCE_METADATA,
+            "scope": scope_summary(include_baselines=args.include_baselines,
+                                   size_classes=args.size_classes),
+            "weighting": "pooled_design_presence_separately_within_each_tier",
+            "sampled_rows_deduplicated": False,
+            "family_unique_assignments_validated": True,
+            "n_topologies_processed": n_processed,
+            "n_topologies_skipped": n_skipped,
+            "tier_cutoffs": {"top_quantile": args.top_quantile,
+                             "bottom_quantile": args.bot_quantile},
+            "top_rules_per_task": emit_presence_rules_summary(presence_df),
+            "per_topology": per_topology_log,
+        }, f, indent=2)
+    print(f"[emit] wrote {presence_summary_path}")
 
     # Top-K rules summary
     print(f"[emit] top-30 cross-topology rules per task")
