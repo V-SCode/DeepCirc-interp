@@ -1,5 +1,12 @@
 # Preparing the v1.1.1 correction release
 
+Published by the user on 2026-10-30 as
+[10.5281/zenodo.23822701](https://doi.org/10.5281/zenodo.23822701), from
+tag `v1.1.1` at commit `3761887960672f63a252feff29a8ee0c41ed930c`.
+All five published file sizes and MD5 checksums were verified after
+publication. [The release receipt](release_v1.1.1.json) records the checks
+and successful CI; the preparation procedure below is retained for reference.
+
 This is a source-panel and data correction. Illustrator master regeneration
 and all manuscript text, Methods, figure legends and table legends are deferred.
 No Word document or existing Illustrator master belongs in this upload.

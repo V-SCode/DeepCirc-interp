@@ -1,0 +1,97 @@
+{
+  "draft_id": 23822701,
+  "conceptrecid": "20576708",
+  "review_url": "https://zenodo.org/uploads/23822701",
+  "source_commit": "3761887960672f63a252feff29a8ee0c41ed930c",
+  "source_tag": "v1.1.1",
+  "published": true,
+  "verification_complete": true,
+  "files": [
+    {
+      "filename": "DeepCirc-interp-1.1.1.zip",
+      "size_bytes": 9664531,
+      "md5": "63dc84467e2515bf2bd51d8eec5272e3"
+    },
+    {
+      "filename": "DeepCirc-interp-1.1.1-setFinalvF-source-panels-and-tables.zip",
+      "size_bytes": 22442113,
+      "md5": "a003aae1f630f0b43f7129e477b054ac"
+    },
+    {
+      "filename": "README-ZENODO.md",
+      "size_bytes": 2780,
+      "md5": "1f5368222b5805abc1e4e2cfb7d4eb93"
+    },
+    {
+      "filename": "metadata.json",
+      "size_bytes": 1431,
+      "md5": "426ad996a97dc3823df9db35f512f8f7"
+    },
+    {
+      "filename": "manifest.json",
+      "size_bytes": 99687,
+      "md5": "eac8a9f915715fcfac2e99bcdf28c51e"
+    }
+  ],
+  "metadata_patch_verified": true,
+  "creators_orcids_affiliations_preserved": true,
+  "license_preserved": true,
+  "empty_inherited_date_placeholders_removed": 1,
+  "state": "published",
+  "reserved_doi": "10.5281/zenodo.23822701",
+  "publication_date_preserved_during_draft_metadata_merge": true,
+  "publication_verification": {
+    "record_id": 23822701,
+    "doi": "10.5281/zenodo.23822701",
+    "concept_doi": "10.5281/zenodo.20576708",
+    "version": "v1.1.1",
+    "publication_date": "2026-10-30",
+    "published_by": "user",
+    "all_five_sizes_and_md5s_match": true,
+    "files": [
+      {
+        "filename": "DeepCirc-interp-1.1.1.zip",
+        "size_bytes": 9664531,
+        "md5": "63dc84467e2515bf2bd51d8eec5272e3"
+      },
+      {
+        "filename": "DeepCirc-interp-1.1.1-setFinalvF-source-panels-and-tables.zip",
+        "size_bytes": 22442113,
+        "md5": "a003aae1f630f0b43f7129e477b054ac"
+      },
+      {
+        "filename": "README-ZENODO.md",
+        "size_bytes": 2780,
+        "md5": "1f5368222b5805abc1e4e2cfb7d4eb93"
+      },
+      {
+        "filename": "metadata.json",
+        "size_bytes": 1431,
+        "md5": "426ad996a97dc3823df9db35f512f8f7"
+      },
+      {
+        "filename": "manifest.json",
+        "size_bytes": 99687,
+        "md5": "eac8a9f915715fcfac2e99bcdf28c51e"
+      }
+    ]
+  },
+  "record_url": "https://zenodo.org/records/23822701",
+  "github_ci": {
+    "run_url": "https://github.com/V-SCode/DeepCirc-interp/actions/runs/41138078503",
+    "conclusion": "success",
+    "python_versions": [
+      "3.10",
+      "3.11",
+      "3.12"
+    ],
+    "commit": "3761887960672f63a252feff29a8ee0c41ed930c"
+  },
+  "publication_scope": "Corrected source panels, normalized data, table and code; manuscript prose/legends and final Illustrator assembly deferred.",
+  "previous_published_version_files_unchanged": true,
+  "api_notes": [
+    "Authenticated requests succeeded with explicit User-Agent and Accept headers.",
+    "An inherited date object with a type but no date value was removed to satisfy current write validation.",
+    "The deposit listing omits file details; all five checksums were verified with the individual deposit endpoint and again with the public record endpoint after user publication."
+  ]
+}
